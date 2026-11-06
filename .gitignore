@@ -1,0 +1,25 @@
+# 공유에 필요한 실행 파일과 저장소 안내 파일만 포함합니다.
+*
+!/.gitignore
+!/README.md
+
+!/ForeverGatherMarks/
+!/ForeverGatherMarks/ForeverGatherMarks_Forever.toc
+!/ForeverGatherMarks/ForeverGatherMarks.lua
+!/ForeverGatherMarks/MinimapGatherSkill.lua
+!/ForeverGatherMarks/MinimapGatherNearby.lua
+
+!/ForeverQuestHelper/
+!/ForeverQuestHelper/ForeverQuestHelper_Forever.toc
+!/ForeverQuestHelper/QuestHelperSettings.lua
+!/ForeverQuestHelper/QuestFloor.lua
+!/ForeverQuestHelper/ForeverQuestRoute.lua
+!/ForeverQuestHelper/ForeverQuestRoute.xml
+!/ForeverQuestHelper/HordeQuestPlan.lua
+!/ForeverQuestHelper/HordeQuestPanel.lua
+!/ForeverQuestHelper/HordeQuestStarts.lua
+!/ForeverQuestHelper/ForeverQuestMarks.lua
+!/ForeverQuestHelper/QuestDirection.lua
+!/ForeverQuestHelper/QuestStarterAlerts.lua
+!/ForeverQuestHelper/QuestArrow.tga
+!/ForeverQuestHelper/QuestCompass.tga

@@ -1,0 +1,46 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+    <Frame name="ForeverQuestRoutePinTemplate" virtual="true" enableMouse="false">
+        <Size x="24" y="20"/>
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture setAllPoints="true">
+                    <Color r="0.05" g="0.09" b="0.12" a="0.94"/>
+                </Texture>
+            </Layer>
+            <Layer level="OVERLAY">
+                <FontString parentKey="Number" inherits="GameFontNormalSmall" setAllPoints="true"/>
+            </Layer>
+        </Layers>
+        <Scripts>
+            <OnLoad>Mixin(self, MapCanvasPinMixin, ForeverQuestRoutePinMixin);</OnLoad>
+        </Scripts>
+    </Frame>
+    <Frame name="ForeverHordeQuestStartPinTemplate" virtual="true" enableMouse="true">
+        <Size x="26" y="26"/>
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture setAllPoints="true">
+                    <Color r="0.08" g="0.43" b="0.44" a="0.95"/>
+                </Texture>
+            </Layer>
+            <Layer level="BORDER">
+                <Texture>
+                    <Size x="22" y="22"/>
+                    <Anchors><Anchor point="CENTER"/></Anchors>
+                    <Color r="0.025" g="0.08" b="0.10" a="0.98"/>
+                </Texture>
+            </Layer>
+            <Layer level="OVERLAY">
+                <Texture parentKey="Icon" hidden="true" setAllPoints="true"/>
+                <FontString parentKey="Mark" inherits="GameFontNormalLarge" hidden="true" setAllPoints="true"/>
+            </Layer>
+        </Layers>
+        <Scripts>
+            <OnLoad>
+                Mixin(self, MapCanvasPinMixin, ForeverHordeQuestStartPinMixin);
+                self:SetMouseClickEnabled(false);
+                self:SetMouseMotionEnabled(true);
+            </OnLoad>
+        </Scripts>
+    </Frame>
+</Ui>
