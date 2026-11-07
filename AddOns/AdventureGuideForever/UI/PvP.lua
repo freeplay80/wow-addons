@@ -1,0 +1,171 @@
+---@type string, AGFNamespace
+local _, ns = ...
+local L = ns.L
+local Asides = ns.Asides
+
+--[[ PvP (docs/design.md §2.15): a battleground open to the player and the next PvP rank's reward,
+     each an aside. The opt-in Battlegrounds card is the planner's (Model.lua). ]]
+
+-- The highest level this character has stood in a battleground at (charDB.battled); 0 when never, or unreadable.
+---@return integer
+local function Battled()
+	local battled = ns.Prefs().battled
+	return type(battled) == "number" and battled or 0
+end
+
+-- "Warsong Gulch is open to you": the newest open battleground (State.Battlegrounds), until the character has stood in
+-- a battleground since it opened; its place is the nearest battlemaster the data has, else it is text only (Darkspear
+-- Islands has none in CMaNGOS).
+Asides.Register(function()
+	if not ns.Prefs().battlegrounds then
+		return nil
+	end
+	local bg = ns.State.Battlegrounds()[1]
+	if not bg or bg.level <= Battled() then
+		return nil
+	end
+	local npc = ns.Model.Battlemaster(ns.Data, ns.State.Player(), bg.id)
+	return {
+		key = "battleground:" .. bg.id,
+		text = L.BATTLEGROUND_OPEN:format(bg.name),
+		-- The minimap's battlemaster mark (CSV:1319).
+		icon = "battlemaster",
+		place = npc and npc.place,
+	}
+end)
+
+-- Standing in a battleground acts on the aside: it goes, and the next battleground to open brings the next one.
+-- IsInInstance is the client's; the probe did not reach a battleground, so without it nothing is recorded.
+local instance = CreateFrame("Frame")
+instance:RegisterEvent("PLAYER_ENTERING_WORLD")
+instance:RegisterEvent("ZONE_CHANGED_NEW_AREA")
+instance:SetScript("OnEvent", function()
+	if not IsInInstance then
+		return
+	end
+	local _, kind = IsInInstance()
+	local level = ns.State.Level()
+	if kind == "pvp" and level > Battled() then
+		ns.Prefs().battled = level
+		Asides.Refresh()
+	end
+end)
+
+-- Camelot's PvP rank track is major faction 2800 (Blizzard_UIPanels_Game/Camelot/PVPRankFrame.lua).
+local RANK_FACTION = 2800
+
+-- The next rank reward above `rank`: the first rank past it with rewards, and the first of those with a description.
+-- Nil when that rank's rewards have none, or no rank up to `maxLevel` has any. The aside and the PvP tab both show it.
+---@param factions table C_MajorFactions
+---@param rank integer
+---@param maxLevel? integer
+---@return integer? level
+---@return table? reward
+local function NextReward(factions, rank, maxLevel)
+	for level = rank + 1, maxLevel or rank do
+		local rewards = factions.GetRenownRewardsForLevel(RANK_FACTION, level) or {}
+		for _, reward in ipairs(rewards) do
+			if reward.description then
+				return level, reward
+			end
+		end
+		if #rewards > 0 then
+			return nil
+		end
+	end
+	return nil
+end
+
+-- "Rank 6 · <reward>": the next rank with rewards, and the first of them with a description, in its own words and
+-- with its icon, as the character pane's "next reward" rows show them. Only for a character with rank points, and
+-- only where the client has C_MajorFactions' progression calls, which the probe did not reach.
+Asides.Register(function()
+	local factions = C_MajorFactions
+	if not (factions and factions.GetMajorFactionProgressionInfo and factions.GetRenownRewardsForLevel) then
+		return nil
+	end
+	local info = factions.GetMajorFactionProgressionInfo(RANK_FACTION)
+	local rank = info and info.renownLevel or 0
+	if not info or (rank <= 0 and (info.renownReputationEarned or 0) <= 0) then
+		return nil
+	end
+	local level, reward = NextReward(factions, rank, info.maxLevel)
+	if not reward then
+		return nil
+	end
+	return {
+		key = "pvprank",
+		text = L.PVP_RANK_REWARD:format(level, reward.description),
+		-- The minimap's battlemaster mark stands in for a reward with no icon.
+		icon = "battlemaster",
+		texture = reward.icon,
+	}
+end)
+Asides.RefreshOn("PLAYER_PVP_RANK_CHANGED")
+Asides.RefreshOn("MAJOR_FACTION_RENOWN_LEVEL_CHANGED")
+
+---@class AGFPvP
+local PvP = {}
+ns.PvP = PvP
+
+function PvP.Data()
+	local player = ns.State.Player()
+	local result = {
+		rank = { state = "unavailable" },
+		battlegrounds = {},
+		available = C_PvP ~= nil and type(C_PvP.GetLevelUpBattlegrounds) == "function",
+	}
+	local factions = C_MajorFactions
+	local info = factions
+		and factions.GetMajorFactionProgressionInfo
+		and factions.GetMajorFactionProgressionInfo(RANK_FACTION)
+	if info and type(info.renownLevel) == "number" then
+		local level = info.renownLevel
+		result.rank = {
+			level = level,
+			earned = info.renownReputationEarned,
+			threshold = info.renownLevelThreshold,
+			maxLevel = info.maxLevel,
+			state = info.maxLevel and level >= info.maxLevel and "capped" or level == 0 and "unranked" or "ranked",
+		}
+		if factions.GetRenownRewardsForLevel then
+			local nextLevel, reward = NextReward(factions, level, info.maxLevel)
+			if reward then
+				result.rank.reward = { level = nextLevel, text = reward.description, icon = reward.icon }
+			end
+		end
+	end
+	for _, bg in ipairs(player.battlegrounds) do
+		local npc, id = ns.Model.Battlemaster(ns.Data, player, bg.id)
+		local place
+		if npc then
+			place = {}
+			for key, value in pairs(npc.place) do
+				place[key] = value
+			end
+		end
+		result.battlegrounds[#result.battlegrounds + 1] =
+			{ id = bg.id, name = bg.name, level = bg.level, npc = id, place = place }
+	end
+	return result
+end
+
+function PvP.Go(id)
+	for _, bg in ipairs(PvP.Data().battlegrounds) do
+		if bg.id == id and bg.place then
+			return ns.Guidance.Navigate({
+				kind = "battlemaster",
+				verb = "battlemaster",
+				key = "battlemaster:" .. bg.npc,
+				map = bg.place.map,
+				x = bg.place.x,
+				y = bg.place.y,
+				quests = {},
+				title = L.BATTLEMASTER_QUEUE:format(bg.name),
+				detail = "",
+				reason = "",
+			})
+		end
+	end
+	return false
+end

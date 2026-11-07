@@ -1,0 +1,39 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<!-- Pin de un nodo en el mapa del mundo (UI/WorldMapPins.lua). Las texturas se
+	     crean en OnLoad. Sin bloque de scripts: el mapa pone OnEnter/OnLeave/OnMouseUp
+	     y llama a OnLoad por su cuenta. -->
+	<Frame name="GatherRadarWorldMapPinTemplate" mixin="GatherRadarWorldMapPinMixin" enableMouse="true" virtual="true">
+		<Size x="14" y="14"/>
+	</Frame>
+	<!-- Boton del mapa del mundo con el menu de tipos (UI/WorldMapPins.lua): el
+	     aspecto de los botones redondos del mapa, como el de DungeonQuestAtlas. -->
+	<DropdownButton name="GatherRadarMapButtonTemplate" mixin="GatherRadarMapButtonMixin" frameStrata="HIGH" virtual="true">
+		<Size x="32" y="32"/>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture parentKey="Background" file="Interface\Minimap\UI-Minimap-Background">
+					<Size x="25" y="25"/>
+					<Anchors><Anchor point="TOPLEFT" x="2" y="-4"/></Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="ARTWORK">
+				<Texture parentKey="Icon">
+					<Size x="20" y="20"/>
+					<Anchors><Anchor point="TOPLEFT" x="7" y="-6"/></Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="OVERLAY">
+				<Texture parentKey="Border" file="Interface\Minimap\MiniMap-TrackingBorder">
+					<Size x="54" y="54"/>
+					<Anchors><Anchor point="TOPLEFT"/></Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<HighlightTexture alphaMode="ADD" file="Interface\Minimap\UI-Minimap-ZoomButton-Highlight"/>
+		<Scripts>
+			<OnLoad method="OnLoad"/>
+			<OnEnter method="OnEnter"/>
+			<OnLeave method="OnLeave"/>
+		</Scripts>
+	</DropdownButton>
+</Ui>

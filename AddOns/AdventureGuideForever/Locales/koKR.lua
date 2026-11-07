@@ -1,0 +1,559 @@
+-- Machine translated (2026-10-22); corrections welcome: https://github.com/cjber/adventure-guide-forever/issues/new?template=translation.yml
+local _, ns = ...
+if GetLocale() ~= "koKR" then
+	return
+end
+local L = ns.L
+L["AFTER_PICK_UP"] = "수락한 후"
+L["ALL_SUGGESTIONS"] = "모든 제안"
+L["AUDIT_BUILD"] = "데이터 빌드 %s, 클라이언트 빌드 %s.%s"
+L["AUDIT_COUNTS"] = "데이터의 퀘스트 %d개, 지금 수행 가능 %d개, 완료 확인 %d개"
+L["AUDIT_NOT_READY"] =
+	"완료한 퀘스트를 아직 불러오는 중입니다. 위의 수치가 낮을 수 있습니다."
+L["AUDIT_QUESTIE_BUILDING"] = "QuestieDB의 퀘스트를 아직 불러오는 중입니다."
+L["AUDIT_QUESTIE_UNUSED"] = "QuestieDB를 사용하지 않음: %s."
+L["AUDIT_SOURCE_BUNDLED"] =
+	"퀘스트 데이터가 없습니다. QuestieDB를 켜십시오. 수락할 퀘스트를 추천받으려면 Questie를 켜십시오."
+L["AUDIT_SOURCE_QUESTIE"] = "QuestieDB %s의 퀘스트"
+L["BACK_STOPS_ROUTE"] = "경로도 중지합니다"
+L["BACK_TO_ALL"] = "뒤로 화살표를 클릭하면 모든 제안을 봅니다"
+L["BATTLEGROUND_OPEN"] = "%s 참여 가능"
+L["BATTLEGROUND_SUBLINE"] = "참여할 수 있는 전장"
+L["BATTLEMASTER_IN"] = "전투모병관: %s"
+L["BATTLEMASTER_QUEUE"] = "%s 대기열 참가"
+L["BEGINS_STORY"] = "새 이야기를 시작합니다"
+L["CALLING_QUESTS"] = "직업 퀘스트 %d개"
+L["CALLING_QUESTS_ONE"] = "직업 퀘스트 1개"
+L["CALLING_TASK"] = "직업 과제: %s"
+L["CALLING_TRAINER"] = "직업 상급자의 과제: %s"
+L["CARD_BY_BOAT"] = "배로 %d분"
+L["CARD_BY_ZEPPELIN"] = "비행선으로 %d분"
+L["CARD_MINUTES"] = "%d분"
+L["CARRY_ADDED"] = "직접 추가 %d개"
+L["CARRY_AWAY"] = "바다 건너 제출 %d개"
+L["CARRY_EXPLANATION"] =
+	"퀘스트 목록의 제출할 퀘스트와 미완료 목표, 그리고 경로에 추가한 퀘스트입니다."
+L["CARRY_IN_PROGRESS"] = "진행 중 %d개"
+L["CARRY_READY"] = "제출 가능 %d개"
+L["CHAPTER"] = "%d장"
+L["CHAPTERS_DONE"] = "%d/%d 완료"
+L["CHAPTER_OF"] = "%d장 / %d장"
+L["CHAPTER_QUEST"] = "%s: %s"
+L["CLEANUP"] = "정리: %s"
+L["CLEANUP_READY"] = "제출 가능 %d개"
+L["CLEANUP_GREY"] = "회색 %d개"
+L["CLEANUP_ELSEWHERE"] = "다른 곳 %d개"
+L["CLEANUP_READY_HEADING"] = "제출 가능:"
+L["CLEANUP_GREY_HEADING"] = "회색:"
+L["CLEANUP_ELSEWHERE_HEADING"] = "여기서 끝낼 수 없음:"
+L["CLEANUP_MENU_TITLE"] = "내 퀘스트 목록 정리"
+L["CLEANUP_RIGHT_CLICK"] = "오른쪽 클릭으로 회색 또는 다른 곳의 퀘스트를 지도에서 엽니다."
+L["CHOOSE_JOURNEY"] = "다른 여정 선택"
+L["CHOOSE_NEXT"] = "다음 여정을 선택하십시오"
+L["CLICK_TO_CHOOSE"] = "클릭하여 이 여정 선택"
+L["CLICK_TO_RESUME"] = "클릭하여 경로 재개"
+L["CLICK_TRAVEL"] = "클릭하여 %s(으)로 이동"
+L["CLICK_WAYPOINT"] = "클릭하여 이동 지점 설정"
+L["CLICK_WAYPOINT_STEP"] = "클릭하여 이동 지점 설정"
+L["CLOSES_WARNING"] = "%s 퀘스트를 수락하면 %s 퀘스트를 영영 받을 수 없습니다."
+L["CONTINUES_STORY"] = "시작한 이야기를 이어 갑니다"
+L["DO_THIS_NEXT"] = "다음에 하기"
+L["DUMP_SAVED"] =
+	"배치를 저장했습니다. /reload를 입력한 후 WTF\\Account\\<account>\\SavedVariables\\AdventureGuideForever.lua 파일을 보내 주십시오"
+L["DUNGEON_BOSSES_LOOT"] = "우두머리와 전리품"
+L["DUNGEON_INSIDE"] = "퀘스트 %d개가 다음 장소 안에서 끝남: %s"
+L["DUNGEON_INSIDE_ONE"] = "퀘스트 1개가 다음 장소 안에서 끝남: %s"
+L["DUNGEON_LOOT_COMBAT"] = "우두머리 전리품은 전투가 끝난 후 불러옵니다."
+L["DUNGEON_LOOT_INSTALL"] =
+	"우두머리와 전리품을 보려면 AtlasLoot Classic과 던전 및 공격대 모듈을 설치하십시오."
+L["DUNGEON_LOOT_UNKNOWN"] = "AtlasLoot에 아직 이 던전의 우두머리 전리품이 없습니다."
+L["DUNGEON_PICKUP"] = "수락"
+L["DUNGEON_QUESTS"] = "이 던전의 퀘스트 %d개"
+L["DUNGEON_QUESTS_ONE"] = "이 던전의 퀘스트 1개"
+L["ENTRANCE_UNKNOWN"] = "입구 위치를 알 수 없습니다."
+L["FAMILY_CLOSE"] = "닫기"
+L["FAMILY_COPY_HINT"] = "주소를 복사한 후 브라우저에서 여십시오."
+L["FAMILY_COPY_LINK"] = "링크 복사"
+L["FAMILY_DONT_SUGGEST"] = "다시 제안하지 않기"
+L["FAMILY_LINE_AGF"] = "레벨에 맞는 퀘스트를 골라 하나의 여정으로 계획합니다."
+L["FAMILY_LINE_LEGACY"] = "각 지역에서 진행할 수 있는 유산 도전을 보여줍니다."
+L["FAMILY_LINE_SKILLUP"] = "다음 전문 기술 등급까지 가장 저렴한 경로를 계획합니다."
+L["FAMILY_LINE_SPF"] =
+	"어디든 가장 빠른 길을 계획해 안내하며, 배와 비행선 시간을 실시간으로 보여줍니다."
+L["FAMILY_LINE_TWEAKS"] = "기본 UI용 퀘스트 자동화, 희귀 몬스터 알림, 상인 거래 처리."
+L["FAMILY_PAGE"] = "Forever 애드온"
+L["FAMILY_STATE_MISSING"] = "설치 안 됨"
+L["FAMILY_STATE_OFF"] = "설치됨, 사용 안 함"
+L["FAMILY_STATE_ON"] = "켬"
+L["FAMILY_SUGGEST"] = "제 다른 Forever 애드온 추천"
+L["FAMILY_SUGGEST_ABOUT"] =
+	"제 다른 Forever 애드온이 도움이 될 만한 곳에 조용히 한 줄을 표시합니다. 설치하지 않은 애드온만 해당됩니다."
+L["FAMILY_SUPPORT"] =
+	"Forever 애드온은 무료이며 잠긴 기능이 없습니다. 도움이 되셨다면 커피 한 잔 사 주세요." -- mt
+L["FAMILY_THIS_ADDON"] = "이 애드온"
+L["FROM_SKILLUP"] = "SkillUp Forever 제공"
+L["GO"] = "출발"
+L["GO_TO_ENTRANCE"] = "입구로 가기"
+L["GROUP_BATTLEGROUNDS"] = "전장"
+L["GROUP_CONTINUE"] = "계속하기"
+L["GROUP_DUNGEONS"] = "던전"
+L["GROUP_MANY"] = "파티 필요 %d개"
+L["GROUP_NEED_DUNGEON"] = "던전: %s"
+L["GROUP_NEED_ELITE"] = "정예: 파티 권장"
+L["GROUP_NEED_RAID"] = "공격대: %s"
+L["GROUP_NEED_RAID_ANY"] = "공격대: 파티 권장"
+L["GROUP_NEED_SIZE"] = "%d인 파티"
+L["GROUP_ONE"] = "파티 필요 1개"
+L["GROUP_ZONES"] = "퀘스트 목적지"
+L["GUIDE_BACK"] = "여정으로 돌아가기"
+L["GUIDE_OPEN"] = "전체 안내서 보기"
+L["GUIDE_OUTLINE"] = "나중 퀘스트 · 안내서 개요"
+L["GUIDE_OUTLINE_TOOLTIP"] =
+	"이 지역의 퀘스트입니다. 안내서는 수락을 추천하기 전에 수행 가능 여부를 확인합니다."
+L["GUIDE_PAGE"] = "%d / %d · 다음 단계 %d개 · 나중 퀘스트 %d개"
+L["HAND_IN_WHEN"] = "%s에 있을 때 제출"
+L["HAND_IN_WHEN_DONE"] = "완료하면"
+L["BEFORE_IT_RUNS_OUT"] = "%s(이)가 사라지기 전에"
+L["BEFORE_ITEM_RUNS_OUT"] = "퀘스트 아이템이 사라지기 전에"
+L["HELP_AUDIT"] = "/agf audit - 퀘스트 데이터를 게임과 대조합니다"
+L["HELP_DUMP"] = "/agf dump - 오류 보고용으로 안내서 배치를 저장합니다"
+L["HELP_LEADERBOARD"] =
+	"/agf leaderboard - 이 애드온 탭에서 Forever Leaderboards를 엽니다 (또한 /agf stats)" -- mt
+L["HELP_OPEN"] = "/agf - 세계 지도에서 안내서를 엽니다."
+L["HELP_REPORT"] = "/agf report - 오류 보고에 복사할 보고서를 표시합니다"
+L["HELP_SHARE"] =
+	"/agf share on|off - 퀘스트 완료 합계를 길드 및 파티와 공유하는 기능을 켜거나 끕니다"
+L["HELP_TRACKER"] = "/agf tracker - 추적기 고정점을 출력합니다 (전투 중 겹칠 때)"
+L["HELP_WHERE"] = "/agf where - 안내서의 현재 정거장을 표시합니다 (잘못된 정거장 보고용)"
+L["HUB_HAND_IN"] = "제출 %d개"
+L["HUB_MORE"] = "%s 외 정거장 %d곳"
+L["HUB_MORE_ONE"] = "%s 외 정거장 1곳"
+L["HUB_MORE_QUESTS"] = "외 %d개"
+L["HUB_NPCS_MORE"] = "%s 외 %d명"
+L["HUB_PICK_UP"] = "수락 %d개"
+L["ITEM_LOADING"] = "아이템 불러오는 중..."
+L["JOURNEY_CALLING"] = "당신의 소명"
+L["JOURNEY_CARRY"] = "내 퀘스트 목록 정리"
+L["JOURNEY_CHOICES"] = "모험 선택"
+L["JOURNEY_CHOOSE"] = "시작하려면 활동에서 여정을 선택하십시오."
+L["JOURNEY_COMPLETE"] = "여정 완료"
+L["JOURNEY_INTO"] = "%s(으)로 가는 길"
+L["JOURNEY_NEXT_ZONE"] = "%s(으)로 이동"
+L["JOURNEY_PAGE"] = "%d / %d"
+L["JOURNEY_PROGRESS_EMPTY"] = "완료한 이야기가 여기에 표시됩니다."
+L["JOURNEY_QUESTS"] = "이 여정의 퀘스트"
+L["JOURNEY_STORY"] = "%s 이야기"
+L["LATER_LAPS"] = "그중 %d개는 나중 바퀴"
+L["LEADERBOARD_SHARING_OFF"] =
+	"공유가 꺼져 있습니다. 아무것도 보내거나 표시하지 않습니다. /agf share on으로 켤 수 있습니다."
+L["LEADERBOARD_SHARING_ON"] =
+	"공유가 켜져 있습니다. /agf share off 또는 설정 > 애드온 > Adventure Guide에서 끌 수 있습니다."
+L["LEGACY_PROGRESS_LINK"] = "지도에서 유산 진행 상황 열기"
+L["LEGACY_PROGRESS_NOTE"] = "수집품, 탐험, 지역 완료는 Legacy Forever가 추적합니다."
+L["LEVELS"] = "%d-%d"
+L["LEVELS_FROM"] = "%d+"
+L["LIST_SEPARATOR"] = ", "
+L["LOADING"] = "완료한 퀘스트를 불러오는 중..."
+L["LOG_FULL"] = "목록이 거의 가득 참: 포기할 만한 퀘스트 %d개"
+L["LOG_FULL_LIST"] = "퀘스트 목록에 자리를 만들려면 다음을 포기할 수 있습니다:"
+L["LOG_FULL_ONE"] = "목록이 거의 가득 참: 포기할 만한 퀘스트 1개"
+L["MENU_BACK"] = "뒤로"
+L["MENU_BATTLEGROUNDS"] = "전장"
+L["MENU_CHECKED"] = "[x] %s"
+L["MENU_DUNGEONS"] = "던전"
+L["MENU_GIVERS"] = "퀘스트 NPC 표시"
+L["MENU_MAP_PINS"] = "지도 핀 표시"
+L["MENU_MORE_SETTINGS"] = "추가 설정"
+L["MENU_QUESTS"] = "퀘스트"
+L["MENU_SUBMENU"] = "%s >"
+L["MENU_TRACKER"] = "목표 추적기에 표시"
+L["MENU_UNCHECKED"] = "[ ] %s"
+L["MOMENT"] = "%s: 이제 레벨에 맞습니다"
+L["MOMENT_OPEN"] = "%s 참여 가능"
+L["NEAR_YOUR_LEVEL"] = "레벨에 가까움"
+L["NEW_LAND"] = "%s · %d-%d레벨"
+L["NEXT"] = "다음: %s"
+L["NEXT_CAMP"] = "다음 장소"
+L["NEXT_PAGE"] = "다음"
+L["NEXT_REASON_ASIDE"] = "모험과 함께 고려할 만한 유용한 일입니다."
+L["NEXT_REASON_JOURNEY"] = "%s의 다음 단계입니다."
+L["NEXT_REASON_PROFESSIONS"] = "이 전문 기술 수련 조건을 충족합니다."
+L["NEXT_REASON_TALENTS"] = "특성 포인트를 사용하면 캐릭터가 더 강해집니다."
+L["NEXT_REASON_TRAINING"] = "직업 상급자에게 배울 수 있는 주문이 있습니다."
+L["NEXT_RECIPES"] = "다음 제조법"
+L["NEXT_STEPS"] = "다음 단계"
+L["NOT_INTERESTED"] = "관심 없음"
+L["NOT_OFFERED"] = "%s 건너뜀: 퀘스트 NPC가 제공하지 않았습니다."
+L["NOT_THIS_QUEST"] = "이 퀘스트 말고"
+L["NO_JOURNEY"] =
+	'이곳에는 안내서가 제안할 여정이 없습니다. 퀘스트 NPC 머리 위의 "!"를 찾아보십시오.'
+L["NPC_JOURNEY"] = "Adventure Guide: %s"
+L["OBJECTIVE_LINE"] = "- %s"
+L["OBJECTIVE_PROGRESS"] = "%d/%d"
+L["OPENS_CHAPTER_HERE"] = "여기서 다음 장이 열립니다"
+L["OPEN_RECIPES"] = "제조법 열기"
+L["OPTIONAL"] = "선택 사항"
+L["ORDER_CUSTOM"] = "사용자 순서"
+L["ORDER_DRAG"] = "끌어서 순서 변경"
+L["ORDER_LATER"] = "나중에 하기"
+L["ORDER_NEXT"] = "다음에 하기"
+L["ORDER_RESET"] = "제안 순서로 되돌리기"
+L["ORDER_SOONER"] = "먼저 하기"
+L["OTHER_ADVENTURES"] = "다른 모험"
+L["OVERVIEW_WHERE"] = "%s · %d레벨"
+L["PARTY_HAS"] = "파티원 중 누군가가 가지고 있음"
+L["PICK_UP"] = "퀘스트 수락: %s"
+L["PIN_RETURN_STORY"] = "오른쪽 클릭하면 이야기의 시작부터 경로를 잡습니다"
+L["PLACE"] = "%s, %s"
+L["POLESTAR_GUIDING"] = "Polestar가 안내 중입니다"
+L["POLESTAR_TAKE_OVER"] = "클릭하여 안내 되찾기"
+L["PREVIOUS_PAGE"] = "이전"
+L["PROFESSION_BAR"] = "%d/%d"
+L["PROFESSION_CAP"] = "%s: %d/%d 도달"
+L["PROFESSION_LEARN"] = "배울 수 있음: %s"
+L["PROFESSION_LEARN_IN"] = "%s: %s에서 배울 수 있음"
+L["PROFESSION_LINE"] = "%s · %s"
+L["PROFESSION_RANGE"] = "%d~%d"
+L["PROFESSION_RANGE_TITLE"] = "%d~%d · %s"
+L["PROFESSION_RANK"] = "%s 수련 가능"
+L["PROFESSION_RANK_1"] = "초급"
+L["PROFESSION_RANK_2"] = "수습"
+L["PROFESSION_RANK_3"] = "숙련"
+L["PROFESSION_RANK_4"] = "전문"
+L["PROFESSION_RANK_IN"] = "%s 수련: %s"
+L["PROFESSION_SLOT"] = "전문 기술 자리가 비어 있습니다"
+L["PROFESSION_SLOT_IN"] = "%s의 상급자"
+L["PVP_BATTLEGROUND_LEVEL"] = "%d레벨부터"
+L["PVP_CAPPED"] = "최고 계급 달성"
+L["PVP_GO_BATTLEMASTER"] = "전투모병관에게 가기"
+L["PVP_NEXT_REWARD"] = "다음 보상: %d 계급 · %s"
+L["PVP_NO_BATTLEGROUNDS"] = "현재 레벨에 참여할 수 있는 전장이 없습니다."
+L["PVP_NO_BATTLEMASTER"] = "알려진 전투모병관 위치 없음"
+L["PVP_RANK"] = "%d 계급"
+L["PVP_RANK_POINTS"] = "계급 점수 %d/%d"
+L["PVP_RANK_REWARD"] = "%d 계급 · %s"
+L["PVP_UNAVAILABLE"] = "계급 진행 상황을 알 수 없습니다."
+L["PVP_UNRANKED"] = "계급 없음"
+L["QUESTIE_ABSENT"] = "불러오지 않았습니다"
+L["QUESTIE_CONTRACT"] = "안내서가 읽을 수 없는 버전입니다"
+L["QUESTIE_ENABLE"] = "퀘스트 데이터를 불러오려면 QuestieDB를 켜십시오."
+L["QUESTIE_FAILED"] = "읽기 실패 (%s)"
+L["QUESTIE_FIELD"] = "%s 항목이 없습니다"
+L["QUESTIE_FLAVOUR"] = "WoW: Forever용이 아닙니다"
+L["QUESTIE_POLICY"] = "수행 가능한 퀘스트를 추천받으려면 Questie를 켜십시오."
+L["QUESTIE_ZONES"] = "지역 테이블이 없습니다"
+L["QUESTS_HERE"] = "이곳의 퀘스트 %d개"
+L["QUESTS_IN_PROGRESS"] = "진행 중인 퀘스트"
+L["QUESTS_NEAR"] = "레벨에 가까운 퀘스트 %d개"
+L["QUESTS_NEAR_ONE"] = "레벨에 가까운 퀘스트 1개"
+L["QUEST_LEVEL"] = "[%d] %s"
+L["QUEST_VISIT_WARNING"] = "퀘스트 방문: %s. 이 지역의 권장 레벨은 %d-%d입니다."
+L["READY_OF"] = "%d/%d 준비됨"
+L["READY_TO_HAND_IN"] = "제출 가능"
+L["REAGENTS"] = "재료"
+L["REAGENT_AUCTION"] = "경매장"
+L["REAGENT_CRAFT"] = "제작하기"
+L["REAGENT_GATHER"] = "채집하기"
+L["REAGENT_HAVE"] = "보유: %d"
+L["REAGENT_NEED"] = "%d %s"
+L["REAGENT_VENDOR"] = "상인에게서 구입"
+L["REASON_CHAIN_GIVER"] = "연계 퀘스트 시작: %s"
+L["REASON_GREY"] = "곧 회색이 될 퀘스트 %d개"
+L["REASON_HANDS"] = "%s: 일손이 필요합니다"
+L["RECIPE_COUNT"] = "%s  ×%d"
+L["RECIPE_LEARNED"] = "배움"
+L["RECIPE_TRAIN_AT"] = "%d에 수련"
+L["RECOMMENDED"] = "추천"
+L["REPLACES_JOURNEY"] = "현재 여정을 대체합니다."
+L["REPORT_HINT"] =
+	"텍스트가 선택되었습니다. Ctrl+C(Mac은 Cmd+C)를 눌러 복사한 후 오류 보고에 붙여 넣으십시오."
+L["REPORT_TITLE"] = "Adventure Guide 보고서"
+L["REST_HERE"] = "이곳 여관에서 휴식"
+L["RESUME"] = "중단한 곳: %s"
+L["RESUME_ADVENTURE"] = "재개"
+L["RIGHT_CLICK_NOT_INTERESTED"] = "관심이 없으면 오른쪽 클릭"
+L["ROUTE_PAUSED"] = "경로가 일시 중지되었습니다. 여정을 클릭하면 재개합니다."
+L["RXP_IMPORT"] = "가져오기"
+L["RXP_NEXT"] = "다음"
+L["RXP_NO_GUIDE"] = "시작하려면 가이드를 선택하십시오."
+L["RXP_ORIGINAL"] = "RestedXP 원래 창 열기"
+L["RXP_PREVIOUS"] = "이전"
+L["RXP_PROGRESS"] = "%d/%d단계"
+L["RXP_RECOMMENDATIONS"] = "Adventure Guide 추천"
+L["RXP_SELECT"] = "가이드 선택"
+L["RXP_SETTINGS"] = "설정"
+L["RXP_SETUP_AGF"] = "Adventure Guide에 RestedXP 단계를 표시합니다."
+L["RXP_SETUP_HIDDEN"] = "RestedXP 가이드 창과 지도 표시를 숨깁니다."
+L["RXP_SETUP_HIDDEN_SPF"] = "RestedXP 가이드 창, 화살표, 지도 표시를 숨깁니다."
+L["RXP_SETUP_NATIVE"] = "가이드 창, 화살표, 대상, 지도 표시를 그대로 둡니다."
+L["RXP_SETUP_NATIVE_TITLE"] = "RestedXP"
+L["RXP_SETUP_PROMPT"] = "RestedXP가 설치되어 있습니다. 가이드를 표시할 곳을 선택하십시오."
+L["RXP_SETUP_SETTINGS"] = "나중에 애드온 설정에서 바꿀 수 있습니다."
+L["RXP_SETUP_SKILLUP"] = "SkillUp: 장비와 구매 여정을 사용할 수 있습니다."
+L["RXP_SETUP_SKILLUP_SPF"] = "SkillUp: 장비와 구매 경로에 Shortest Path를 사용합니다."
+L["RXP_SETUP_SPF"] = "경로와 나침반 안내에 Shortest Path를 사용합니다."
+L["RXP_SETUP_TITLE"] = "가이드 표시"
+L["RXP_SKIP"] = "건너뛰기: %s"
+L["RXP_SKIP_STEP"] = "단계 건너뛰기"
+L["RXP_STEP"] = "%d단계"
+L["RXP_STICKY"] = "%s (진행 중)"
+L["RXP_ONGOING"] = "진행 중" -- mt
+L["RXP_MORE_STEP"] = "+1단계 더" -- mt
+L["RXP_MORE_STEPS"] = "+%d단계 더" -- mt
+L["RXP_TITLE"] = "RestedXP 가이드"
+L["SEARCH_NONE"] = "검색과 일치하는 퀘스트가 없습니다."
+L["SEARCH_QUESTS"] = "퀘스트 검색"
+L["SEPARATOR"] = " · "
+L["SETTINGS_GROUP_INTERFACE"] = "인터페이스"
+L["SETTINGS_GROUP_MAP"] = "지도"
+L["SETTINGS_GROUP_ROUTE"] = "경로"
+L["SETTINGS_GROUP_TRACKER"] = "목표 추적기"
+L["SETTINGS_OPEN"] = "열기"
+L["SETTING_ATTACH_TRACKER"] = "퀘스트 추적기에 붙이기"
+L["SETTING_ATTACH_TRACKER_TOOLTIP"] =
+	"끄면 공유 Forever 추적기를 화면 어디로든 끌어 옮길 수 있습니다."
+L["SETTING_AUTO_START"] = "경로 자동 시작"
+L["SETTING_AUTO_START_TOOLTIP"] =
+	"선택한 여정의 경로가 준비되면 바로 Shortest Path로 보내므로, 접속하거나 /reload한 후 출발을 누르지 않아도 지도에 선이 그려집니다. 중지를 누르면 여정을 다시 선택할 때까지 지워집니다."
+L["SETTING_DUNGEONS_DEFAULT"] = "기본적으로 던전 포함"
+L["SETTING_DUNGEONS_DEFAULT_TOOLTIP"] =
+	"안내서를 설치한 채 캐릭터로 처음 접속할 때부터 던전 퀘스트를 제안합니다. 안내서의 설정 메뉴에서 언제든 바꿀 수 있습니다."
+L["SETTING_FOLLOW_QUEST"] = "현재 퀘스트 따라가기"
+L["SETTING_FOLLOW_QUEST_TOOLTIP"] =
+	"경로가 안내하는 퀘스트의 지역에 들어가면 안내서가 그 퀘스트를 선택해 지도에 해당 지역을 표시합니다. 직접 선택한 퀘스트는 바꾸지 않습니다."
+L["SETTING_GIVERS"] = "지도에 퀘스트 NPC 표시"
+L["SETTING_GIVERS_TOOLTIP"] =
+	'지금 수락할 수 있는 퀘스트가 있는 모든 NPC 위에 세계 지도의 "!"를 표시합니다. 지도의 경로 핀도 켜야 합니다.'
+L["SETTING_GUIDE_TRACKS"] = "RestedXP 가이드의 퀘스트만 추적" -- mt
+L["SETTING_GUIDE_TRACKS_TOOLTIP"] =
+	"RestedXP 가이드를 따라가는 동안 목표 추적기에는 현재 단계와 진행 중인 단계가 지정한 퀘스트만 표시됩니다. 직접 추적하던 퀘스트는 가이드를 그만 따라가면 돌아옵니다." -- mt
+L["SETTING_LOCK_TRACKER"] = "추적기 잠금"
+L["SETTING_LOCK_TRACKER_TOOLTIP"] =
+	"공유 Forever 추적기를 놓은 자리에 유지합니다. 위쪽 손잡이로 더 이상 끌 수 없습니다."
+L["SETTING_MAP_PINS"] = "지도에 경로 핀 표시"
+L["SETTING_MAP_PINS_TOOLTIP"] =
+	"해당 지역이 표시되는 동안 세계 지도에 경로의 번호 붙은 단계를 표시하며, 퀘스트 NPC 표시가 켜져 있으면 퀘스트 NPC도 표시합니다. 열린 안내서는 어느 경우든 경로를 미리 보여 줍니다."
+L["SETTING_PARTY_QUESTS"] = "파티의 퀘스트 우선"
+L["SETTING_PARTY_QUESTS_TOOLTIP"] =
+	"파티 중에는 파티원도 가지고 있는 퀘스트의 단계를 조금 더 가까운 것으로 계산해 함께 하기 쉽게 합니다. Adventure Guide를 쓰는 파티원끼리는 숨겨진 애드온 메시지로 서로 가진 퀘스트를 알려 줍니다."
+L["SETTING_POLESTAR_ASIDE"] = "Polestar가 안내하는 동안 물러나기"
+L["SETTING_POLESTAR_ASIDE_TOOLTIP"] =
+	"Polestar가 가이드를 진행하는 동안에는 안내서가 자체 경로를 시작하지 않고 지도 표시도 그리지 않습니다. 추적기에 Polestar가 안내 중이라고 표시되며, 클릭하면 다시 안내를 맡습니다."
+L["SETTING_QUEST_LEVEL"] = "내 레벨보다 높은 최대 퀘스트 레벨"
+L["SETTING_QUEST_LEVEL_ONE"] = "%s레벨"
+L["SETTING_QUEST_LEVEL_TOOLTIP"] =
+	"안내서가 추천하는 가장 높은 퀘스트 레벨을 내 레벨 기준으로 선택합니다. 기본값 +2는 주황색과 빨간색 퀘스트를 피합니다. 이미 퀘스트 목록에 있는 퀘스트는 계속 표시됩니다."
+L["SETTING_QUEST_LEVEL_VALUE"] = "%s레벨"
+L["SETTING_ROUTE_ORDER"] = "최적화된 경로 (베타)"
+L["SETTING_ROUTE_ORDER_TOOLTIP"] =
+	"끔: 경로는 단계마다 가장 가까운 일을 안내하여 단순하고 예측 가능합니다. 켬: 이야기의 장을 먼저 하고, 마을의 일을 묶고, 이전 제안을 안정적으로 유지하는 실험적인 순서입니다."
+L["SETTING_RXP"] = "RestedXP 가이드 사용"
+L["SETTING_RXP_TOOLTIP"] =
+	"현재 RestedXP 가이드를 여정 카드, 지도, 추적기에 추가합니다. RestedXP는 가이드 단계를 진행하고, Shortest Path Forever는 이동을 맡습니다. RestedXP는 설치된 채로 가이드 진행을 관리합니다."
+L["SETTING_STATS_SHARE"] = "길드 및 파티와 활동 공유"
+L["SETTING_STATS_SHARE_TOOLTIP"] =
+	"기본으로 켜져 있습니다. 길드, 파티, 공격대 또는 인스턴스의 애드온 사용자와 누적 활동 기록을 공유합니다. 끄면 이 캐릭터에만 기록을 보관합니다. 공유 기록은 플레이어가 보고한 내용이며 검증되지 않습니다."
+L["SETTING_STEP_SOUND"] = "단계 완료 시 소리"
+L["SETTING_STEP_SOUND_TOOLTIP"] = "경로 단계를 마치면 짧은 소리를 한 번 재생합니다."
+L["SETTING_TITLE_ROUTE"] = "여정으로 경로 시작"
+L["SETTING_TITLE_ROUTE_TOOLTIP"] =
+	"안내서에서 여정을 선택하거나 목표 추적기에서 현재 단계의 제목을 클릭하면 경로를 따라 출발합니다. Shortest Path Forever를 불러왔으면 그것을, 아니면 지도의 이동 지점을 사용합니다. 선택한 여정을 다시 클릭하면 중지합니다."
+L["SETTING_TRACKER"] = "추적기 영역 표시"
+L["SETTING_TRACKER_TOOLTIP"] =
+	'목표 추적기의 퀘스트 위에 현재 단계를 위한 짧은 "Adventure Guide" 영역을 표시합니다.'
+L["SETTING_TRACK_ROUTE"] = "추적기 제목으로 퀘스트 추적"
+L["SETTING_TRACK_ROUTE_TOOLTIP"] =
+	"목표 추적기에서 안내서 제목을 클릭하면 퀘스트 목록에 있는 경로의 모든 퀘스트를 추적기 한도까지 추적합니다."
+L["SETTING_TRAINING_REMINDERS"] = "직업 주문 수련 알림"
+L["SETTING_TRAINING_REMINDERS_TOOLTIP"] =
+	"직업 상급자 방문을 제안하고 여정에 주문 수련을 추가합니다. 배울 주문은 직접 고를 수 있으며, 모든 주문을 살 필요는 없습니다."
+L["SETTING_UNTRACK_OTHERS"] = "다른 퀘스트 추적 해제"
+L["SETTING_UNTRACK_OTHERS_TOOLTIP"] =
+	"같은 클릭으로 경로에 없는 모든 퀘스트의 추적을 해제합니다. 경로의 퀘스트 추적도 켜야 합니다."
+L["SETTING_UPGRADES"] = "보상 향상 표시" -- mt
+L["SETTING_UPGRADES_TOOLTIP"] =
+	"퀘스트에서 보상을 선택할 수 있으면, 해당 부위에 착용 중인 아이템보다 나은 보상마다 초록색 화살표를 표시합니다: 내 방어구 종류, 직업이 사용하는 주 능력치, 더 높은 아이템 레벨. 대신 선택하지는 않습니다. Pawn이 설치되어 있으면 Pawn이 대신 표시합니다." -- mt
+L["SETTING_WANDERER"] = "방랑자: 장소 이름만"
+L["SETTING_WANDERER_TOOLTIP"] =
+	"안내서는 다음에 갈 곳의 이름만 알려 주고 길은 맡깁니다. 이동 지점, Shortest Path Forever 경로, 지도 표시가 없습니다."
+L["SETTING_WARN_CLOSING"] = "다른 퀘스트를 막는 퀘스트 경고"
+L["SETTING_WARN_CLOSING_TOOLTIP"] =
+	"퀘스트 NPC가 다른 퀘스트를 영영 받을 수 없게 만드는 퀘스트를 제공하면, 수락하기 전에 잃게 될 퀘스트를 대화창에 알려줍니다."
+L["SETTING_WHATS_NEW"] = "업데이트 후 새로운 소식"
+L["SETTING_WHATS_NEW_TOOLTIP"] =
+	"안내서가 업데이트된 후 처음 접속할 때 대화창에 한 줄을 표시합니다."
+L["SET_HEARTH"] = "귀환석 지정: %s"
+L["SHIFT_ADD"] = "Shift-클릭하여 경로에 추가"
+L["SHIFT_ADD_START"] = "Shift-클릭하여 그 퀘스트를 경로에 추가"
+L["SHIFT_REMOVE"] = "Shift-클릭하여 경로에서 제거"
+L["SHIFT_REMOVE_START"] = "Shift-클릭하여 그 퀘스트를 경로에서 제거"
+L["SHORTEST_PATH"] = "Shortest Path"
+L["SHOW_AGAIN"] = "다시 표시: %s"
+L["SHOW_ON_MAP"] = "지도에 표시"
+L["SHOW_QUEST"] = "퀘스트 보기"
+L["SKILLUP_FAMILY"] = "SkillUp Forever는 다음 전문 기술 등급까지 가장 저렴한 경로를 계획합니다."
+L["SKILLUP_FAMILY_MENU"] = "다음 등급까지 가장 저렴한 경로: SkillUp Forever"
+L["SKILLUP_NONE"] =
+	"올릴 제작 전문 기술이 없습니다. 상급자에게서 하나를 배우면 여기에 표시됩니다."
+L["SKILLUP_OUTDATED"] =
+	"다음 숙련도 상승은 SkillUp Forever가 알려 줍니다. 업데이트하면 여기에 표시됩니다."
+L["SKIP"] = "지금은 건너뛰기"
+L["SKIPPED"] = "건너뜀 (%d)"
+L["SKIP_STEP"] = "지금은 이 단계 건너뛰기"
+L["SPF_DISABLED"] = "걷는 경로와 배 시간을 보려면 Shortest Path Forever를 켜십시오."
+L["SPF_FAMILY_MENU"] = "걷는 경로와 배 시간: Shortest Path Forever"
+L["SPF_MISSING"] = "걷는 경로와 배 시간을 보려면 Shortest Path Forever를 설치하십시오."
+L["STARTS_AFTER_COMBAT"] = "전투가 끝나면 경로가 시작됩니다"
+L["STARTS_WITH"] = "시작: %s"
+L["START_ADVENTURE"] = "시작"
+L["STEP_BATTLEMASTER"] = "전투모병관 방문: %s"
+L["STEP_COLLECT"] = "수집: %s · %s"
+L["STEP_DEFEAT"] = "처치: %s · %s"
+L["STEP_NUMBERED"] = "%d. %s"
+L["STEP_OBJECTIVE"] = "목표 완료 · %s"
+L["STEP_PICKUP"] = "수락: %s"
+L["STEP_SHARED_OBJECTIVES"] = "목표 %d개 완료 · %s"
+L["STEP_TOWN"] = "%s 방문: %s"
+L["STEP_WORK"] = "완료: %s · %s"
+L["STOP"] = "중지"
+L["STOPS"] = "정거장 %d곳"
+L["STOPS_ONE"] = "정거장 1곳"
+L["STOP_VISIT"] = "정거장 %d: %s"
+L["STORY_COMPLETE"] = "이야기 완료"
+L["SUGGESTED"] = "제안됨"
+L["TAB_ACTIVITIES"] = "활동"
+L["TAB_JOURNEYS"] = "여정"
+L["TAB_PROFESSIONS"] = "전문 기술"
+L["TAB_PROGRESS"] = "진행 상황"
+L["TAB_PVP"] = "PvP"
+L["TALENT_POINT"] = "사용할 특성 포인트가 1개 있습니다"
+L["TALENT_POINTS"] = "사용할 특성 포인트가 %d개 있습니다"
+L["TITLE"] = "Adventure Guide"
+L["TODAY_MORE"] = "+%d개 더"
+L["TOWN_COUNTS"] = "수락 %d, 제출 %d"
+L["TOWN_GIVER"] = "%s: %s"
+L["TOWN_HANDINS"] = "제출 %d"
+L["TOWN_PICKUPS"] = "수락 %d"
+L["TOWN_SKIP_GIVER"] = "이 NPC 건너뛰기"
+L["TRACKER_DRAG_TITLE"] = "Forever 추적기"
+L["TRACKER_DRAG_TOOLTIP"] = "끌어서 이동"
+L["TRACKER_LOADING"] = "퀘스트 데이터 불러오는 중..."
+L["TRACKER_LOCKED_TOOLTIP"] = "추적기가 잠겨 있습니다. 추적기 잠금을 끄면 이동할 수 있습니다."
+L["TRACKER_PAUSED"] = "경로가 일시 중지되었습니다. 제목을 클릭하면 재개합니다." -- mt
+L["TRACKER_UNATTACHED"] =
+	"목표 추적기에 영역을 추가하지 못했습니다. /agf audit로 보고해 주십시오."
+L["TRAINER"] = "직업 상급자 방문"
+L["TRAINER_IN"] = "직업 상급자 방문: %s"
+L["TRAINER_LINE"] = "%s · %s"
+L["TRAINER_SPELL"] = "새 주문 1개"
+L["TRAINER_SPELLS"] = "새 주문 %d개"
+L["TRAIN_IN"] = "수련: %s"
+L["TRAVEL"] = "%s · %d분"
+L["TRAVEL_ABOUT"] = "약 %d분 거리"
+L["TRAVEL_BOAT"] = "%s행 배"
+L["TRAVEL_FLIGHT"] = "%s(으)로 비행"
+L["TRAVEL_LIFT"] = "%s행 승강기"
+L["TRAVEL_NEW_FLIGHT_PATH"] = " · 새 비행 경로"
+L["TRAVEL_PASSAGE"] = "%s(으)로 통과"
+L["TRAVEL_PORTAL"] = "%s행 차원문"
+L["TRAVEL_TRAM"] = "%s행 지하철"
+L["TRAVEL_WAIT"] = " · %d분 대기"
+L["TRAVEL_WALK"] = "%s까지 걷기"
+L["TRAVEL_ZEPPELIN"] = "%s행 비행선"
+L["TURN_IN"] = "제출: %s"
+L["TWEAKS_DISABLED"] = "던전 입구를 찾으려면 Tweaks Forever를 켜십시오."
+L["TWEAKS_FAMILY_MENU"] = "던전 입구 찾기: Tweaks Forever"
+L["TWEAKS_MISSING"] = "던전 입구를 찾으려면 Tweaks Forever를 설치하십시오."
+L["TWEAKS_OUTDATED"] = "던전 입구를 찾으려면 Tweaks Forever를 업데이트하십시오."
+L["UNLISTED"] =
+	'이 땅에는 안내서가 아직 모르는 이야기가 있습니다. 퀘스트 NPC 머리 위의 "!"를 찾아보십시오.'
+L["UPDATED_TO"] = "%s(으)로 업데이트됨. %s"
+-- mt
+L["WHATS_NEW"] = "Forever Leaderboards 창이 열립니다." -- mt
+L["WHY_ALLIANCE"] = "얼라이언스 전용"
+L["WHY_BREADCRUMB"] = "%s 수락 전까지만"
+L["WHY_CHOSE"] = "대신 선택함: %s"
+L["WHY_COMPLETED"] = "완료함: %s"
+L["WHY_DONE"] = "이미 완료했습니다"
+L["WHY_EARLIER_QUEST"] = "이전 퀘스트"
+L["WHY_HORDE"] = "호드 전용"
+L["WHY_IN_LOG"] = "퀘스트 목록에 있음"
+L["WHY_LEVEL"] = "%d레벨 필요"
+L["WHY_NOT_OFFERED"] = "퀘스트 NPC가 제공하지 않았습니다"
+L["WHY_NO_START"] = "안내서가 시작 위치를 알 수 없습니다"
+L["WHY_ONE_OF"] = "다음 중 하나 필요: %s"
+L["WHY_PROVIDER"] = "Questie가 준비되어 이 퀘스트를 수행할 수 있다고 확인해야 합니다."
+L["WHY_REPEATABLE"] = "반복 퀘스트는 제안하지 않습니다"
+L["WHY_REPUTATION"] = "평판에 따라 다름: %s"
+L["WHY_REP_BELOW"] = "%s 미만일 때만 (%s)"
+L["WHY_REP_MIN"] = "%s 필요 (%s)"
+L["WHY_SKILL"] = "%s %d 필요"
+L["YOUR_CHOICE"] = "선택"
+-- mt: Minimap button settings.
+L["SETTING_MINIMAP_BUTTON"] = "미니맵 버튼" -- mt
+L["MINIMAP_BUTTON_TOOLTIP"] =
+	"미니맵에 Adventure Guide 버튼을 추가합니다. 테두리를 따라 끌어 이동하거나 여기에서 끄세요." -- mt
+L["MINIMAP_BUTTON_SUBTEXT"] = "레벨링 안내서를 열려면 클릭하세요" -- mt
+-- mt: Issue composer and report window.
+L["HELP_ISSUE"] = "/agf issue - GitHub 이슈 링크와 함께 오류를 보고하거나 기능을 요청합니다" -- mt
+L["ISSUE_BUG"] = "오류" -- mt
+L["ISSUE_BUG_PREFIX"] = "오류: " -- mt
+L["ISSUE_COPY_LINK"] = "이슈 링크 복사" -- mt
+L["ISSUE_COPY_REPORT"] = "보고서 복사" -- mt
+L["ISSUE_DETAILS_LABEL"] = "무슨 일이 있었는지 또는 원하는 기능" -- mt
+L["ISSUE_FEATURE"] = "기능 요청" -- mt
+L["ISSUE_FEATURE_PREFIX"] = "기능 요청: " -- mt
+L["ISSUE_LINK_HINT"] =
+	"링크가 선택되었습니다. Ctrl+C(Mac은 Cmd+C)를 눌러 브라우저에 붙여 넣으십시오. GitHub에서 이 내용이 채워진 새 이슈가 열립니다." -- mt
+L["ISSUE_TITLE_LABEL"] = "제목" -- mt
+L["ISSUE_WINDOW_TITLE"] = "오류 보고 또는 기능 요청" -- mt
+L["MINIMAP_UNAVAILABLE"] = "미니맵을 사용할 수 없어 사용자 지정 버튼을 건너뜁니다." -- mt
+L["SETTING_HIDE_QUESTIE_TRACKER"] = "Questie 추적기 끄기" -- mt
+L["SETTING_HIDE_QUESTIE_TRACKER_TOOLTIP"] =
+	"이 구역이 표시되는 동안 Questie의 퀘스트 추적기는 꺼져 있어 퀘스트가 두 번 표시되지 않습니다. 이 옵션을 끄면 Questie의 추적기가 돌아옵니다." -- mt
+L["QUESTIE_TRACKER_RELOAD"] = "Questie의 추적기는 /reload 후에 돌아옵니다." -- mt
+L["QUEST_AREAS_OFF"] = "퀘스트 지역이 숨겨져 있습니다" -- mt
+L["QUEST_AREAS_SHOW"] = "클릭하여 지도에 게임의 파란색 퀘스트 지역 표시" -- mt
+L["QUEST_AREAS_DISMISS"] = "오른쪽 클릭하여 이 안내 숨기기" -- mt
+L["QUEST_AREAS_TOOLTIP"] =
+	"지도의 파란색 퀘스트 지역은 각 목표를 수행하는 곳을 보여 줍니다. Questie의 Questie 및 pfQuest 목표 유형은 이를 끕니다." -- mt
+L["JOURNEY_NEXT"] = "%s(으)로 이동"
+L["SETTING_AUTO_NEXT_ZONE"] = "지역 완료 시 다음 지역 시작"
+L["SETTING_AUTO_NEXT_ZONE_TOOLTIP"] =
+	"퀘스트를 제출해 지역 여정이 끝나면 안내가 같은 목록에서 현재 레벨에 맞는 다음 지역을 고릅니다. 그 여정이 이미 안내 중이었다면 경로도 시작합니다. 끄면 여정 완료에서 멈추고 다음 여정을 직접 고릅니다."
+L["SETTING_NPC_HIGHLIGHT"] = "다음 퀘스트 NPC 강조"
+L["SETTING_NPC_HIGHLIGHT_TOOLTIP"] =
+	"단계가 퀘스트를 주거나 받는 NPC와 대화할 때 작은 화살표가 이름표 위에서 튀고 추적기 아래에 대상 버튼이 표시됩니다. 끄면 둘 다 숨깁니다. 안내는 이름표 설정을 바꾸지 않습니다."
+L["NPC_HIGHLIGHT_HINT"] =
+	"우호적 이름표가 꺼져 있습니다. 인터페이스 설정에서 켜면 어디로 가야 하는지 볼 수 있습니다."
+
+-- Forever Leaderboards (Forever Core's shared window).
+L["Forever Leaderboards"] = "Forever 순위표" -- mt
+L["Overall"] = "전체" -- mt
+L["Forever standing"] = "Forever 순위" -- mt
+L["Your guild and group"] = "길드 및 그룹" -- mt
+L["This week"] = "이번 주" -- mt
+L["All time"] = "전체 기간" -- mt
+L["Rank"] = "순위" -- mt
+L["Player"] = "플레이어" -- mt
+L["No one has reported yet."] = "아직 보고한 사람이 없습니다." -- mt
+L["Share my progress"] = "내 진행 상황 공유" -- mt
+L["Others' values are player-reported."] = "다른 플레이어의 값은 플레이어가 보고한 것입니다." -- mt
+L["Points for placing on each addon's board."] = "각 애드온 순위표에 오른 점수입니다." -- mt
+L["(you)"] = "(나)" -- mt
+L["board"] = "순위표" -- mt
+L["boards"] = "순위표" -- mt
+L["Uses Forever addons"] = "Forever 애드온 사용 중" -- mt
+L["Forever: %s overall this week"] = "Forever: 이번 주 종합 %s" -- mt
+L["Forever: %s overall"] = "Forever: 종합 %s" -- mt
+L["1st"] = "1위" -- mt
+L["2nd"] = "2위" -- mt
+L["3rd"] = "3위" -- mt
+L["4th"] = "4위" -- mt
+L["5th"] = "5위" -- mt
+L["6th"] = "6위" -- mt
+L["7th"] = "7위" -- mt
+L["8th"] = "8위" -- mt
+L[", "] = ", " -- mt
+L.LEADERBOARD_METRIC = "완료한 퀘스트" -- mt
+L.LEADERBOARD_TOTAL = "총" -- mt

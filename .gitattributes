@@ -1,0 +1,4 @@
+# Keep snapshot and translation backup bytes intact, including original line endings.
+/AddOns/** -text
+/local-koKR/** -text
+/installed-addons-manifest.json text eol=lf

@@ -1,0 +1,143 @@
+## Interface: 16001
+## Version: 1.02
+## Author: Pirson
+## IconTexture: Interface\AddOns\GatherRadar\img\logo_gr
+## Title: |cffd597ffGatherRadar|r
+
+# https://warcraft.wiki.gg/wiki/Addon_Categories
+## Category: Professions
+## Category-deDE: Berufe
+## Category-esES: Profesiones
+## Category-esMX: Profesiones
+## Category-frFR: Métiers
+## Category-itIT: Professioni
+## Category-koKR: 전문 기술
+## Category-ptBR: Profissões
+## Category-ruRU: Профессии
+## Category-zhCN: 专业
+## Category-zhTW: 專業技能
+## Category-plPL: Profesje
+## Category-svSE: Yrken
+## Category-noNO: Yrker
+## Category-csCZ: Profese
+## Category-nlNL: Beroepen
+## Category-roRO: Profesii
+## Category-huHU: Szakmák
+## Category-elGR: Επαγγέλματα
+## Category-ukUA: Професії
+## Category-daDK: Erhverv
+## Category-fiFI: Ammatit
+## Category-skSK: Profesie
+## Category-bgBG: Професии
+## Category-hrHR: Profesije
+## Category-srRS: Profesije
+## Category-slSI: Poklici
+## Category-ltLT: Profesijos
+## Category-lvLV: Profesijas
+## Category-etEE: Ametid
+## Category-idID: Profesi
+## Category-msMY: Profesion
+## Category-faIR: حرفه‌ها
+## Category-heIL: מקצועות
+## Category-bnBD: পেশা
+## Category-urPK: پیشے
+## Category-taIN: தொழில்கள்
+## Category-teIN: వృత్తులు
+## Category-trTR: Meslekler
+## Category-jaJP: 専門職
+## Category-arSA: المهن
+## Category-hiIN: पेशे
+## Category-thTH: อาชีพ
+## Category-viVN: Nghề nghiệp
+
+## Notes: |cFF33CCFFHerb & ore tracker: herbs, mining nodes, treasure and fishing pools on your minimap and world map with their icons. Remembers nodes, arrow, party sharing, GatherMate2_Data import.|r
+## Notes-esES: |cFF33CCFFRastreador de hierbas y menas: hierbas, minería, tesoros y bancos de peces en el minimapa y el mapa del mundo con su icono. Recuerda nodos, flecha, compartir en grupo, importa GatherMate2_Data.|r
+## Notes-esMX: |cFF33CCFFRastreador de hierbas y menas: hierbas, minería, tesoros y bancos de peces en el minimapa y el mapa del mundo con su icono. Recuerda nodos, flecha, compartir en grupo, importa GatherMate2_Data.|r
+## Notes-deDE: |cFF33CCFFKräuter- und Erz-Tracker: Kräuter, Erzvorkommen, Schätze und Fischschwärme mit ihren Symbolen auf Minikarte und Weltkarte. Merkt sich Vorkommen, Pfeil, Teilen mit der Gruppe, Import von GatherMate2_Data.|r
+## Notes-frFR: |cFF33CCFFSuivi d'herbes et de minerais : herbes, gisements, trésors et bancs de poissons sur ta minicarte et ta carte du monde avec leurs icônes. Mémorise les points, flèche, partage en groupe, import de GatherMate2_Data.|r
+## Notes-itIT: |cFF33CCFFTracker di erbe e minerali: erbe, giacimenti, tesori e banchi di pesci sulla minimappa e sulla mappa del mondo con le loro icone. Ricorda i nodi, freccia, condivisione nel gruppo, importazione di GatherMate2_Data.|r
+## Notes-koKR: |cFF33CCFF약초 및 광석 추적기: 약초, 광맥, 보물, 물고기 떼를 아이콘과 함께 미니맵과 세계 지도에 표시합니다. 채집물 기억, 화살표, 파티 공유, GatherMate2_Data 가져오기.|r
+## Notes-ptBR: |cFF33CCFFRastreador de ervas e minérios: ervas, veios de minério, tesouros e cardumes no minimapa e no mapa-múndi com seus ícones. Lembra os nodos, seta, compartilhamento em grupo, importação do GatherMate2_Data.|r
+## Notes-ruRU: |cFF33CCFFТрекер трав и руды: травы, рудные жилы, сокровища и косяки рыбы на миникарте и карте мира с их значками. Запоминает точки, стрелка, обмен с группой, импорт GatherMate2_Data.|r
+## Notes-zhCN: |cFF33CCFF草药和矿石追踪：在小地图和世界地图上用图标显示草药、矿脉、财宝和鱼群。记忆采集点、箭头指引、队伍共享、导入 GatherMate2_Data。|r
+## Notes-zhTW: |cFF33CCFF草藥與礦石追蹤：在小地圖和世界地圖上以圖示顯示草藥、礦脈、寶藏和魚群。記憶採集點、箭頭指引、隊伍分享、匯入 GatherMate2_Data。|r
+## Notes-plPL: |cFF33CCFFTracker ziół i rud: zioła, złoża rud, skarby i ławice ryb na minimapie i mapie świata z ich ikonami. Zapamiętuje złoża, strzałka, udostępnianie w drużynie, import GatherMate2_Data.|r
+## Notes-svSE: |cFF33CCFFSpårare för örter och malm: örter, malmfyndigheter, skatter och fiskstim på minikartan och världskartan med sina ikoner. Minns fyndplatser, pil, delning i gruppen, import av GatherMate2_Data.|r
+## Notes-noNO: |cFF33CCFFSporing av urter og malm: urter, malmforekomster, skatter og fiskestimer på minikartet og verdenskartet med ikonene sine. Husker funnsteder, pil, deling i gruppen, import av GatherMate2_Data.|r
+## Notes-csCZ: |cFF33CCFFSledování bylin a rud: byliny, ložiska rud, poklady a hejna ryb na minimapě a mapě světa s jejich ikonami. Pamatuje si naleziště, šipka, sdílení ve skupině, import GatherMate2_Data.|r
+## Notes-nlNL: |cFF33CCFFKruiden- en ertstracker: kruiden, ertsaders, schatten en visscholen op je minikaart en wereldkaart met hun pictogrammen. Onthoudt vindplaatsen, pijl, delen met de groep, import van GatherMate2_Data.|r
+## Notes-roRO: |cFF33CCFFTracker de plante și minereuri: plante, zăcăminte, comori și bancuri de pești pe minihartă și harta lumii, cu iconițele lor. Ține minte resursele, săgeată, partajare în grup, import GatherMate2_Data.|r
+## Notes-huHU: |cFF33CCFFGyógynövény- és érckövető: gyógynövények, érclelőhelyek, kincsek és halrajok a minitérképen és a világtérképen az ikonjaikkal. Megjegyzi a lelőhelyeket, nyíl, megosztás a csoporttal, GatherMate2_Data importálása.|r
+## Notes-elGR: |cFF33CCFFΑνιχνευτής βοτάνων και μεταλλευμάτων: βότανα, κοιτάσματα, θησαυροί και κοπάδια ψαριών στον μικροχάρτη και στον παγκόσμιο χάρτη με τα εικονίδιά τους. Θυμάται σημεία, βέλος, κοινή χρήση με την ομάδα, εισαγωγή GatherMate2_Data.|r
+## Notes-ukUA: |cFF33CCFFТрекер трав і руди: трави, рудні жили, скарби та косяки риби на мінікарті й карті світу з їхніми значками. Запам'ятовує точки, стрілка, обмін із групою, імпорт GatherMate2_Data.|r
+## Notes-daDK: |cFF33CCFFSporing af urter og malm: urter, malmforekomster, skatte og fiskestimer på minikortet og verdenskortet med deres ikoner. Husker fundsteder, pil, deling i gruppen, import af GatherMate2_Data.|r
+## Notes-fiFI: |cFF33CCFFYrttien ja malmien seuranta: yrtit, malmiesiintymät, aarteet ja kalaparvet minikartalla ja maailmankartalla kuvakkeineen. Muistaa esiintymät, nuoli, jakaminen ryhmän kanssa, GatherMate2_Data-tuonti.|r
+## Notes-skSK: |cFF33CCFFSledovanie bylín a rúd: byliny, ložiská rúd, poklady a húfy rýb na minimape a mape sveta s ich ikonami. Pamätá si náleziská, šípka, zdieľanie v skupine, import GatherMate2_Data.|r
+## Notes-bgBG: |cFF33CCFFТракер за билки и руда: билки, рудни находища, съкровища и пасажи риба на миникартата и картата на света с техните иконки. Запомня находищата, стрелка, споделяне с групата, импорт на GatherMate2_Data.|r
+## Notes-hrHR: |cFF33CCFFPraćenje bilja i rude: bilje, nalazišta rude, blago i jata riba na minikarti i karti svijeta s njihovim ikonama. Pamti nalazišta, strelica, dijeljenje sa skupinom, uvoz GatherMate2_Data.|r
+## Notes-srRS: |cFF33CCFFPraćenje bilja i rude: bilje, nalazišta rude, blago i jata riba na minimapi i mapi sveta sa njihovim ikonama. Pamti nalazišta, strelica, deljenje sa grupom, uvoz GatherMate2_Data.|r
+## Notes-slSI: |cFF33CCFFSledilnik zelišč in rude: zelišča, nahajališča rude, zakladi in jate rib na mini zemljevidu in zemljevidu sveta z njihovimi ikonami. Si zapomni nahajališča, puščica, deljenje s skupino, uvoz GatherMate2_Data.|r
+## Notes-ltLT: |cFF33CCFFŽolių ir rūdos sekiklis: žolės, rūdos telkiniai, lobiai ir žuvų būriai minižemėlapyje ir pasaulio žemėlapyje su jų piktogramomis. Įsimena telkinius, rodyklė, dalijimasis su grupe, GatherMate2_Data importas.|r
+## Notes-lvLV: |cFF33CCFFAugu un rūdas izsekotājs: augi, rūdas atradnes, dārgumi un zivju bari minikartē un pasaules kartē ar to ikonām. Atceras atradnes, bultiņa, kopīgošana grupā, GatherMate2_Data imports.|r
+## Notes-etEE: |cFF33CCFFTaimede ja maagi jälgija: taimed, maagileiukohad, aarded ja kalaparved minikaardil ja maailmakaardil koos ikoonidega. Jätab leiukohad meelde, nool, jagamine grupiga, GatherMate2_Data import.|r
+## Notes-idID: |cFF33CCFFPelacak herba dan bijih: herba, urat bijih, harta karun, dan kawanan ikan di minimap dan peta dunia dengan ikonnya. Mengingat titik, panah, berbagi dengan grup, impor GatherMate2_Data.|r
+## Notes-msMY: |cFF33CCFFPenjejak herba dan bijih: herba, urat bijih, harta karun dan kawanan ikan pada peta mini dan peta dunia dengan ikonnya. Mengingati titik, anak panah, perkongsian kumpulan, import GatherMate2_Data.|r
+## Notes-faIR: |cFF33CCFFردیاب گیاهان و سنگ معدن: گیاهان، رگه‌های معدنی، گنج‌ها و دسته‌های ماهی روی نقشه کوچک و نقشه جهان با آیکون‌هایشان. به خاطر سپردن نقاط، پیکان، اشتراک با گروه، وارد کردن GatherMate2_Data.|r
+## Notes-heIL: |cFF33CCFFמעקב עשבים ועפרות: עשבים, מרבצי עפרות, אוצרות ולהקות דגים במפה הקטנה ובמפת העולם עם הסמלים שלהם. זוכר נקודות, חץ, שיתוף עם הקבוצה, ייבוא GatherMate2_Data.|r
+## Notes-bnBD: |cFF33CCFFভেষজ ও আকরিক ট্র্যাকার: ভেষজ, আকরিকের খনি, গুপ্তধন ও মাছের ঝাঁক তাদের আইকনসহ মিনিম্যাপ ও বিশ্ব মানচিত্রে। নোড মনে রাখে, তীর, দলের সাথে শেয়ার, GatherMate2_Data আমদানি।|r
+## Notes-urPK: |cFF33CCFFجڑی بوٹیوں اور کچ دھات کا ٹریکر: جڑی بوٹیاں، کان کنی کے مقامات، خزانے اور مچھلیوں کے غول آپ کے منی میپ اور عالمی نقشے پر ان کے آئیکنز کے ساتھ۔ مقامات یاد رکھتا ہے، تیر، گروپ کے ساتھ شیئرنگ، GatherMate2_Data درآمد۔|r
+## Notes-taIN: |cFF33CCFFமூலிகை மற்றும் தாது டிராக்கர்: மூலிகைகள், சுரங்க முனைகள், புதையல்கள் மற்றும் மீன் கூட்டங்கள் அவற்றின் ஐகான்களுடன் உங்கள் மினிமேப் மற்றும் உலக வரைபடத்தில். முனைகளை நினைவில் வைக்கும், அம்புக்குறி, குழு பகிர்வு, GatherMate2_Data இறக்குமதி.|r
+## Notes-teIN: |cFF33CCFFమూలికలు మరియు ఖనిజ ట్రాకర్: మూలికలు, గని నోడ్‌లు, నిధులు మరియు చేపల గుంపులు వాటి ఐకాన్‌లతో మీ మినీమ్యాప్ మరియు ప్రపంచ పటంలో. నోడ్‌లను గుర్తుంచుకుంటుంది, బాణం, గ్రూప్ షేరింగ్, GatherMate2_Data దిగుమతి.|r
+## Notes-trTR: |cFF33CCFFOt ve maden takipçisi: otlar, maden damarları, hazineler ve balık sürüleri simgeleriyle mini haritanda ve dünya haritasında. Kaynakları hatırlar, ok, grup paylaşımı, GatherMate2_Data içe aktarma.|r
+## Notes-jaJP: |cFF33CCFF薬草・鉱石トラッカー：薬草、鉱脈、宝、魚群をアイコン付きでミニマップとワールドマップに表示。ポイントの記憶、矢印、グループ共有、GatherMate2_Data のインポート。|r
+## Notes-arSA: |cFF33CCFFمتتبع الأعشاب والخامات: الأعشاب وعروق التعدين والكنوز وأسراب الأسماك على خريطتك المصغرة وخريطة العالم مع أيقوناتها. يتذكر الموارد، سهم، مشاركة مع المجموعة، استيراد GatherMate2_Data.|r
+## Notes-hiIN: |cFF33CCFFजड़ी-बूटी और अयस्क ट्रैकर: जड़ी-बूटियाँ, खनन स्रोत, खज़ाने और मछलियों के झुंड उनके आइकन के साथ आपके मिनीमैप और विश्व मानचित्र पर। स्रोत याद रखता है, तीर, समूह के साथ साझा करना, GatherMate2_Data आयात।|r
+## Notes-thTH: |cFF33CCFFตัวติดตามสมุนไพรและแร่: สมุนไพร สายแร่ สมบัติ และฝูงปลา บนมินิแมปและแผนที่โลกพร้อมไอคอน จดจำจุด ลูกศร แชร์กับกลุ่ม นำเข้า GatherMate2_Data|r
+## Notes-viVN: |cFF33CCFFTheo dõi thảo dược và quặng: thảo dược, mỏ quặng, kho báu và đàn cá trên bản đồ nhỏ và bản đồ thế giới kèm biểu tượng. Ghi nhớ điểm, mũi tên, chia sẻ với nhóm, nhập GatherMate2_Data.|r
+
+## SavedVariables: GatherRadarDB
+## OptionalDeps: GatherMate2
+## X-Curse-Project-ID: 1757790
+
+# Solo WoW Forever: el sufijo _Camelot es el game type que busca ese cliente.
+# GatherRadar.toc es copia exacta de este: la app de CurseForge exige <Carpeta>.toc
+
+Locales/enUS.lua
+Locales/esES.lua
+Locales/deDE.lua
+Locales/frFR.lua
+Locales/itIT.lua
+Locales/ptBR.lua
+Locales/ruRU.lua
+Locales/koKR.lua
+Locales/zhCN.lua
+Locales/zhTW.lua
+Locales/plPL.lua
+Locales/svSE.lua
+Locales/noNO.lua
+Locales/trTR.lua
+Locales/jaJP.lua
+Locales/arSA.lua
+Locales/hiIN.lua
+Locales/thTH.lua
+Locales/viVN.lua
+Locales/csCZ.lua
+Data/NodeNames.lua
+Data/ImportHerb.lua
+Data/ImportOre.lua
+Data/ImportTreasure.lua
+Data/ImportFish.lua
+Core/Nodes.lua
+Core/Database.lua
+Core/GatherRadar.lua
+Core/Scanner.lua
+Core/Collector.lua
+Core/Comm.lua
+Core/Import.lua
+UI/About.lua
+UI/MinimapPins.lua
+UI/WorldMapPins.lua
+UI/Arrow.lua
+UI/Session.lua
+UI/Options.lua
+UI/WorldMapPins.xml

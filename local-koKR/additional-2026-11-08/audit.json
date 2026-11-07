@@ -1,0 +1,4937 @@
+[
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Talk to Torben Zapblast"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Take the Swift Seahorse to Nespirah"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Hide behind Neferset Frond"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Talk to Uchek"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Three Hammerhead Oil and two Remora Oil"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Get on Aronus"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Place a totem on the ground and defend it"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Man the Siege Tank"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Talk to Sassy Hardwrench"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Use the Heth'Jatari Conch"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Wait for the Mercenary Ship to arrive"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Mount Crowley's Horse"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Get in a cannon"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Use the catapult to board the ship"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Board the carriage"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Talk to Krennan Aranas to join the battle"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Get on the Captured Riding Bat"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Get in a Glaive Thrower"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Get on a Hippogryph"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Subdue a Famished Great Shark"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Use Grimnur's Bait on yourself"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Fish for Giant Furious Pike"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Fish for Randy Smallfish and Amorous Mud Snapper"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Mount the Skeletal Steed"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Fish for Crystal Bass"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Use Budd's Chain"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Feed Juniper Berries"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Use Flameseer's Staff"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Fish for Azshara Snakehead"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Cook 5 Spice Bread and combine with Mulgore Spices"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Attach a Stag Eye to your Fishing Pole and fish for Sandy Carp"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Fish for Royal Monkfish"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Bring the horses to Lorna Crowley"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Rescue the Crash Survivor"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Unlock the Ball and Chain"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Run away from the Blazing Trainer"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Fish for Arctic Char"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Fish for Blind Cavefish"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Put on your disguise"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Talk to Karr'gonn"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Go through the portal"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Fish for Young Ironjaw"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Use Orb of Elune on its corpse"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Use Petrified Root on its corpse"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Breathe in the incense"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Take control of the decoy"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Fish for Violet Perch"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Fish for Lake Whitefish"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Fish for Toxic Puddlefish"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Fish for Giant Catfish"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Fish for Kaldorei Herring"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Fish for Blind Minnow"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Fish for Hardened Walleye"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Fish for Corpse-Fed Pike"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Fish for Severed Abomination Head"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Fish for Giant Flesh-Eating Tadpole"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Fish for Stonebull Crayfish"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Use Enormous Bird Call"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Escort the Injured Fawn back home"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Climb the tree"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Fish for Phantom Ghostfish"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Get on the Protector's back"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Speak to Sandrya Moonfall to start the attack"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Use Bear's Paw Bundle"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Ask Orseus for a hippogryph"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Use the Buried Artifact Detector to collect 5 Ancient Device Fragment"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Open the cage"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Use the Alliance Decoy Kit in the Ruins of Lordaeron and feed the Moat Monster"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Cut down the tree"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Use the mortar"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Inspect the bulldozer"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Touch the spirit"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Step through the Nightmare Portal"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Ride Thessera"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Use the Blessed Herb Bundle"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Kill the Darkscale Priestesses"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Destroy the Devouring Artifact"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Get in the Shredder"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Shoot the wyvern"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Defend The Briny Cutter"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Fish for Squirming Slime Mold"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Drag the corpses here"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Attune the with the Broken Blade's owner"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Scout the Tunnel to the North"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Scout the Northwestern Terrace"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Place Ricket's Tickers next to the one of the white rocks"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Place Ricket's Tickers next to the one of the blue rocks"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Place Ricket's Tickers next to the one of the purple rocks"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Place Ricket's Tickers next to the one of the red rocks"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Dive into the underwater cave"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Use Rockslide Reagent on Earthen Geomancer"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Use Mylra's Knife on dead Jadecrest Basilisks"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Learn Spell: Charge"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Learn Spell: Judgement"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Learn Spell: Seal of Righteousness"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Learn Spell: Steady Shot"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Learn Spell: Eviscerate"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Learn Spell: Flash Heal"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Learn Spell: Arcane Missiles"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Learn Spell: Immolate"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Learn Spell: Rejuvenation"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Learn Spell: Primal Strike"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Talk to High Tinker Mekkatorque"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Attack an Kvaldir High-Shaman and kite him to Executioner Verathress"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Place Trapped Basilisk Meat to lure Stonescale Matriarch"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Talk to Rinling to start the game"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Talk to Finlay Coolshot to start the game"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Talk to Jessica Rogers to start the game"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Talk to Maxima Blastenheimer to start the game"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Talk to Mola to start the game"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Talk to Jornun"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "After Zar'jira is defeated, take a portal back to Darkspear Hold"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Put out the fires"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Activate Gasbot after sabotaging the Headquarters"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Get on the yacht"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Place the Wild Clucker Eggs in the trap"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Kill the Mechachicken"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Get on the B.C. Eliminator"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Kill the Oomlot Shaman"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Use Super Booster Rocket Boots in the vicinity of Coach Crosscheck"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Talk to Tal"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Talk to Anachronos"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Get a ride to Razor Hill"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Start listening to the story"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Get in if you don't have a shredder"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Deliver the Stonified Miner here"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Break the Power Stone"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Talk to Assistant Greely"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Take a free airlift"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Summon the Scalding Water Lord"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Talk to Andorel Sunsworn while in disguise"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Place the Arcane Charge in Balboa's path"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Use Polymorph Insect on it"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Touch the Frost Portal Stone"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Touch the Fire Portal Stone"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Touch the Shadow Portal Stone"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Begin your trial"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Take the portal to Xylem's Tower"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Revive"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Secure a ride to Valormok"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Jump on!"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Use Betina's Flasks on living Blighted Surge or Plague Ravager"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Get a ride to Brill"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Talk to Slate Quicksand"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Talk to Peak Grindstone"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Take control of a catapult"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Start the chase"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Talk to Coridormi"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Talk to Ziradormi"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Fill the balloon"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Defend The Immortal Coil"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Use the Blade to become a naga"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Kill all three Tentacle Horrors"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Control the Bound Torrent"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Summon Ick'thys the Unfathomable"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Release the termites"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Place the Skyreach Crystal Clusters"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Talk to Injured Rainspeaker Oracle"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Defeat Volgur"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Defeat Brita"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Grab the package"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Board the Flying Machine"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Summon the Shade of Shadumbra"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Go to your trial"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Go back"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Use the Reactor Control Console"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Take out the Forsaken Machinist"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Get on a Rocketway Rat after you got shrunk"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Take the portal"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Bring the raptors to The Velocistar"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Talk to Lord Hewell for a horse"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Smuggler's Scar Scouted"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Talk to Erunak"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Head to the top of Nespirah"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Climb into the balloon"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Adarrah Signaled"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Wait for the Zeppelin"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Summon Negolash"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Talk to Pebble"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Place Trapped Basilisk Meat to spawn Stonescale Matriarch"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Place Ricket's Tickers next to the white rocks"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Place Ricket's Tickers next to the blue rocks"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Place Ricket's Tickers next to the purple rocks"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Place Ricket's Tickers next to the red rocks"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Cook 10 Spice Bread"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Fish for Great Sea Herring"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Extinguish the fire"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Disable the Shadow Cloak Generator"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Disable the Rod of Subjugation"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Kill the Deep Corruptor"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Start the fight"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Summon Abyssion"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Defeat Abyssion"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Bring the Opalescent Guardians here"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Talk to Salhet"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Talk to Commander Schnottz"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Defeat the defenses"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Follow the trail of gore"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Start the wedding!"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Debilitate Apexar!"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Debilitate Aetharon!"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Debilitate Edemantus!"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "The High Seat"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Stop Smoot"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Go to the shore"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Go back to the ship"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Throw the Barbed Fleshhook at them"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Place the bait near it"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Throw Bottle of Leeches"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Use the imbued blood"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Speak to Gorka"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Speak to Kadrak"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Speak with Karthog to lure out General Hawthorne"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Talk to Tahet"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Summon Galenges"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Speak with Torga"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Defeat Raging Invader"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Speak with Mazzer Stripscrew to get on your boat"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Speak with Griznak to get on your boat"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Speak with Thraka to begin the assault"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Use the Phaseblood Potion at the Sigil of Tichondrius"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Get in Krom'gar Demolisher"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Get in the balloon"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Capture a Hazzali Swarmer"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Talk to Narain to mount your bug"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Make it rain"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Kill them to spawn the chips"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Engage it to create Ember Pools"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Start the bombing run"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Control the Canyon Ettin"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Use the Ettin to lift the boulder"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Free Danforth"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Unlock the ward"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Summon Darkblaze"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Summon Myzrael"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Talk to Korrah"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Talk to Lord Hydronis"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Talk to Aggra"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Speak to Khan Leh'prah"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Use the Raging Vortex Gem"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Talk to Cyclonas"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Speak to Narimar"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Talk to the Un'Goro Examinant"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Pull the lever"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Speak to Maximillian"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Slay Disciple of Elune"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Summon Lycanthoth"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Get a ride to Stormfeather Outpost"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Get a ride to Western Plaguelands"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Get a portal to Western Plaguelands"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Speak with the Deathly Usher north of the Rise of the Defiler."
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Speak to Orkus"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Kill Araj"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Take a ride to Chillwind Camp"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Use Zen'Kiki to engage the Diseased Hawks"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Lure the spiders to the Recruits"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Talk to Kalecgos"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Kill Dark Iron Dwarves to lure Dig-Boss Dinwhisker"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Kill Dig-Boss Dinwhisker"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Talk to the Flight Master"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Summon Lathoric the Black"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Help Hansel Heavyhands"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Take a horse ride to Guard Thomas"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "2 Hides, 4 Mud, 2 Thread"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "4 Hides, 1 Mud, 3 Thread"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "1 Hide, 3 Mud, 4 Thread"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "3 Hides, 2 Mud, 1 Thread"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Destroy the War Reaver"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Release the Magma Lord"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Get a ride to Swamp of Sorrows"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Talk to Lil' Crazy Jerry"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Talk to Lil' Crazy Daisy"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Go back to the mainland"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Summon Grol"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Start the ritual"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Summon Naias"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Get a ride to Explorers' League Digsite"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Grab a mop"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "You can also pay \"Pretty Boy\" Duncan to clean the deck for you"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Board Damsel's Luck"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Disembark Damsel's Luck"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Talk to Kebok"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Get a ride to Forest Song"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Get a ride to Dustwallow Marsh"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Drop off the Druids here"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Kill the general"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Plant the spear"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Control Lord Azrethoc"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Shatter the rubble"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Get a ride to the Blackpool"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Break the restraints"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Close the portal"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Talk to Archmage Malin"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Summon Edana Hatetalon"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Fill the vial"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Fly to Talonbranch Glade"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Step on the disc"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Inspect it"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Break open the coconut"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Use Bite"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Fly above the canopy"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Defeat another Bloodpetal"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Speak with Gorilla, Stomper and Thunderer"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Search the basket"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Get a ride to Astranaar"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Kill Xandivious"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Break the 3 barrels"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Loot the Plans"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Deliver the Razormane Prisoner"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Kill Wyneth"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Trap the raptor"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Take a ride to Zoram'gar Outpost"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Throw the Secret Signal Powder"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Kill Chief Murgut"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Take a ride to the Mor'shan Ramparts"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Use the ropes to go up and down the hill"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Take a ride to Desolation Hold"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Use Calder's Bonesaw on its remains"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Use the Box to avoid enemies"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\CataObjectives.lua",
+    "key": "Take a ride"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\ClassicObjectives.lua",
+    "key": "Place the Termite Barrel"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\ClassicObjectives.lua",
+    "key": "Use it"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\ClassicObjectives.lua",
+    "key": "Use the cannon"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\ClassicObjectives.lua",
+    "key": "Use it when Ranshalla tells you to"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\ClassicObjectives.lua",
+    "key": "Ask for the illusion"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\ClassicObjectives.lua",
+    "key": "Place the meat"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\ClassicObjectives.lua",
+    "key": "Apply the pheromones"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\ClassicObjectives.lua",
+    "key": "Release the Servant"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\ClassicObjectives.lua",
+    "key": "Summon Kirtonos"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\ClassicObjectives.lua",
+    "key": "Kill Xabraxxis"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\ClassicObjectives.lua",
+    "key": "Place the NG-5 Explosives (Blue)"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\ClassicObjectives.lua",
+    "key": "Place the NG-5 Explosives (Red)"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\ForeverObjectives.lua",
+    "key": "Use the Flutterfly Swatter"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\ForeverObjectives.lua",
+    "key": "Knock on Kuramaa's Stump"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Use the Wind Stone"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Use the Firework Launcher"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Bring the Injured Sailor to Delora Lionheart"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Take a ride"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Throw the Gut Bomb"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Talk to Chen"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Fill the vial"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Talk to Mudmug"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Use the bait"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Talk to Gai Lan"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Talk to Gardener Fran"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Talk to Yi-Mo"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Talk to Master Bruised Paw"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Talk to Na Lek"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Talk to Li Li"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Talk to Hemet"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Talk to Koro Mistwalker"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Talk to Chi-Ji"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Talk to Rivett"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Talk to Toya"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Talk to Kor Bloodtusk"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Smash the Spirit Bottles"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Talk to Lyalia"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Talk to Miss Fanny"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Defeat the Stonebound Colossus"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Shoot the fireworks"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Talk to Kitemaster Shoku for a ride to the top"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Talk to Kitemaster Inga for a ride back to the bottom"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Search through the book"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Talk to Mishi"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Set the Yaungol Banner ablaze"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Slay the overseers"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Cleanse the pool"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Use the rope"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Talk to Kil'ruk"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Reel in the fishing rod"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Jump in"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Enter the burrow"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Let the Chanter pick-up the Motherseeds"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Talk to Chief Rikkitun"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Remove the boulders"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Talk to Cho"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Feed the Flask of Kafa to Kota Kon"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Talk to Lun-Chi"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Talk to Brewmaster Chani"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Enter the underwater cave"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Talk to Kang Bramblestaff"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Give him a shield"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Talk to The Wrestler"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Give him a book"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Talk to Master Boom Boom"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Give him a staff"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Talk to Master Windfur"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Give him a dagger"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "After quest is complete, select 3rd option"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Pink Turnip - 2nd option"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Watermelon - 1st option"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Tofu - 3rd option"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Follow the students and help them"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Reveal Virmen Pesters"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Plant the banner"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Place a totem next to the ranger"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Man a Dragon Launcher"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Kill the Mist-Shamans after they placed their torch"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Plant the torch"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Attack Zhao-Jin the Bloodletter"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Borrow a kite"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Return the hatchlings to the nests"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Kill the eyes"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Talk to Wika-Wika"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Phase into the Spirit Void"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Fish for Dojani Eel"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Fish for Wolf Piranha"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Attack it to drop the Stolen Mistfall Keg"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Use the raft"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Take a ride to the Temple of the Jade Serpent"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Bring the yaks here"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Speak to Kiryn"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Clear the rocks"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Use the crystal"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Use the Amber Tap"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Start the fight"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Talk to Ban"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Grab another torch"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Bring the Motherseeds here"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Blow up the explosives"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Take a ride to Dawn's Blossom"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Grab the drinks"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Kill them near stone blocks"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Fly to Fire Camp Bataar"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Fly to the Shrine"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Fly to Mogujia"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Fly to Binan Village"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Kill the ones near Blood Elves in fire pillars"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Fly to the Grummle Bazaar"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Deactivate Spirit Wall"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Fish in the Mysterious Whirlpool"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Use the crane egg and fish in the yolk"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Use Ken-Ken's Mask on Ik'thik Wing Commander"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Release Ancestors"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Talk to Kaz'tik"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Learn to make Sliced Peaches"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Fly to the Valley of Emperors"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Fly to the Ruins of Korune"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Open the amber"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Fly to Emperor's Reach"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Fly to Garrosh'ar Advance"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Go through the portal"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Kill the Arcweaver"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Kill the Shan'ze Thundercallers"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Summon Gura"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Disrupt the Ancient Stone Conqueror ritual"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Kill the Master Caller to disrupt the ritual"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Hurl the Lightning Lance into Nalak"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Use the controller"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\MopObjectives.lua",
+    "key": "Bring the sacks here"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\SeasonObjectives.lua",
+    "key": "Use the Rowboat to reach the eastern shore."
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\SeasonObjectives.lua",
+    "key": "Drink the Squall-breakers Potion and talk to Nyse."
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\SeasonObjectives.lua",
+    "key": "Defeat enough enemies to call forth the Shadowy Figure and talk to her to receive a Mote of Darkness."
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\SeasonObjectives.lua",
+    "key": "Use the Holy Spring Water next to the Holy Spring, while you have two meditation buffs active. Then loot the rune from the fountain."
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\SeasonObjectives.lua",
+    "key": "Escort Alyssian Windcaller to the Dream Portal"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\SeasonObjectives.lua",
+    "key": "Escort Doran Dreambough to the Dream Portal"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\SeasonObjectives.lua",
+    "key": "Escort Maseara Autumnmoon to the Dream Portal"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\SeasonObjectives.lua",
+    "key": "Escort Kroll Mountainshade to the Dream Portal"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\SeasonObjectives.lua",
+    "key": "Escort Alara Grovemender to the Dream Portal"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\SeasonObjectives.lua",
+    "key": "Escort Elenora Marshwalker to the Dream Portal"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\SeasonObjectives.lua",
+    "key": "Escort Mellias Earthtender to the Dream Portal"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\SeasonObjectives.lua",
+    "key": "Escort Nerene Brooksinger to the Dream Portal"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\SeasonObjectives.lua",
+    "key": "Escort Jamniss Treemender to the Dream Portal"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\SeasonObjectives.lua",
+    "key": "Escort Elianar Shadowdrinker to the Dream Portal"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\SeasonObjectives.lua",
+    "key": "Escort Serlina Starbright to the Dream Portal"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\SeasonObjectives.lua",
+    "key": "Escort Veanna Cloudsleeper to the Dream Portal"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\SeasonObjectives.lua",
+    "key": "Talk to the Injured Gnome"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\SeasonObjectives.lua",
+    "key": "Swim south till you reach a small island. You need to use your Guided Buoyancy Accelerant or any other swim speed increase."
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\SeasonObjectives.lua",
+    "key": "Teleport to either Westfall (Alliance) or Tirisfal Glades (Horde)."
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\SeasonObjectives.lua",
+    "key": "Form a proper group and click on the Console to summon Harvest Golem V000-A."
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\SeasonObjectives.lua",
+    "key": "Keep up Disarm and Demoralizing Shout to greatly reduce the damage of the golem."
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\SeasonObjectives.lua",
+    "key": "Phase 1: Interrupt"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\SeasonObjectives.lua",
+    "key": "Phase 2: Kite"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\SeasonObjectives.lua",
+    "key": "Phase 3: Use Shield Wall and survive"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\SeasonObjectives.lua",
+    "key": "Use your Survival Supplies"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\SeasonObjectives.lua",
+    "key": "Place Suspicious Supplies on the bone piles"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\SeasonObjectives.lua",
+    "key": "Find Caius Blackwood"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\SeasonObjectives.lua",
+    "key": "Fight Riosustrasz near the edge"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\SeasonObjectives.lua",
+    "key": "Use Scroll of Lesser Spatial Mending"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\SeasonObjectives.lua",
+    "key": "Talk to Inquisitor Jociphine to get a disguise"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\SeasonObjectives.lua",
+    "key": "Craft cloth bolts near the Crusader's Loom"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\SeasonObjectives.lua",
+    "key": "From afar, use the Apple Scope to peer into the orchard, then lasso an Apple with the Apple Rope."
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\SeasonObjectives.lua",
+    "key": "Free the fish from their barrels."
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Defeat Centaur to summon Warlord Krom'zar"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Place the Infused Crystal and protect it from the Scourge for 1 minute"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use the Bundle of Medallions"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use the Sanctified Crystal against a wounded Uncontrolled Voidwalker"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use the Wolf Totem at the location where you found Krun Spinebreaker's body and follow the Ancestral Spirit Wolf."
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Take Avruu's Orb to the Haal'eshi Altar"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use the Robotron Control near the Concealed Command Console hidden in a small cluster of bushes"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use the Gift of Naias near the Altar of Naias"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Summon Hauteur using the Ritual Torch"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Gather a Fel Ember using Grand Warlock's Amulet"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Destroy the barrel using the Skin of Purest Water"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Kill Bristlelimb Furbolgs to lure High Chief Bristlelimb"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Light the brazier"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Defile the Statue of Queen Azshara"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Place the Bundle of Dragon Bones at the Ever-burning Pyre"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Call for help from Trackers of the Hand"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Destroy all 4 Sunhawk Portal Controller"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Plant the Feralfen Totem on the ground"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use Gordawg's Boulder to shatter Shattered Rumblers into Minions of Gurok"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use 7 Warmaul Skulls to summon Gurok the Usurper"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Make smoke signals"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Place the carcass"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Jump!"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use Apex's Crystal Focus near Archmage Vargoth's Orb"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Speak with Wing Commander Dabir'ee"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Speak with Wing Commander Brack"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Speak with Gryphoneer Windbellow"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use the Soul Mirror near Ancient Orc Ancestors to summon Darkened Spirits."
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use the Elemental Power Extractor before killing it"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Activate the rune"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use the Challenge of the Blue Fight to challenge Veraku"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Take control of the Scrap Reaver X6000."
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Blow the Unyielding Battle Horn near the Alliance Banner"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Communicate with Wind Trader Marid"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Communicate with Commander Ameer"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Take the portal to Socrethar's Seat"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "When at Socrethar's Seat, ask for his help against Socrethar"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Open a portal to Socrethar's Seat with Socrethar's Teleporting Stone"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "After defeating Socrethar, you can open a portal back"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Take the portal back to Invasion Point: Overlord"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use Navuud's Concoction before attacking Void Wastes"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use Navuud's Concoction before attacking Seeping Sludges"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Open the prison"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use the Totem of Spirits on Enraged Earth and Fiery Spirits"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use the Totem of Spirits on Enraged Water Spirits"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use the Totem of Spirits on Enraged Air Spirits"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use Oronok's Boar Whistle to dig up a Shadowmoon Tuber"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Place the Bladespire Banner atop the Northmaul Tower"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Walk with your Spirit Hunter"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use the Fistful of Feathers on the Lashh'an Spell Circle and get back to Daranelle"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Speak with Rally Zapnabber and use the Zephyrium Capacitorium"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Place the Bundle of Bloodthistle at the end of the bridge"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use the Blood Elf Disguise before talking to him"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Open the Power Converters and encase what is inside with the Protovoltaic Magneto Collector"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use the Elemental Displacer to disrupt the ritual in the summoning chamber"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use The Cipher of Damnation at Altar of Damnation"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Let him know when you are ready for Cyrukh"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Open Nether Drake Eggs and use the Temporal Phase Modulator on whatever hatches"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use the Temporal Phase Modulator"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use a Fel Reaver Control Console to take control of a Fel Reaver Sentinel"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Kill some Deranged Helboars"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use the Felhound Whistle"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use the Imbued Silver Spear at Portal Clearing near Marshlight Lake to awake Xeleth"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use a Arcano Control Unit and then swim in the lava to tag the Greater Felfire Diemetradon"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Kill Razaani ethereals to lure Nexus-Prince Razaan out"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Kill the 3 Shadowmoon Soulstealers to force Shadowlord Deathwail to land"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Sign Tally's Waiver, then speak with Rally Zapnabber to use the Zephyrium Capacitorium"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Speak with Rally Zapnabber to use the Zephyrium Capacitorium"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Speak with Rally Zapnabber to use the Zephyrium Capacitorium and spin the Nether-weather Vane while flying"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Blow the whistle and have Grulloc run after the boar"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use Sablemane's Trap at Gorgrom's Altar"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use Rexxar's Battle Horn at the Altar of Goc"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Equip the Unfinished Headpiece, travel to the Altar of Damnation, and use it while standing near Gul'dan."
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Put Grulloc to sleep using Sablemane's Sleeping Powder"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Kill flayers and take their carcasses. Place a carcass in the field"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use Sablemane's Signet at the Altar of Goc"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Retrieve five Camp Anger Keys and activate the five Legion obelisks. The obelisks have a short duration, so make sure they are all activated at the same time."
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use Exorcism Feathers to summon Koi-Koi Spirits"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use the Demoniac Scryer"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use Enchanted Nethervine Crystal on Enslaved Netherwing Drake"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use the Mental Interference Rod on the Mo'arg and use their Detonate Teleporter ability"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Collect Cursed Eggs to spawn a Hatchling"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Kill Nexus-Prince Razaan to spawn the Collection of Souls"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Kill Force Commander Gorax and place the Challenge From the Horde upon his corpse"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Help Akuno find his way to the Refugee Caravan in Terokkar Forest."
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Kill Rotting Forest-Ragers and Infested Root-Walkers to spawn Wood Mites"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Place the Achorite Relic"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Slay Shattered Hand Berserkers near it"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use the Naturalized Ammunition to take control of the Death's Door Fel Cannon"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Open the coffin and kill its contents"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use Dread Relic with 20 Doom Skulls near the Writhing Mound Summoning Circle to call Teribus the Cursed"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use the Fumper to lure Mature Bone Sifter"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Kill Decrepit Clefthoofs and use the Fumper on their corpses"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Perform the exorcism"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use the Sparrowhawk Net to capture a Wild Sparrowhawk"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Defeat the Guardian of the Eagle and obtain the Essence of the Eagle"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Defeat the Guardian of the Falcon and obtain the Essence of the Falcon"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Defeat the Guardian of the Hawk and obtain the Essence of the Hawk"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Defeat him so he spawns Grulloc's Dragon Skull"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Defeat him so he spawns Maggoc's Treasure Chest"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Defeat him so he spawns Slaag's Standard"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Step into fire rings to summon Vim'gol"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Defeat him so he spawns Vim'gol's Vile Grimoire"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Defeat him so he spawns Skulloc's Soul"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use Vim'gol's Grimoire at Soulgrinder's Altar"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use 35 Apexis Shards to activate Apexis Monument. Apexis Guardian will spawn after six rounds"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use a Time-Lost offering to summon Terokk"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use 35 Apexis Shards to open Furywing's Egg"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use 35 Apexis Shards to open Obsidia's Egg"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use 35 Apexis Shards to open Insidion's Egg"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use 35 Apexis Shards to open Rivendark's Egg"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use 35 Apexis Shards to activate Fel Crystal Prism"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use the Nether Ray Cage and slay Blackwind Warp Chasers near the Hungry Nether Ray"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Redeem Remains"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Plant the Stonemaul Banner"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Information Gathered"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Plant the torch at the end of the dock"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Smear the Fish Paste on yourself and swim to the ship wreck"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Cook Demon Broiled Surprise in the remains of a Abyssal Flamebringer in Blade's Edge Mountains"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Cook Spiritual Soup at the Ancestral Grounds in Nagrand"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Energize a Crystal Ward"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Defeat enemy players"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use Fel Siphon and then kill the weakened Felblood Initiate"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Kill Incandescent Fel Sparks after summoning your Living Flare"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use Razorthorn Flayer Gland on Razorthorn Ravager to tame it"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use Expose Razorthorn Root of your tamed Razorthorn Ravager to expose Razorthorn Root"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Speak to Ayren Cloudbreaker"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Take a ride back to the isle"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Break down Ata'mal Metal on the anvil to cleanse it"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Fish here for Blackfin Darter"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Fish here for World's Largest Mudfish"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Fish here for Bloated Barbed Gill Trout"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Fish here for Monstrous Felblood Snapper"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Summon and defeat each of the descendants by using 10 Time-Lost Scrolls"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use the Extinguishing Mixture near the eternal flame"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use the Banishing Crystal and slay demons near the summoned portal"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Let Xi'ri know you're ready to battle"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Take a ride to Spinebreaker Post"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Light the torches"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Place the Signaling Gem"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Disturb the nest"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Fish for Baby Crocolisk"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Open the container"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Attempt to loot The Thunderspike"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Control the Marmot"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Take a ride"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Get a disguise"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Charge the Vekh'nir Crystal"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Use 6 Ruuan'ok Claws to summon a Harbinger of the Raven"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Kill Siltfin Murlocs to summon a Quel'dorei Magewrath"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Mount up"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Talk to Jaina"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Summon one of Ahune's lieutenants"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Summon one of Ahune's templars"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Start the event"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Open it"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Kill the Ritualists"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\TbcObjectives.lua",
+    "key": "Grab a keg"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Wait for Harrowmeiser's zeppelin to dock"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Feathered Charm on Steelfeather"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Entrance to Utgarde Catacombs"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Talk to Olga"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Fight Jonah"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Present the Vrykul Scroll of Ascension"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Destructive Ward"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Quetz'lun's Ritual"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Capture Chicken Escapee"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Gossamer Potion"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Get in Brann's Flying Machine"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Eye of Acherus Control Mechanism"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Defeat Dark Rider of Acherus and take his horse"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Return Scarlet Ghouls"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Climb inside the Inconspicuous Mine Car"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use the Scarlet Cannon"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Equip Keleseth's Persuaders and persuade Scarlet Crusaders"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use the Makeshift Cover"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use the Horn of the Frostbrood"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Talk to Highlord Darion Mograine"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Fresh Barbfish Bait"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Rune Sample"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Scepter of Command"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Ley Line Focus Control Talisman"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Tu'u'gwar's Bait"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Throw Wolf Bait"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Ride Dusk"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Teleport to the top of Naxxanar"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Talk to Thassarian"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Raelorasz' Spark"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Talk to Keristrasza"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Arcane Power Focus"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Valve"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use the Gearmaster's Manual"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Melee attack Venomhide Ravasaur"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Slay Vrykul across the Forsaken blockade until they appear"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Talk to Bat Handler Camille"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Talk to Wyrmbait"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Fish for Severed Arm"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Fish for Corroded Jewelry"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Fish for Terror Fish"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Slay any beast, jump in any water location and fish in the Pool of Blood"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Fill the Empty Apothecary's Flask at the Cauldron of Vrykul Blood"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Mix the Flask of Vrykul Blood with Harris's Plague Samples"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Break Riven Widow Cocoons to free captives"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Grick's Bonesaw on corpses of Deranged Explorers"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Ask Alanya for transportation"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Lure Reef Bull with Tasty Reef Fish"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Place Tillinghast's Plagued Meat on the ground"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Plagued Vrykul Sprayed"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Feed it with Zul'Drak Rat"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Plagued Vrykul exterminated"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Place fake fur near Caribou Traps"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Beryl Shield Detonator"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Kill Inquisitor Salrand"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Place Icemaw Bear Flank"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Imperean's Primal on Snarlfang's Totem"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Jenny's Whistle near a crashed flying machine"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Return Jenny to safety without losing cargo"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use the Carved Horn"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Test Rune of Command on normal Stone Giants"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Windsoul Totem to collect energy from killing Steam Ragers"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Robots weakened and destroyed"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Nerubian tunnels collapsed"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use The Horn of Elemental Fury near the southern sinkhole"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Ride Flamebringer"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Enlist Budd's help"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Escort Budd to the Drak'Zin Ruins"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Budd's Tag Troll spell to stun Drakkari trolls"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Capture stunned Drakkari trolls with Bounty Hunter's Cage"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Place Scourged Troll Mummy in the fire"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Tranquilizer Dart on Tatjana"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Talk to Tur Ragepaw to summon Ursoc"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Spray Proto-Drake Egg"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Skytalon Molts"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Ethereal Worg's Fang"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Fight Lightning Sentries with Depleted War Golem deployed nearby"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Eye of Dominion"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Intercept the message from Loken"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Commandeer Crykul Harpoon Gun"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Ring the gong outside Drakil'jin to summon Warlord Jin'arrak"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Touch Talonshrike's Egg"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Speak with Gan'jo to return to life"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use the Snow of Eternal Slumber on ancient Drakkari spirits"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Place the Infused Drakkari Offering at the gongs outside Drakil'jin"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Free Roanauk Icemist"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Abbey Bell Rope"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "High Abbot spoken with"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Pull Sturdy Vines to reveal fruit"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Freya's Horn atop of the Glimmering Pillar"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Zort's Scraper when covered in Corrosive Spit"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Slay Antiok's mount to make him vulnerable"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Listen to what the Avatar of Freya has to say"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Sandfern Disguise near the fallen log"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Softknuckle Poker on Softknuckles"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Travel through the Waygate"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Mount Argent Skytalon"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Drop Off Captured Crusader"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Mount Argent Cannon"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Drums of the Tempest at Stormwright's Shelf"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Charge the Dormant Polished Crystal at the exposed Lifeblood Pillar"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Slay Scourge while riding Gymer"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Complete Overlord Drakuru's task"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Infiltrate Voltarus using Ensorcelled Choker"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Scepter of Suggestion to mind control Blight Geist"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Scepter of Empowerment to mind control Servant of Drakuru"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Take the teleporter to Drakuru's upper chamber"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Escort rescued Crusaders to Dr. Rogers"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Soo-rahm's Incense"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Chime of Cleansing to summon Spirit of Atha"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Chime of Cleansing to summon Spirit of Ha-Khalan"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Chime of Cleansing to summon Spirit of Koosu"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Ride a Wyrmrest Defender to defend the Temple"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Venture Co. Explosive on dead Stonewatcher"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Talk to High-Oracle Soo-say to retrieve a Gorloc companion"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Uncured Caribou Hide"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use the Tainted Crystal at the Great Lightning Stone"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Research the Gearmaster's Manual"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Tamper with General's Weapon Rack to summon General Lightsbane"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use the Challenge Flag on sparring Mjordin Combatants"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Mount Nergeld"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Possess a Water Terror"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use the Horn of the Peaks and call on the Earthen to defeat Iron Dwarves and Iron Sentinels"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Mount Icefang"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Bag of Jagged Shards near Malykriss Furnace"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Pustulant Spinal Fluid"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Free Burning Skeletons to destroy Chained Abominations"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Talk to Margrave Dhakar to fight Morbidus"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Medallion of Mam'toth to calm and ride an Enraged Mammoth"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Wake Slumbering Mjordin until you find Iskalder"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Iskalder delivered to The Bone Witch"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use the Battlescar Signal Fire to summon Iskalder"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Blow the War Horn of Jotunheim to challenge Overthane Balargarde"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Board Refurbished Demolisher"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Activate the Summoning Stone after collecting 5 Dark Matter"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Throw a Writhing Mass into a cauldron at Aldur'thar"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Seize Control of an Eidolon Watcher"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Speak to Keritose Bloodblade to secure a Skeletal Gryphon"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Lead a subdued Lithe Stalker to the cliff above Vereth the Cunning"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Seize Control of a Lithe Stalker"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Drag Scourge Bombs to Lumbering Atrocities"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Rune of Distortion near Grimkor's Orb to summon Grimkor the Wicked"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Kill gladiators at the Ring of Judgement until Oluf the Violent appears"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Kill Oluf the Violent"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Muddled Mojo on Prophet of Sseratus before killing it"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Kill Jin'Alai Trolls near a totem until their leaders appear"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Heb'Jin's Drum to summon Heb'Jin"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Release Akali from his chains"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use the Prophet of Akali Convocation"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Retrieve U.D.E.D."
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use U.D.E.D on Ironwool Mammoth"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Place Hardpacked Explosive Bundle at Frostgut's Altar"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Talk to Ricket for transportation"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Fly freed Proto-Drakes to safety while carrying rescued Brunnhildar Prisoners"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Talk to Rokhan to call down Sarathstra"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Drink Drakuru's Elixir after gathering Zim'bo's Mojo"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Harpoon Guns to burn Dry Haystacks"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Hyldnir Harpoon to land on nearby Proto-Drakes"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Hyldnir Harpoon on Column Ornaments to dismount"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Listen to Thorim's history"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Ride Snorri"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Diamond Tipped Pick on the corpses of Dead Iron Giants"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Go Harpoon Surfing"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use the Dull Carving Knife near Drakuru"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Attune the Lorehammer"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use the Lorehammer to travel back in time"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Defeat the North Wind"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Plagued Grain Crates Dispelled: 0/1"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Warts-B-Gone Lip Balm and /kiss a Lake Frog"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Speak to Squire David"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Speak to Squire Danny"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Speak to Squire Cavin"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Plant Alliance Battle Standard"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Plant Horde Battle Standard"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Snagglebolt's Air Analyzer on perfumed guards"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Enter teleporter to access Naxxanar"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Naxxanar teleporters"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Mount Wooly Mammoth Bull to assist in killing Kaw the Mammoth Destroyer"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Storm Totem to summon Storm Tempest"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Frosthound's Collar at the Abandoned Camp"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Mount Frostbite to track scent"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Mount Tamed Jormungar to fight Iron Colossus"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Pick it up"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Talk to Fjorlin Frostbrow"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Buy a Small Paper Zeppelin"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Throw Small Paper Zeppelin to Kekek"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use the waygate to teleport to Un'goro Crater"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Everburning Ember"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Fill Rejek's Vial"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Speak with Sar'this for his help hunting a Flawless Arcane Elemental"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use The Big Gun at the front of the ship to slay Sorlof"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use The Gearmaster's Manual"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Ley line focus information retrieved"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Commandeer a Forsaken Blight Spreader"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Deliver Shredder"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Feed with Zul'Drak Rat"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Speak to Arch Druid Lilliandra for transportation to Moonglade"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Crusader Olakin's Remains at the Sanctum of Reanimation Slab"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Talk to Rizzy Ratchwiggle"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Talk to Karen No"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use Interdimensional Refabricator"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Summon Drottinn Hrothgar using the Kvaldir War Horn"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Summon Mistcaller Yngvar using the Mistcaller's Charm"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Provoke Ornolf the Scarred using the Captured Kvaldir Banner"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Take chum"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use your drum near a Mysterious Snow Mound"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Talk to Tirion while wearing a Cultist Acolyte's Hood"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Search for Kurzel"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Dip Kurzel's Blouse Scrap on the remains of Novos the Summoner"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Place the flower offering"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Open the phylactery"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Deliver the orphan to Khu'nok"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Kill Kaw the Mammoth Destroyer"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Get hit by Slime Spray to get the Green Blight strain"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Get hit by Gaseous Blight to get the Orange Blight strain"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Start the procedure"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Toss ingredients into the cauldron"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Plant the Argent Crusade Banner"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Ask McGoyver for a ride to the Explorers' League Outpost"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Send your Trained Rock Falcon after it"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Release the Trained Rock Falcon"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use the Work Bench then cast Rocket Jump standing on the rune next to it"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use the Work Bench then cast Collect Data near the blue relic near Gwendolyn's cart"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use the Work Bench then cast Bluff on Lebronski after you've walked on his rug"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Ask Shandy Glossgleam to lend you a tabard"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Put on the Golem suit"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Search for treasure"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Get a gryphon to ride and some bombs"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "After acquiring the Armor, get a ride back"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Examine the remains"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Ask the warden to take you to the Sunwell"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "After restoring Quel'Delar, go back to Dalaran"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Meditate"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Search for Northern Barbfish"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Commune with Oacha'noa"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Place the Mine Bomb here"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Get a ride to Thorson's Post"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Get in"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Man the Chain Gun"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Destroy Icestorm"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Slay Grand Necrolord Antiok"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Request a portal to Orgrimmar"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Begin the assault!"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Throw the Explosive Charges when it opens its mouth wide"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use the Sturdy Crates to capture the worm spawn"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Get in the shredder if you have the key"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Ride the rocket!"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Bring the mustangs to Squire Percy"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Drink Drakuru's Elixir after gathering 5 Frozen Mojo"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Drink Drakuru's Elixir after gathering 5 Desperate Mojo"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Drink Drakuru's Elixir after gathering 5 Sacred Mojo"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Drink Drakuru's Elixir after gathering 5 Enduring Mojo"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Let Gymer know you're ready"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Open the coffin"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Learn Drakuru's secret"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use the Scepter of Domination to control it"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "After defeating Drakuru, go back down using this portal"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Defeat Drakuru"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Go on top of the ziggurat with Drakuru"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Take a ride to Sholazar Basin"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Ask for a spare fruit"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Begin the distillation process"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Break the egg"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Start the escort"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Activate the teleporter"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Take a ride to the ship"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Plant the Blessed Banner of the Crusade"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Get on the turret"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Get in the Jumpbot"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Free Patches"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Place the blood at the Shrine of Kartak"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Free the slave"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Take a ride to Garrosh's Landing"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Bring the kodos to Farmer Torp"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Get a new Deserter if you lose him/her"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Drive a tank"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Bring the captured drake to Raelorasz"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Take a drake to the top of the temple"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Take a drake to the middle of the temple"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Blow the horn"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Attune a Captured Frog"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Talk to Handler Marnlek and deploy the frogs on the white smoke"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Talk to Handler Marnlek for a ride"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Unlock the chains"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Take the gryphon to ground level"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Take the gryphon to Acherus"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use the Gift of the Harvester on it"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Use the Portal to Acherus"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Go to Stormwind"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Go to Orgrimmar"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Apply the harness"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\ExtraObjectives\\WotlkObjectives.lua",
+    "key": "Summon Nightbane"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\Journey\\MyJourney.lua",
+    "key": "Missing Arena Rating"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\MinimapIcon\\MinimapIcon.lua",
+    "key": "Error"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\MinimapIcon\\MinimapIcon.lua",
+    "key": "Warning"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\MinimapIcon\\MinimapIcon.lua",
+    "key": "Information"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\MinimapIcon\\MinimapIcon.lua",
+    "key": "QuestieDB is running in Source mode."
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\MinimapIcon\\MinimapIcon.lua",
+    "key": "Client: %s (build %s, %s)"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\MinimapIcon\\MinimapIcon.lua",
+    "key": "Interface: %s"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\MinimapIcon\\MinimapIcon.lua",
+    "key": "Project: %s (%s)"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\MinimapIcon\\MinimapIcon.lua",
+    "key": "Questie expansion: %s (%s)"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\MinimapIcon\\MinimapIcon.lua",
+    "key": "Season: %s (%s), active: %s"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\MinimapIcon\\MinimapIcon.lua",
+    "key": "Region: %s (%s), locale: %s"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\MinimapIcon\\MinimapIcon.lua",
+    "key": "Client flags: %s"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\MinimapIcon\\MinimapIcon.lua",
+    "key": "Realm flags: %s"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\MinimapIcon\\MinimapIcon.lua",
+    "key": "Region flags: %s"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\MinimapIcon\\MinimapIcon.lua",
+    "key": "QuestieDB Source load information."
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\MinimapIcon\\MinimapIcon.lua",
+    "key": "Provider version: %s"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\MinimapIcon\\MinimapIcon.lua",
+    "key": "Data expansion: %s"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\MinimapIcon\\MinimapIcon.lua",
+    "key": "Read mode: %s"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\MinimapIcon\\MinimapIcon.lua",
+    "key": "Provider contracts: %s to %s; Questie requires %s"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\MinimapIcon\\MinimapIcon.lua",
+    "key": "Client diagnostics unavailable: %s"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\MinimapIcon\\MinimapIcon.lua",
+    "key": "Provider diagnostics unavailable: %s"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\MinimapIcon\\MinimapIcon.lua",
+    "key": "Questie could not start: %s"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\MinimapIcon\\MinimapIcon.lua",
+    "key": "Update Questie and QuestieDB, then reload the UI."
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\MinimapIcon\\MinimapIcon.lua",
+    "key": "Reload the UI. If the problem persists, report this error."
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\Zones\\Pandaria.lua",
+    "key": "The Thunder Forges"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\Zones\\Scenarios.lua",
+    "key": "Mogu Island Loot Room"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\Zones\\Scenarios.lua",
+    "key": "Mogu Island Progression Events"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\Zones\\Scenarios.lua",
+    "key": "Heart of the Old God Scenario"
+  },
+  {
+    "addon": "Questie",
+    "file": "Questie\\Localization\\Translations\\Zones\\Scenarios.lua",
+    "key": "Halfhill Scenario"
+  },
+  {
+    "addon": "Leatrix_Plus",
+    "file": "Leatrix_Plus/Leatrix_Plus_Locale.lua",
+    "key": "WoW Forever"
+  },
+  {
+    "addon": "Leatrix_Plus",
+    "file": "Leatrix_Plus/Leatrix_Plus_Locale.lua",
+    "key": "Protection"
+  },
+  {
+    "addon": "Leatrix_Plus",
+    "file": "Leatrix_Plus/Leatrix_Plus_Locale.lua",
+    "key": "Restoration"
+  },
+  {
+    "addon": "Leatrix_Plus",
+    "file": "Leatrix_Plus/Leatrix_Plus_Locale.lua",
+    "key": "Collected"
+  },
+  {
+    "addon": "Leatrix_Plus",
+    "file": "Leatrix_Plus/Leatrix_Plus_Locale.lua",
+    "key": "Not collected"
+  },
+  {
+    "addon": "Leatrix_Plus",
+    "file": "Leatrix_Plus/Leatrix_Plus_Locale.lua",
+    "key": "Appearance"
+  },
+  {
+    "addon": "Leatrix_Plus",
+    "file": "Leatrix_Plus/Leatrix_Plus_Locale.lua",
+    "key": "Appearance ID"
+  },
+  {
+    "addon": "Leatrix_Plus",
+    "file": "Leatrix_Plus/Leatrix_Plus_Locale.lua",
+    "key": "Appearance set"
+  },
+  {
+    "addon": "Leatrix_Plus",
+    "file": "Leatrix_Plus/Leatrix_Plus_Locale.lua",
+    "key": "Toy"
+  },
+  {
+    "addon": "Leatrix_Plus",
+    "file": "Leatrix_Plus/Leatrix_Plus_Locale.lua",
+    "key": "Mount"
+  },
+  {
+    "addon": "Leatrix_Plus",
+    "file": "Leatrix_Plus/Leatrix_Plus_Locale.lua",
+    "key": "Mount ID"
+  },
+  {
+    "addon": "Leatrix_Plus",
+    "file": "Leatrix_Plus/Leatrix_Plus_Locale.lua",
+    "key": "Pet"
+  },
+  {
+    "addon": "Leatrix_Plus",
+    "file": "Leatrix_Plus/Leatrix_Plus_Locale.lua",
+    "key": "Step 1"
+  },
+  {
+    "addon": "Leatrix_Plus",
+    "file": "Leatrix_Plus/Leatrix_Plus_Locale.lua",
+    "key": "Start here."
+  },
+  {
+    "addon": "Leatrix_Plus",
+    "file": "Leatrix_Plus/Leatrix_Plus_Locale.lua",
+    "key": "English"
+  },
+  {
+    "addon": "Leatrix_Plus",
+    "file": "Leatrix_Plus/Leatrix_Plus_Locale.lua",
+    "key": "Deutsch"
+  },
+  {
+    "addon": "Leatrix_Plus",
+    "file": "Leatrix_Plus/Leatrix_Plus_Locale.lua",
+    "key": "Español (EU)"
+  },
+  {
+    "addon": "Leatrix_Plus",
+    "file": "Leatrix_Plus/Leatrix_Plus_Locale.lua",
+    "key": "Español (AL)"
+  },
+  {
+    "addon": "Leatrix_Plus",
+    "file": "Leatrix_Plus/Leatrix_Plus_Locale.lua",
+    "key": "Français"
+  },
+  {
+    "addon": "Leatrix_Plus",
+    "file": "Leatrix_Plus/Leatrix_Plus_Locale.lua",
+    "key": "Italiano"
+  },
+  {
+    "addon": "Leatrix_Plus",
+    "file": "Leatrix_Plus/Leatrix_Plus_Locale.lua",
+    "key": "Português"
+  },
+  {
+    "addon": "Leatrix_Plus",
+    "file": "Leatrix_Plus/Leatrix_Plus_Locale.lua",
+    "key": "Русский"
+  },
+  {
+    "addon": "Leatrix_Plus",
+    "file": "Leatrix_Plus/Leatrix_Plus_Locale.lua",
+    "key": "한국어"
+  },
+  {
+    "addon": "Leatrix_Plus",
+    "file": "Leatrix_Plus/Leatrix_Plus_Locale.lua",
+    "key": "简体中文"
+  },
+  {
+    "addon": "Leatrix_Plus",
+    "file": "Leatrix_Plus/Leatrix_Plus_Locale.lua",
+    "key": "繁體中文"
+  }
+]

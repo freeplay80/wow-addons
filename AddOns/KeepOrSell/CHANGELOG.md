@@ -1,0 +1,226 @@
+# Changelog
+
+## 0.21.0
+
+- New option "Grey items always to the vendor" (Junk section, on by default): grey items the vendor buys go to the vendor, whatever the auction house says. Greys are often listed at absurd prices that never sell; before, such a price put them in the AuctionHouse group. The tooltip says "(grey: auction price ignored)". Filters can set it with `greyVendor`. Requested on CurseForge (issue #1).
+- "Grey and white gear as junk" now also covers grey and white gear your class can never wear: once you have visited the auction house with Auctionator, such gear without an auction price is junk instead of waiting for a price (e.g. white mail boots on a druid).
+- Tooltip: a price note now follows the reason without a comma, e.g. "Junk – plain gear (below 2x vendor price)".
+
+## 0.20.1
+
+- Fix: searching the game's Options (e.g. for "name") raised `ADDON_ACTION_FORBIDDEN … IsUserOAuthed()` and blamed KeepOrSell. The button under Esc > Options > AddOns no longer shows up in the Options search; it is still on the KeepOrSell page.
+
+## 0.20.0
+
+- Account mode: items another of your characters needs go to a new group "For alts", so you can collect them and mail them over. It counts profession materials that still give that character skill points and the class items of its class (candles, poisons, totems …), even when the AH would pay well. Your own needs always come first, and soulbound items never count. The tooltip names who needs it and why, e.g. "For alts: Amy (Tailoring), Bob (class item)".
+- Alts are matched by ruleset and faction (on Forever the ruleset is the server), not by realm name. Each character has to log in once with this version.
+- A table of your alts in the options: each one with its full name in its class colour, its professions, and switches for profession materials, class items and whether it counts at all (a bank character, an abandoned alt).
+- KeepOrSell now tells characters apart by first name and surname. Before, two characters with the same first name shared their remembered recipes; each character moves its data over on its next login.
+- The old option "Reagents for your other characters" is now the per-alt switch "Profession materials": if you had it off, it stays off for every character KeepOrSell knew when you updated. Filter texts no longer carry it (the alts are private), so an old filter's `altReagents` line is skipped.
+- KeepOrSell has its own options window, in the style of the setup window: sections in a sidebar on the left, the options side by side on the right. `/kos` opens and closes it; the "? KoS" button and the setup window open it too. Esc → Options → AddOns → KeepOrSell now holds a button that opens it. It also works with the gamepad UI.
+- The tooltip names every reason to keep an item, not only the first: e.g. a quest item that your profession and two alts also need shows "also: Profession · for alts: …" below.
+- New option "\"? KoS\" button in the bags" (Display) hides that button if your bag window is crowded.
+
+## 0.19.1
+
+- The auction house deposit now counts: an item only goes to the AuctionHouse group when it still beats the vendor after the AH cut even if one auction doesn't sell and the deposit is lost (8 hours, all copies in your bags in one auction). The 1 silver minimum deposit is per auction: a single Linen Cloth at 27 copper isn't worth it, 21 of them are. Items where the deposit eats the gain now go to the vendor, and the tooltip names the deposit.
+- The hint about items that don't stack no longer lists items you carry on purpose: class items such as Soul Shards, profession tools and items you marked to keep.
+
+## 0.19.0
+
+- Shareable filters: `/kos export` shows your setup (decision options, keep marks, item and category rules) as plain text to copy, `/kos import` takes someone else's. A check shows what would change before you apply it, and "Undo last import" in the options takes it back. The text is data only and never runs; lines the addon doesn't understand are dropped and counted.
+- Filter rules: `item 2592 = junk` names one item (as strong as Scrap's own list), `class 7 subclass 5 quality 0-1 = junk` a whole category. A category rule never junks green or better wearable gear or items Forever added, and junks other items only when they are grey, white bound items with a vendor price, or items with a known, recent price below the auction threshold. `/kos rule <item> <group|clear>` sets an item rule, `/kos rules` lists them, and the tooltip says when a filter rule decided.
+
+## 0.18.1
+
+- The help in the bag window is now a small "? KoS" button instead of a lone question mark.
+
+## 0.18.0
+
+- Fishing poles (every one, whatever its name) now show "Keep – profession tool" in the tooltip, like mining picks and skinning knives.
+- Rogues always keep Swiftthistle, the reagent for Thistle Tea.
+- Quest starters Questie doesn't know (many of Forever's new ones) are now kept as quest items until their quest is done, also without Questie. The list comes from the game's own item table.
+- Quests Questie doesn't know are remembered from your quest log, so your other characters keep their items too until they've done the quest. Needs QuestieDB.
+- Items Forever added are no longer junked just for a low price: KeepOrSell can't judge them yet, so they stay ("new in Forever"). Gear your class can't wear still goes.
+- A quest whose chain you started (an earlier step is done) keeps its items at any level, and the tooltip says it's next in your chain.
+- Warnings: destroying or selling an item KeepOrSell would keep (quest items, reagents, items you marked, class items, tools, equipment sets) prints why in chat and on screen. Option "Warn before losing kept items".
+- Ammo and quivers count as unusable for classes without bows or guns, and mana-only drinks for warriors and rogues.
+- Reagents that still give skill points to another of your characters (same realm and faction, not soulbound) go to the Profession group, with the character's name in the tooltip. Option "Reagents for your other characters"; each character opens its professions once.
+- Repeatable quests (cloth donations, Argent Dawn turn-ins …) now keep their items from the quest's required level on, not only within five levels of the quest, and the tooltip says "repeatable quest". Needs QuestieDB.
+- A question mark in Baganator's bag window lists KeepOrSell's shortcuts when you hover it: Alt+Right-click to always keep an item, the destroy button and the `/kos` commands. Click it for the options.
+
+## 0.17.2
+
+- Unlearning a profession now drops its reagents too: they no longer stay in the Profession group as if a recipe still gave skill points. Reagents remembered by older versions are cleared once, so open your remaining professions once more.
+
+## 0.17.1
+
+- New option "Reagents for recipes you haven't learned" (on by default): turn it off and reagents of recipes you could still learn are sorted like any other item (auction house, junk) until you learn the recipe. Recipes you don't know yet are still kept.
+
+## 0.17.0
+
+- Keep anything you like: Alt+Right-click an item in your bags and KeepOrSell keeps it from now on – never junk, auction house or disenchant, also without Scrap. Click again to undo. `/kos kept` lists your marks, `/kos keep <item>` and `/kos unkeep <item>` work too, and a button in the options forgets them all. Items on Scrap's own junk list stay junk.
+- Gear saved in an equipment set is always kept.
+- Loot coins: when you loot with full bags, a gold coin in the loot window marks loot worth more than the junk it would replace (quest items always). Hover the loot to see which item to destroy for it; the destroy button lights up right away. Option "Loot coins when bags are full" (on by default, works without Baganator).
+- Loot that still fits onto a stack in your bags or into a profession bag no longer counts as needing room, and the destroy button skips junk in profession bags, since destroying it frees no slot for anything else.
+- With the gamepad UI on, the options page stays off: Blizzard's settings window can freeze the game there with addon pages. `/kos` says so; switch to mouse and keyboard and /reload to change options.
+
+## 0.16.2
+
+- Fix: the tooltip of kept items no longer suggests "Otherwise: Auction house" when the auction price beats the vendor only slightly. The auction house now has to pass your auction factor, like for the AuctionHouse group, since the deposit and the chance of not selling eat a small gain; otherwise the vendor comes first.
+
+## 0.16.1
+
+- Fix: "Disenchant for skill points" no longer shows at Enchanting 60 or higher, or at the skill cap of your rank (e.g. 150/150). Disenchanting itself only gives skill points below 60; above that an item is disenchanted only when its materials are worth more than selling it to a vendor or on the auction house.
+- Items KeepOrSell keeps for no particular reason (consumables …) now also show the best way to get rid of them in the tooltip ("Otherwise: Auction house").
+
+## 0.16.0
+
+- Clearer tooltip: an empty line sets KeepOrSell apart from other addons, and below the verdict each way to get rid of the item gets its own line with the amount on the right (disenchant, auction house, vendor). The group's own way comes first in color; items KeepOrSell keeps show the best one as "Otherwise: Auction house 4s", so you see at a glance what to do once you no longer need them.
+- With the legacy talent "Reagent Economy" learned, vendor reagents of your class (Wild Berries, Arcane Powder, candles, symbols, Ankh, Flash Powder …) are no longer kept no matter what; they are sorted like any other item. Rebirth seeds and the Light Feather stay protected, since Rebirth and Slow Fall still ask for them with the talent. Tools, poisons and Soul Shards are always kept.
+
+## 0.15.1
+
+- Items that don't stack (scrolls, clams, duplicate gear) take one bag slot each, even when Baganator shows them as one stack. The tooltip now says so ("doesn't stack, takes 5 bag slots") and the hints button lists them ("Don't stack, each takes its own bag slot: 5× Scroll: CWAL").
+- New Unstacked group: copies of an item that doesn't stack and has no other group (e.g. mage scrolls) show one slot each in Baganator instead of a single stack. Gear stays with the gear, junk with the junk.
+
+## 0.15.0
+
+- New Open group: clams, boxes and other items with "Right Click to Open" (not locked) go there instead of staying in the bags waiting for an auction price. Each one takes its own bag slot even when Baganator shows them as one stack; the tooltip says how many slots they use and the hints button reminds you to open them. Option "Items to open" (on by default).
+
+## 0.14.0
+
+- Setup window for new players: after login it shows what KeepOrSell still needs (Baganator, its category groups, Auctionator, a first price scan; Scrap and Questie optional) until everything is done or you tick "Don't show again". One click switches Baganator to category groups by importing a Baganator profile "KeepOrSell"; your old profile stays. The scan is explained step by step. Open it any time with `/kos setup`, the button in the options or the hints button in your bags.
+
+## 0.13.2
+
+- Class items are never junk: spell reagents and class tools of your class (Thieves' Tools, poisons and their reagents, shaman totems, Light Feather, Rebirth seeds, candles and symbols for the group buffs, Soul Shards …) stay in your bags, even when the class quest that handed them out is done or they would be worth auctioning ([#1](https://github.com/svengabr/KeepOrSell/issues/1)).
+
+## 0.13.1
+
+- New logo and an icon in the addon list.
+- The addon list shows "dev" instead of the raw version placeholder when running from a source checkout.
+
+## 0.13.0
+
+- Disenchant: enchanters get a new Disenchant group. Green, blue and purple weapons and armor that would be sold or auctioned go there when their materials are worth more, using the Classic disenchant tables and Auctionator prices for the materials. Soulbound items are disenchanted unless the vendor pays more, and items whose materials still give skill points always are. The tooltip shows the average value and the chance of each material. Option "Suggest disenchanting" (on by default).
+- Profession: reagents of recipes you haven't learned yet (and that would still give skill points) now always stay in the Profession group, even when they are worth auctioning, e.g. Strange Dust for an enchanter. You'd only buy them back later.
+- Tooltip: gear you can wear still stays where it is, but the tooltip now tells you what it would bring once you no longer need it: disenchanting (enchanters), the auction house (tradeable items) or the vendor, best first.
+
+## 0.12.3
+
+- Profession: reagents of recipes you haven't learned yet now go to the Profession group instead of staying in Baganator's own categories. They still go to the auction house when worth it.
+
+## 0.12.2
+
+- Profession: reagents that first have to be crafted into another reagent now count too, e.g. Strange Dust that an enchanter turns into Magic Particles for a recipe that still gives skill points. They go to the Profession group instead of the auction house. Open the profession window once after updating.
+
+## 0.12.1
+
+- Profession: reagents of recipes you haven't learned yet (e.g. Greater Magic Essence for a young enchanter) are no longer junk. KeepOrSell now also remembers the unlearned, non-grey recipes when you open the profession window; such reagents may still go to the auction house if worth it.
+
+## 0.12.0
+
+- Questie: newer races such as the High Order Skyborn now get the upcoming quests of their faction. QuestieDB marks these races with a bit that can't be derived from the race ID, so before, every race-restricted quest was ignored for them and its items (e.g. Murloc Eyes for "Westfall Stew") could end up as junk.
+
+## 0.11.1
+
+- KeepOrSell is now published for WoW: Forever only, the only client it is played and tested on. Retail and the other Classic flavors are no longer listed.
+
+## 0.11.0
+
+- Optional TradeSkillMaster support for advanced users: when Auctionator has no price for an item (and no group member shared one), KeepOrSell uses TSM's lowest buyout, otherwise its market value. The tooltip marks these prices with "(TSM)". TSM prices have no age, so "Maximum price age" doesn't apply to them, and they are not shared with the group. Grey/white gear without a price still needs an auction house visit with Auctionator before it counts as junk.
+- With Questie, items that start a quest or that a quest hands you now count as quest items, whatever their item class: they stay in the Quest group (the tooltip names the quest) while the quest is open, and become junk once it is done – e.g. a second library book after turning in the first one, or a leftover quest tool. Items with no known quest still stay.
+
+## 0.10.0
+
+- Bag value in Baganator's bag window (bottom left), e.g. "Junk 1g 20s · AH 15g": your junk at the vendor and the AuctionHouse group at auction (before fees). Hover it for item counts and the three most valuable auction items. New option "Show bag value" (default on, needs Baganator).
+- Bags full while looting: when the loot is worth more than your cheapest junk (better of auction and vendor price; quest and profession items always count), the destroy button glows until the loot window closes and one chat line names both items. One click makes room, then loot as usual.
+
+## 0.9.0
+
+- Destroy button in Baganator's bag window (bottom left): each click destroys the cheapest junk item in your bags (vendor price × stack) – for small bags far from a vendor. Hover it to see which item goes next. Only items Scrap would sell (without Scrap: grey items and KeepOrSell's junk), never rare or better items. New option "Destroy button" (default on, needs Baganator).
+
+## 0.8.2
+
+- Shared prices now keep everyone up to date, not only fill gaps: KeepOrSell asks the group about every tradeable item in your bags, and members answer when their price is fresher. Fresher means fewer days old; for two prices from the same day, the later **full scan** wins. KeepOrSell notes the time of your last full auction house scan once its data has arrived (single searches don't count) and tells the group right after, so the others pick up the new prices at once.
+- Full scan times and shared prices are kept per realm and faction, since each has its own auction house. Prices shared with 0.8.0 or 0.8.1 are dropped once, they don't say which auction house they came from.
+- The group protocol changed: 0.8.1 and earlier don't exchange prices with 0.8.2, everyone in the group needs 0.8.2.
+
+## 0.8.1
+
+- Quest items (item class Quest) now name their quest in the tooltip, e.g. "Quest – quest item for \"Westfall Stew\" (level 14)", looked up with Questie at any level.
+- With Questie, a quest item whose quests you have all done is no longer kept: it goes to the auction house when worth it, otherwise it becomes junk (soulbound ones too). Without an auction price it stays.
+
+## 0.8.0
+
+- Share auction prices in your group: KeepOrSell asks your party or raid for prices you are missing or that are too old, and members of your realm with KeepOrSell and Auctionator answer with theirs. Shared prices are saved with their age, expire like your own (Maximum price age) and the tooltip names who shared them, e.g. "(price from Sven, 2 days old)". New option "Share prices in the group" (default on); switching it off also ignores prices shared earlier. Auctionator's own database is not changed.
+
+## 0.7.2
+
+- The auction house threshold is now at least 1.1× the vendor price (slider 1.1–10 in steps of 0.1). Below that, the 5% auction house cut could leave you with less than the vendor pays, and Auctionator warned when posting. Lower saved values are raised to 1.1.
+
+## 0.7.1
+
+- Profession tools (Mining Pick, Blacksmith Hammer, Skinning Knife, runed enchanting rods, Arclight Spanner and others) are never sold or sent to the auction house anymore. The tooltip says "Keep – profession tool".
+
+## 0.7.0
+
+- Questie support: items a quest you haven't done yet needs (within 5 levels of yours, open to your race and class) go to the Quest group instead of being sold. The tooltip names the quest. Needs Questie (QuestieDB); new option "Upcoming quests (Questie)".
+- Options are grouped into Auction house, Junk, Keep and Display. The panel lists Auctionator, Baganator, Scrap and Questie with their status (active, disabled, not installed). Options that need a missing addon are greyed out and say which addon they need.
+- Faster: item decisions are cached, so Baganator refreshes no longer recalculate every item (fixes stutter with the bag window open).
+- The hint button only asks Baganator for a new layout when it actually changes.
+- Author name in the TOC is now Conoar.
+- Recipes you already know and recipes for professions you don't have now go to AuctionHouse when worth it, otherwise to junk (new option "Useless recipes").
+- Fixed a Lua error (`DoesItemExist`) when hovering items in the merchant's buyback tab.
+
+## 0.6.2
+
+- Hints in Baganator's bag window (bottom left) when KeepOrSell needs something from you: Auctionator missing, no auction house visit yet, outdated prices in your bags, profession windows never opened. Hover for details, click for options. Without Baganator the hints show in chat after login. Can be switched off.
+
+## 0.6.1
+
+- Recipes for your own professions that you haven't learned yet go to the Profession group instead of the auction house. Already known recipes are classified as before.
+
+## 0.6.0
+
+- Options panel under Esc → Options → AddOns → KeepOrSell (auction house threshold, Scrap junk, Baganator groups).
+- `/kos` now only opens the options panel; the `factor`, `scrap` and `sets` subcommands are gone.
+- Tooltip line explaining where an item goes and why (can be switched off).
+- Minimum auction house profit per item, after the 5% AH cut.
+- Maximum auction price age: older Auctionator prices are ignored and the item is kept.
+- New Profession group: reagents of known recipes that still give skill points are kept and never junk.
+- Gear your class can never wear (e.g. mail or swords for a druid) goes to the auction house when tradeable and worth it, otherwise to junk. Gear you could wear is never junk.
+- Grey and white gear that no quest needs and that isn't worth auctioning is junk; without an auction price once you have visited the auction house with Auctionator. Shirts, tabards and fishing poles are kept.
+- Worn items get no tooltip line.
+- Items for other classes ("Classes: Mage") are treated like gear your class can't use.
+- The tooltip also says when an outdated auction price is the reason an item stays.
+- Soulbound items are no longer put into the AuctionHouse group.
+
+## 0.5.0
+
+- No Baganator setup needed anymore: Quest and AuctionHouse appear as groups in the equipment sets category.
+- Regular quest items are part of the Quest group.
+- Quest group renamed from "Quest Objective" to "Quest".
+
+## 0.4.1
+
+- First release on CurseForge.
+- Automated packaging via GitHub Actions.
+
+## 0.4.0
+
+- Renamed from BagQuestMarks to **KeepOrSell**, slash command `/kos`.
+- English and German texts.
+
+## 0.3.0
+
+- Cheap trade goods are marked as junk via Scrap.
+
+## 0.2.0
+
+- "AuctionHouse" group based on Auctionator prices.
+
+## 0.1.0
+
+- Quest objective items reported to Baganator.

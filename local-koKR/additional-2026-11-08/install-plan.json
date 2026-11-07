@@ -1,0 +1,57 @@
+[
+  {
+    "relative": "ForeverMap\\ForeverMap.lua",
+    "before": "9a3f05accd58e1051c21b7c15fd0e31ca8532b93e4dae5c385fd49aa63b815c8",
+    "after": "50bf7702fa8cc06da25b0045cf23bf39c99a1c2e09c47438342e049139817a8d"
+  },
+  {
+    "relative": "HanharEnhancementHUD\\Locale.lua",
+    "before": "02626501953e057221263ffe84a445f57899c6516d1a2e36195970ad39bed738",
+    "after": "48d682f198cd704e975a06bad8a91ffeae5d2b200750be7ef162ed248a6f4845"
+  },
+  {
+    "relative": "KeepOrSell\\KeepOrSell.toc",
+    "before": "50b913ba56ee27e5873a83cf2c6c8c611bcc608f8aca6f7297c853269c7e8bed",
+    "after": "7e039c1e2e95cad05e1968ce1b64d0532f7c55fb87fb3f267d1194828aa685ea"
+  },
+  {
+    "relative": "KeepOrSell\\Locales\\Locales.lua",
+    "before": "014e922139f19529aaf7d539bbb0b29b90816c8664fccb2f2ee58e287f5c86cb",
+    "after": "66710861ea9be32a202cf6e3cc7c1e0019eb7dee9923d49d9e68681bd2b17e0c"
+  },
+  {
+    "relative": "Leatrix_Plus\\Leatrix_Plus_Locale.lua",
+    "before": "83f1924bba4e3589861558f8056c0f10417bdf96aa258405c1ec87dda8570926",
+    "after": "602f7172dcbff8fea7476be0512a47705848886d4191d41f8c05ee73dd26694c"
+  },
+  {
+    "relative": "Questie\\Localization\\Translations\\ExtraObjectives\\ClassicObjectives.lua",
+    "before": "c940948a36a206c3cb7b49d7ef9a1cd4e55a8ac436c04117738652b8c91c2e2e",
+    "after": "6eaa05f83d17f5f1ebe79dac6b8897d9b85532059f8e9f7fb1f438ee2473105f"
+  },
+  {
+    "relative": "Questie\\Localization\\Translations\\ExtraObjectives\\ForeverObjectives.lua",
+    "before": "890239cf24d601baddf1d17d9f289a8cc5e7cb74381f8da258692c0bdd266f7a",
+    "after": "c09df7dac5352e077234ecdbc7bd6cdb763395e25dae4fd84cf8cd525dc05f9e"
+  },
+  {
+    "relative": "Questie\\Localization\\Translations\\Journey\\MyJourney.lua",
+    "before": "b2254ca0de4052246eda7e98f0e1589f4bbae7b6c3badc8ae0072b16219ac9f1",
+    "after": "32ebbfac9586f6a44105a0b9fc491ffef0a835aa38b48a1556786f9f75c1d052"
+  },
+  {
+    "relative": "Questie\\Localization\\Translations\\MinimapIcon\\MinimapIcon.lua",
+    "before": "e7d2328c7aff55d6579024b08459e0a4d7cceea383aa305ac20cbcb871a70da2",
+    "after": "24a60f3b825a430d62762aa16136fa95140a9bbe224f756fb0885a6a06da9e09"
+  },
+  {
+    "relative": "QuestieTrace\\Modules\\Dumps\\MapHierarchy.lua",
+    "before": "c0a6aab182a4b04536607227eab7e9ddbbdeb0a1147d4cf21ff93425c9714de1",
+    "after": "5c0bbb96967d02a4ddc49600ff85f9edfb39e6c33848ea5dae8a962286fc125b"
+  },
+  {
+    "relative": "QuestieTrace\\QuestieTrace.lua",
+    "before": "b97b9dd7fead1cf2a5b844a1ba8423197ca41f6a6751f9ef605e5491d60b16a0",
+    "after": "8deb9d6183e87f8e63f667415175931db0ffa8073b3684676ed53343478f589c"
+  }
+]

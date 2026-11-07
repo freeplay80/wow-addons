@@ -1,0 +1,8 @@
+## Interface: 16001, 120105, 120107
+## Title: ForeverMap
+## Notes: 범용 맵 메모 애드온 (한밤 / 클래식 호환)
+## Version: 1.0.49
+## SavedVariables: MyMapNotesDB_V49, MyMapNotesOptions
+## Author: 설쁘 흑마
+
+ForeverMap.lua

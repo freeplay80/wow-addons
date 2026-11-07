@@ -1,0 +1,34 @@
+## Interface: 16001
+## Title: Hanhar Enhancement HUD
+## Notes: An all-in-one HUD for Enhancement shamans that tracks totems, swings, shocks, weapon imbues and Windfury procs in one movable frame.
+## Title-koKR: Hanhar 고양 주술사 HUD
+## Notes-koKR: 토템, 평타, 충격 주문, 무기 강화, 질풍 발동을 이동 가능한 창에 표시합니다.
+## Author: Roman A. Vitanza
+## IconTexture: Interface\AddOns\HanharEnhancementHUD\icon
+## Version: 2.2.6
+## SavedVariables: HanharEnhancementHUDDB
+## X-Curse-Project-ID: 1715864
+
+Compat.lua
+Locale.lua
+Core.lua
+Spellbook.lua
+Totems.lua
+Swing.lua
+Buffs.lua
+Procs.lua
+Dots.lua
+Reinc.lua
+Persist.lua
+Options.lua
+Heh.lua
+Slot01.lua
+Slot02.lua
+Slot03.lua
+Slot04.lua
+Slot05.lua
+Slot06.lua
+Slot07.lua
+Slot08.lua
+Slot09.lua
+Slot10.lua

@@ -1,0 +1,1314 @@
+---@type string, AGFNamespace
+local addonName, ns = ...
+local REPORT_TEXT_HINT = "The text is selected. Press Ctrl+C (Cmd+C on a Mac) to copy it, "
+	.. "then paste it into your bug report."
+local ISSUE_LINK_HINT = "The link is selected. Press Ctrl+C (Cmd+C on a Mac), "
+	.. "then paste into a browser; GitHub opens a filled-in issue."
+local REPORT_PHRASES = {
+	["Adventure Guide report"] = "REPORT_TITLE",
+	[REPORT_TEXT_HINT] = "REPORT_HINT",
+	["Report a bug or request a feature"] = "ISSUE_WINDOW_TITLE",
+	[ISSUE_LINK_HINT] = "ISSUE_LINK_HINT",
+	["Bug"] = "ISSUE_BUG",
+	["Feature request"] = "ISSUE_FEATURE",
+	["Title"] = "ISSUE_TITLE_LABEL",
+	["Bug: "] = "ISSUE_BUG_PREFIX",
+	["Feature request: "] = "ISSUE_FEATURE_PREFIX",
+	["What happened, or what you would like"] = "ISSUE_DETAILS_LABEL",
+	["Copy issue link"] = "ISSUE_COPY_LINK",
+	["Copy report"] = "ISSUE_COPY_REPORT",
+}
+for phrase, key in pairs(REPORT_PHRASES) do
+	ns.L[phrase] = ns.L[key]
+end
+
+local L = ns.L
+ns.ReportTitle = L["Adventure Guide report"]
+ns.TITLE = L.TITLE
+
+-- Account-wide settings (Settings.lua), one key per row on the AddOns page. A missing key
+-- always reads as its default here, so an old save file and a new option agree (WFA-14).
+---@type table<string, boolean|number|string>
+local DEFAULTS = {
+	showTracker = true,
+	restedxpGuide = true,
+	restedxpChoiceMade = false,
+	stepSound = true,
+	trainingReminders = false,
+	maxQuestLevelOffset = 2,
+	-- Opt-in: with the Adventure tab closed the map shows no Adventure Guide mark unless the player asks for them.
+	showMapPins = false,
+	showQuestGivers = false,
+	includeDungeonsDefault = false,
+	-- Choosing a journey starts its route too; the key keeps the name it had when only the tracker title did, so a
+	-- saved choice carries over.
+	titleStartsRoute = true,
+	-- Start the route the guide is offering without a click, so the map line is drawn on login and after a reload.
+	autoStart = true,
+	-- Finishing a zone journey moves to the next zone card, and starts its route when the finished one was guided (#400).
+	autoNextZone = true,
+	-- Highlight the NPC a talk step names, with nameplate arrows and a target button (#401).
+	npcHighlight = true,
+	-- Opt-in: the route never takes over the player's tracked quests unasked. A saved true stays true.
+	trackRouteQuests = false,
+	-- Opt-in: it throws away the player's own choice of tracked quests.
+	untrackOthers = false,
+	-- While a RestedXP guide leads, the tracker lists only the quests its steps name; the player's own list comes back
+	-- when it stops (RestedXPWatch.lua).
+	guideTracksQuests = true,
+	-- Hint strength, Guide (false) or Wanderer (true), which gates every waypoint, route and map mark.
+	wanderer = false,
+	-- Walking into the quest area the route leads to selects its quest, so the map draws its blue area (Focus.lua).
+	followQuest = true,
+	-- One chat line after an update (WhatsNew).
+	whatsNew = true,
+	-- Share small cumulative activity rows over guild/group addon channels; opt-out, so only an explicit off stops it.
+	statsShare = true,
+	-- Beta: the planned route order (chapter lead, town look-ahead, committed order); false is the simple
+	-- nearest-action order, the default (docs/design.md §4.1).
+	optimisedRoute = false,
+	-- While Polestar runs a guide, the route steps aside for it (Polestar.lua); off does nothing without Polestar.
+	polestarAside = true,
+	-- In a party, steps for quests the party shares count as nearer, and the quest IDs go to the party (Party.lua).
+	partyQuests = true,
+	-- The Adventure Guide button on the minimap rim is there unless the player hides it (Core/MinimapButton.lua).
+	minimapButtonHidden = false,
+	-- Before a giver's window offers a quest that closes another for good, say which in chat (Closes.lua).
+	warnClosing = true,
+	-- The green arrow on a quest reward choice that beats what you wear in its slot (Upgrades.lua).
+	markUpgrades = true,
+	-- Questie's own tracker is off while this one shows, so quests are not listed twice (QuestieOptions.lua).
+	hideQuestieTracker = true,
+	-- A record, not a setting: the player hid the note that the game's quest areas are off (Tracker.lua).
+	questAreasNoteHidden = false,
+}
+ns.DEFAULTS = DEFAULTS
+
+-- Per-character prefs (AGFPrefs). `dungeons` seeds from the account-wide default the first
+-- time this character is seen; every other key is a plain default merged in on load.
+local PREFS_DEFAULTS = {
+	plannedDungeons = {},
+	completedStories = {},
+	-- Local engagement records. These stay per-character and are never transmitted by this addon.
+	activity = { questTurnIns = 0, quests = {} },
+	quests = true,
+	dungeons = false,
+	-- Opt-in: the Battlegrounds card.
+	battlegrounds = false,
+	notInterested = {},
+	-- The overview's quest log headers this character collapsed, by group key (Overview.GROUPS); an absent key
+	-- uses the group's own default.
+	previewGroups = {},
+	-- Quests added to the route with a shift-click: quest ID -> true.
+	pinned = {},
+	-- Route pickups their giver's window left out (Offers.lua): quest ID -> the level the player was then.
+	notOffered = {},
+	-- RestedXP guide steps skipped while RestedXP had not reached them, by guide key: step index -> true (RestedXP.lua).
+	guideSkips = {},
+}
+
+---@type table<string, any>?
+local db
+---@type AGFPrefs?
+local charDB
+-- Skipped steps never survive a reload: a step hidden this session is worth seeing again
+-- next time the route is rebuilt from scratch.
+---@type table<string, boolean>
+local sessionSkipped = {}
+-- The spots "Next spot" passed over this session, by area step key (Model.Camp). The table rides on the prefs like
+-- `skipped` and is replaced at every load, so a reload starts at the nearest again.
+---@type table<string, table<string, true>>
+local sessionCamps = {}
+-- The same steps in the order they were skipped, with the titles the menu offers them back by.
+---@type AGFSkipped[]
+local skippedOrder = {}
+
+-- A creature's entry from its GUID, "Creature-0-server-instance-zone-entry-spawn" ("Vehicle-..." for one that carries
+-- a rider); nil for players, pets, objects and a secret or missing GUID (docs/design.md §2.23).
+---@param guid? string
+---@return integer?
+function ns.CreatureEntry(guid)
+	guid = ns.Readable(guid)
+	if type(guid) ~= "string" then
+		return nil
+	end
+	local kind, entry = guid:match("^(%a+)%-%d+%-%d+%-%d+%-%d+%-(%d+)%-%x+$")
+	return (kind == "Creature" or kind == "Vehicle") and tonumber(entry) or nil
+end
+
+---@param msg string
+function ns.Print(msg)
+	DEFAULT_CHAT_FRAME:AddMessage("|cff33ff99" .. ns.TITLE .. "|r " .. msg)
+end
+
+local function QuestLevelOffset(value)
+	return type(value) == "number" and value == value and math.max(-4, math.min(10, math.floor(value))) or 2
+end
+
+local function LoadDB()
+	local loaded = type(AdventureGuideForeverDB) == "table" and AdventureGuideForeverDB or {}
+	-- The micro menu button became the minimap button (#416): a player who turned the old button off keeps the
+	-- new one off, and the old placement choice has no meaning on the rim. Removed keys stay removed after the
+	-- first login, so showing the new button later is not undone by the old setting.
+	if loaded.microButton == false and loaded.minimapButtonHidden == nil then
+		loaded.minimapButtonHidden = true
+	end
+	loaded.microButton, loaded.microButtonPlacement, loaded.replaceMicroButton = nil, nil, nil
+	for key, value in pairs(DEFAULTS) do
+		if type(loaded[key]) ~= type(value) then
+			loaded[key] = value
+		end
+	end
+	loaded.window, loaded.floatWindow = nil, nil
+	-- "Suggest companion addons" became the Forever addons page's "Suggest my other Forever addons"
+	-- (UI/ForeverFamily.lua, `suggestFamily`, on unless false): a player who had turned it off keeps it off.
+	if loaded.suggestCompanions == false and loaded.suggestFamily == nil then
+		loaded.suggestFamily = false
+	end
+	loaded.suggestCompanions = nil
+	loaded.maxQuestLevelOffset = QuestLevelOffset(loaded.maxQuestLevelOffset)
+	AdventureGuideForeverDB = loaded
+	db = loaded
+end
+
+-- The account-wide saved variables the Forever addons page and its hints read and write (UI/ForeverFamily.lua);
+-- nil before they load.
+---@return ForeverFamilyDB?
+function ns.FamilyDB()
+	return db
+end
+
+---@return table
+function ns.TrackerHostSettings()
+	local account = assert(db)
+	if type(account.trackerHost) ~= "table" then
+		account.trackerHost = { attached = true, locked = false }
+	elseif account.trackerHost.attached == nil then
+		account.trackerHost.attached = true
+	end
+	-- Lock defaults off, and a trackerHost saved before it existed simply gains the key.
+	if type(account.trackerHost.locked) ~= "boolean" then
+		account.trackerHost.locked = false
+	end
+	return account.trackerHost
+end
+
+local function LoadCharDB()
+	local loaded = type(AdventureGuideForeverCharDB) == "table" and AdventureGuideForeverCharDB or {}
+	loaded["recommendationFocus"] = nil
+	local migratePlan = type(loaded.plannedDungeons) ~= "table"
+	-- First time this character is seen: honour the account-wide default instead of PREFS_DEFAULTS.dungeons.
+	if loaded.dungeons == nil then
+		loaded.dungeons = db and db.includeDungeonsDefault or false
+	end
+	for key, value in pairs(PREFS_DEFAULTS) do
+		if key ~= "dungeons" and type(loaded[key]) ~= type(value) then
+			loaded[key] = type(value) == "table" and {} or value
+		end
+	end
+	for key, record in pairs(loaded.completedStories) do
+		if
+			type(key) ~= "string"
+			or type(record) ~= "table"
+			or type(record.title) ~= "string"
+			or type(record.quest) ~= "number"
+		then
+			loaded.completedStories[key] = nil
+		end
+	end
+	if type(loaded.activity.questTurnIns) ~= "number" or loaded.activity.questTurnIns < 0 then
+		loaded.activity.questTurnIns = 0
+	end
+	if type(loaded.activity.quests) ~= "table" then
+		loaded.activity.quests = {}
+	end
+	if loaded.activity.lastEventUnix ~= nil and type(loaded.activity.lastEventUnix) ~= "number" then
+		loaded.activity.lastEventUnix = nil
+	end
+	for id, record in pairs(loaded.activity.quests) do
+		if type(id) ~= "number" then
+			loaded.activity.quests[id] = nil
+		elseif type(record) == "number" and record >= 1 then
+			loaded.activity.quests[id] = { count = math.floor(record) }
+		elseif type(record) ~= "table" or type(record.count) ~= "number" or record.count < 1 then
+			loaded.activity.quests[id] = nil
+		else
+			record.count = math.floor(record.count)
+			if record.eventUnix ~= nil and type(record.eventUnix) ~= "number" then
+				record.eventUnix = nil
+			end
+		end
+	end
+	-- Journeys marked "Not interested": key -> the title Show again names it by, and whether it ended the choice of it.
+	-- A bare title is the older shape, from before `chosen` was kept: a journey that was not chosen.
+	for key, entry in pairs(loaded.notInterested) do
+		entry = type(entry) == "string" and { title = entry } or entry
+		if type(key) ~= "string" or type(entry) ~= "table" or type(entry.title) ~= "string" then
+			loaded.notInterested[key] = nil
+		else
+			loaded.notInterested[key] = { title = entry.title, chosen = entry.chosen == true or nil }
+		end
+	end
+	for id, value in pairs(loaded.pinned) do
+		if type(id) ~= "number" or value ~= true then
+			loaded.pinned[id] = nil
+		end
+	end
+	for id, level in pairs(loaded.notOffered) do
+		if type(id) ~= "number" or type(level) ~= "number" then
+			loaded.notOffered[id] = nil
+		end
+	end
+	-- RestedXP steps skipped ahead of RestedXP's own progress: guide key -> the step indexes left out.
+	for key, indices in pairs(loaded.guideSkips) do
+		if type(key) ~= "string" or type(indices) ~= "table" then
+			loaded.guideSkips[key] = nil
+		else
+			for index, value in pairs(indices) do
+				if type(index) ~= "number" or value ~= true then
+					indices[index] = nil
+				end
+			end
+			if not next(indices) then
+				loaded.guideSkips[key] = nil
+			end
+		end
+	end
+	-- Asides turned down: key -> the text Show again names it by. Asides.lua makes the table; anything else in it would
+	-- reach the Skipped menu's sort as a title.
+	for key, text in pairs(type(loaded.asides) == "table" and loaded.asides or {}) do
+		if type(key) ~= "string" or type(text) ~= "string" then
+			loaded.asides[key] = nil
+		end
+	end
+	-- The zone picked in the old "Where next?" cards: nothing offers that choice any more, so none is kept.
+	loaded.zone = nil
+	if loaded.journey ~= nil and type(loaded.journey) ~= "string" then
+		loaded.journey = nil
+	end
+	-- One key names a zone's journey, whether it shows as the zone's story or as heading there (docs/design.md §2.10).
+	if loaded.journey then
+		loaded.journey = loaded.journey:gsub("^story:", "zone:"):gsub("^nextzone:", "zone:")
+		if migratePlan then
+			local instance = tonumber(loaded.journey:match("^dungeon:(%d+)$"))
+			if instance then
+				loaded.plannedDungeons[instance] = true
+			end
+		end
+	end
+	local last = loaded.last
+	if last ~= nil and not (type(last) == "table" and type(last.key) == "string" and type(last.reason) == "string") then
+		loaded.last = nil
+	end
+	if loaded.guided ~= nil and type(loaded.guided) ~= "string" then
+		loaded.guided = nil
+	end
+	if loaded.focus ~= nil and type(loaded.focus) ~= "number" then
+		loaded.focus = nil
+	end
+	if loaded.lead ~= nil and type(loaded.lead) ~= "number" then
+		loaded.lead = nil
+	end
+	if loaded.left ~= nil and type(loaded.left) ~= "number" then
+		loaded.left = nil
+	end
+	local waypoint = loaded.waypoint
+	if
+		waypoint ~= nil
+		and not (
+			type(waypoint) == "table"
+			and type(waypoint.map) == "number"
+			and type(waypoint.x) == "number"
+			and type(waypoint.y) == "number"
+		)
+	then
+		loaded.waypoint = nil
+	end
+	if type(loaded.customOrders) ~= "table" then
+		loaded.customOrders = nil
+	end
+	for key, order in pairs(loaded.customOrders or {}) do
+		if type(key) ~= "string" or type(order) ~= "table" then
+			loaded.customOrders[key] = nil
+		else
+			local keys, seen = {}, {}
+			for _, value in ipairs(order) do
+				if type(value) == "string" and not seen[value] then
+					keys[#keys + 1], seen[value] = value, true
+				end
+			end
+			loaded.customOrders[key] = keys
+		end
+	end
+	loaded.sessionMinutes, loaded.sessionCommit = nil, nil
+	-- The defaults loop above guarantees every AGFPrefs field except `skipped`, which ns.Prefs()
+	-- always sets before returning; nothing else reads charDB directly.
+	---@cast loaded AGFPrefs
+	AdventureGuideForeverCharDB = loaded
+	charDB = loaded
+end
+
+---@param key string
+---@return any
+function ns.Setting(key)
+	local value = db and db[key]
+	if value == nil then
+		return DEFAULTS[key]
+	end
+	return value
+end
+
+---@param key string
+---@param value any
+function ns.SetSetting(key, value)
+	if not db then
+		return
+	end
+	db[key] = key == "maxQuestLevelOffset" and QuestLevelOffset(value) or value
+	if key == "restedxpGuide" then
+		db.restedxpChoiceMade = true
+		ns.GuideSetup.Hide()
+		ns.RestedXP.Refresh()
+	end
+	if key == "guideTracksQuests" then
+		ns.GuideWatch.Sync()
+	end
+	if key == "polestarAside" then
+		ns.Polestar.Check()
+	end
+	if key == "hideQuestieTracker" or key == "showTracker" then
+		ns.QuestieOptions.ApplyTracker()
+	end
+	-- Turning the tracker off hides AGF's action rows out of combat (and gives RestedXP's own windows back).
+	if key == "showTracker" and ns.RXPActions then
+		ns.RXPActions.Refresh()
+	end
+	if key == "partyQuests" then
+		ns.Party.Apply()
+	end
+	if key == "markUpgrades" then
+		ns.Upgrades.Update()
+	end
+	if key == "statsShare" and ns.Stats then
+		ns.Stats.SetEnabled(value == true)
+	end
+	if key == "minimapButtonHidden" and ns.MinimapButton then
+		ns.MinimapButton.Refresh()
+	end
+	-- Wandering from now: what Go started stops, as the player's Stop would.
+	if key == "wanderer" and value then
+		ns.Guidance.Cancel()
+	end
+	-- Rebuilds the route (cheap) and wakes listeners (Panel/Pins/Tracker) to redraw with the new setting.
+	ns.Invalidate()
+end
+
+---@return AGFPrefs
+function ns.Prefs()
+	if not charDB then
+		local prefs = {}
+		for key, value in pairs(PREFS_DEFAULTS) do
+			prefs[key] = type(value) == "table" and {} or value
+		end
+		charDB = prefs --[[@as AGFPrefs]]
+	end
+	charDB.skipped = sessionSkipped
+	charDB.camps = sessionCamps
+	-- The account-wide route-order setting, folded into the prefs the planner reads (Model.Laps, Model.Build).
+	charDB.optimisedRoute = ns.Setting("optimisedRoute") == true
+	return charDB
+end
+
+-- "Next spot" on an area step (docs/design.md §2.8): the spot its arrow points at, or the one the player is at inside
+-- the area (Model.CampAt), is passed over for this session, so the arrow moves to the nearest spot not passed over
+-- (Model.Camp). Passing over the last one starts the round again from it, so some spot is always left to lead to.
+---@param step AGFStep
+function ns.NextCamp(step)
+	local Model = ns.Model
+	local map, x, y = ns.State.Where()
+	local key = Model.SpotKey(Model.CampAt(ns.Data, map and { map = map, x = x, y = y } or nil, step))
+	local passed = sessionCamps[step.key] or {}
+	passed[key] = true
+	local all = true
+	for _, spot in ipairs(Model.Spots(step)) do
+		all = all and passed[Model.SpotKey(spot)] == true
+	end
+	sessionCamps[step.key] = all and { [key] = true } or passed
+	ns.Invalidate()
+end
+
+---@param key string
+---@param title string
+function ns.Skip(key, title)
+	if key:sub(1, 6) == "guide:" then
+		if ns.RestedXP then
+			ns.RestedXP.SkipKey(key)
+		end
+		return
+	end
+	if not sessionSkipped[key] then
+		sessionSkipped[key] = true
+		skippedOrder[#skippedOrder + 1] = { key = key, title = title }
+	end
+	ns.Invalidate()
+end
+
+-- "Not interested": the journey `key` is left out on this character until Show again, and a choice of it
+-- ends, as a click on its card would; Show again chooses it again, after a /reload too.
+---@param key string
+---@param title string
+function ns.NotInterested(key, title)
+	local prefs = ns.Prefs()
+	prefs.notInterested[key] = { title = title, chosen = prefs.journey == key or nil }
+	if prefs.journey == key then
+		ns.Choose(nil)
+	else
+		ns.Invalidate()
+	end
+end
+
+-- "Not this quest" (docs/design.md §2.18): quest `id` leaves every route on this character, and stays in the log; the
+-- Skipped menu's Show again brings it back.
+---@param id integer
+---@param title string
+function ns.NotThisQuest(id, title)
+	ns.Prefs().pinned[id] = nil
+	ns.NotInterested("quest:" .. id, title)
+end
+
+-- Whether every quest in `ids` is on the route by the player's shift-click.
+---@param ids integer[]
+---@return boolean
+function ns.Pinned(ids)
+	local pinned = ns.Prefs().pinned
+	for _, id in ipairs(ids) do
+		if not pinned[id] then
+			return false
+		end
+	end
+	return #ids > 0
+end
+
+-- A shift-click (docs/design.md §2.18): the quests `ids` join the route once open, even grey but never orange or red,
+-- or leave it when they all had joined. Ruled-out quests come back too.
+---@param ids integer[]
+function ns.TogglePinned(ids)
+	local prefs, pin = ns.Prefs(), not ns.Pinned(ids)
+	for _, id in ipairs(ids) do
+		prefs.pinned[id] = pin or nil
+		if pin then
+			prefs.notInterested["quest:" .. id] = nil
+		end
+	end
+	ns.Invalidate()
+end
+
+---@param key string
+function ns.Unskip(key)
+	local aside = key:match("^aside:(.+)$")
+	if aside then
+		ns.Asides.Restore(aside)
+		return
+	end
+	local dismissed = ns.Prefs().notInterested[key]
+	local chosen = dismissed ~= nil and dismissed.chosen
+	ns.Prefs().notInterested[key] = nil
+	sessionSkipped[key] = nil
+	for index, skipped in ipairs(skippedOrder) do
+		if skipped.key == key then
+			table.remove(skippedOrder, index)
+			break
+		end
+	end
+	if chosen then
+		ns.Choose(key, ns.Setting("titleStartsRoute"))
+		return
+	end
+	ns.Invalidate()
+end
+
+-- This session's skipped steps in the order they were skipped, then the journeys this character is not interested in,
+-- by title, then the asides it turned down (keyed "aside:<key>", named by their text).
+---@return AGFSkipped[]
+function ns.Skipped()
+	local all, journeys = {}, {}
+	for index, skipped in ipairs(skippedOrder) do
+		all[index] = skipped
+	end
+	for key, dismissed in pairs(ns.Prefs().notInterested) do
+		journeys[#journeys + 1] = { key = key, title = dismissed.title }
+	end
+	table.sort(journeys, function(a, b)
+		if a.title ~= b.title then
+			return a.title < b.title
+		end
+		return a.key < b.key
+	end)
+	for _, journey in ipairs(journeys) do
+		all[#all + 1] = journey
+	end
+	for _, aside in ipairs(ns.Asides.Declined()) do
+		all[#all + 1] = { key = "aside:" .. aside.key, title = aside.text }
+	end
+	return all
+end
+
+-- The step's quests in the log: a town's hand-ins, or every quest of a turn-in or an area (a group quest's is a
+-- "dungeon" step); a town's pickups never are.
+---@param step AGFStep
+---@return integer[]
+local function LogQuests(step)
+	local quests = (step.kind == "town" and step.handins)
+		or ((step.kind == "turnin" or step.kind == "area" or step.kind == "dungeon") and step.quests)
+		or {}
+	if not step.planned then
+		return quests
+	end
+	-- A quest the route picks up first wasn't in the log when it was planned.
+	local carried = {}
+	for _, id in ipairs(quests) do
+		carried[#carried + 1] = not step.planned[id] and id or nil
+	end
+	return carried
+end
+
+---@param step AGFStep
+---@return boolean
+function ns.InLog(step)
+	return #LogQuests(step) > 0
+end
+
+-- Opens the world map, or turns a shown one, to `mapID`. Blizzard's own opener (Blizzard_WorldMap.lua's
+-- OpenWorldMap) is plain Lua, so addon code may call it, unlike the restricted C_Map.OpenWorldMap, which raises
+-- ADDON_ACTION_BLOCKED from the carry card's cleanup menu (#411). A shown map turns without touching the map's
+-- layout; a closed one still opens through C_Map.OpenWorldMap, which has Blizzard open it without tainting the
+-- gamepad UI's provider tables. Never in combat, like the map's own code; false when nothing opened.
+---@param mapID? integer
+---@return boolean
+function ns.OpenMap(mapID)
+	if InCombatLockdown() then
+		return false
+	end
+	local map = mapID ~= nil and mapID ~= 0 and mapID or nil
+	if WorldMapFrame and WorldMapFrame:IsShown() then
+		OpenWorldMap(map) -- taint-ok: Blizzard's opener on the map it shows; C_Map.OpenWorldMap is restricted (#411)
+	else
+		C_Map.OpenWorldMap(map)
+	end
+	return true
+end
+
+-- A quest in the log opens the world map on the quest's zone and becomes the selected quest (docs/design.md §2.5);
+-- anything else is left to the caller. Never in combat. True when the map opened. Blizzard's details pane is the
+-- player's to open: QuestMapFrame_ShowQuestDetails run from addon code writes the pane's questID, which the map's
+-- quest pins read, and they then fail in combat.
+---@param step AGFStep
+---@return boolean
+function ns.ShowQuest(step)
+	if not ns.InLog(step) or InCombatLockdown() then
+		return false
+	end
+	local questID = LogQuests(step)[1]
+	C_QuestLog.SetSelectedQuest(questID)
+	ns.OpenMap(GetQuestUiMapID(questID))
+	return true
+end
+
+-- The route's quests in the log join the objective tracker; the client refuses any past its watch limit, and sorts
+-- the watches itself (by distance, on each zone change), so no order is kept. With untrackOthers, every other
+-- tracked quest leaves first, which also makes room.
+function ns.TrackRouteQuests()
+	-- A RestedXP guide that leads already tracks its own quests (RestedXPWatch.lua).
+	if ns.Prefs().guideWatch then
+		return
+	end
+	local onRoute, order = {}, {}
+	for _, step in ipairs(ns.Route().steps) do
+		for _, questID in ipairs(LogQuests(step)) do
+			if not onRoute[questID] then
+				onRoute[questID] = true
+				order[#order + 1] = questID
+			end
+		end
+	end
+	if ns.Setting("untrackOthers") then
+		for index = C_QuestLog.GetNumQuestWatches(), 1, -1 do
+			local questID = C_QuestLog.GetQuestIDForQuestWatchIndex(index)
+			if questID and not onRoute[questID] then
+				C_QuestLog.RemoveQuestWatch(questID)
+			end
+		end
+	end
+	for _, questID in ipairs(order) do
+		C_QuestLog.AddQuestWatch(questID)
+	end
+end
+
+--[[ Route: rebuilt lazily, with invalidations from events/prefs coalesced onto one
+     C_Timer.After(0) so a burst of QUEST_LOG_UPDATE events costs one rebuild. ]]
+
+---@type AGFRoute
+local cachedRoute = { journeys = {}, chosen = false, steps = {} }
+local rawRoute = cachedRoute
+-- The player, completed quests and log the cached route was planned from (ns.Snapshot); nil while no build stands
+-- behind the route (completion data not loaded, QuestieDB's catalogue still building).
+---@type AGFSnapshot?
+local snapshot
+local dirty = true
+-- What the next build owes: a full plan (anything but counts changed since the last full one), or only the counts.
+local fullDue = true
+local pendingRebuild = false
+-- The rebuild coroutine (see StepRebuild): nil when no build is in flight. `invalidations` counts ns.Invalidate
+-- calls, so a build that finishes over state that changed while it ran can tell, and rebuild again.
+local rebuildCo
+local invalidations = 0
+local flightStart = 0
+---@type fun()[]
+local routeListeners = {}
+
+-- Combat ends: the full build the fight put off. Registered only while one is owed, so no event runs otherwise.
+local afterCombat = CreateFrame("Frame")
+afterCombat:SetScript("OnEvent", function(self)
+	self:UnregisterEvent("PLAYER_REGEN_ENABLED")
+	ns.Invalidate()
+end)
+
+-- The spells to train the last full build took, asked of Tweaks Forever only while a journey is chosen,
+-- the only route that stops to train; combat's cheap rebuild keeps them, as Tweaks Forever has no answer in a fight.
+---@type AGFTraining?
+local training
+local trainingEndedBySpell = false
+-- In combat only the cheap rebuild runs (the log's steps; the rest as the last full build left them), and the full
+-- one waits for PLAYER_REGEN_ENABLED: looting a quest item mid-fight must not cost a frame.
+local function BuildRoute()
+	-- Overlay the client's native map/zone/instance/skill/faction answers onto whichever ns.Data QuestieSource has
+	-- swapped in, before the planner reads it. EnsureNative is memoized per data table, so the repeated rebuilds are
+	-- free, and it only fills fields the client can answer. Guarded so the planner-only spec environment (Core.lua
+	-- loaded without Geometry.lua) still builds.
+	if ns.Geometry and ns.Geometry.EnsureNative then
+		ns.Geometry.EnsureNative()
+	end
+	local state, prefs, player, combat = ns.State, ns.Prefs(), ns.State.Player(), InCombatLockdown()
+	local log, trained = state.Log(), false
+	-- Only the quest log's counts moved since the last build (its shape is the snapshot's): repaint the last route's
+	-- counts (Model.Repaint), every order, hold and choice kept, with no plan owed after it. docs/design.md §4.4.
+	local shape = ns.Model.LogShape(log)
+	local repaint = not combat and not fullDue and snapshot ~= nil and snapshot.shape == shape
+	fullDue = false
+	if combat then
+		afterCombat:RegisterEvent("PLAYER_REGEN_ENABLED")
+	elseif not repaint then
+		local previous, known = training, false
+		if prefs.journey and ns.Setting("trainingReminders") then
+			training, known = ns.Integrations.Training()
+		else
+			training = nil
+		end
+		trained = trainingEndedBySpell and previous ~= nil and known and training == nil
+		trainingEndedBySpell = false
+	end
+	player.train = training
+	---@type AGFSnapshot
+	local world = { player = player, completed = state.Completed(), log = log, shape = shape }
+	local dungeonEntrances, queried = {}, {}
+	if not (combat or repaint) then
+		for id, entry in pairs(log) do
+			local quest = ns.Data.quests[id]
+			local instance = quest and not quest.raid and quest.dungeon
+			if instance and not entry.complete and not queried[instance] then
+				queried[instance] = true
+				dungeonEntrances[instance] = ns.Dungeons.Entrance(instance)
+			end
+		end
+	end
+	local shown, full = ns.Shown.Build({
+		data = ns.Data,
+		dungeonEntrances = dungeonEntrances,
+		player = player,
+		completed = world.completed,
+		log = log,
+		prefs = prefs,
+		mapName = state.MapName,
+		instanceName = state.InstanceName,
+		last = rawRoute,
+		combat = combat,
+		repaint = repaint,
+		-- The step sound hears the ordered route.
+		observe = function(ordered)
+			ns.Sound.Observe(cachedRoute, ordered, world, trained)
+		end,
+	})
+	return shown, full, world
+end
+
+-- The "you're here" head (docs/design.md §4.2): the route is rebuilt on events, never as the player moves, save that
+-- walking into an open area the route goes to makes it the head and holds guidance there, and walking out of it
+-- (past Model.Here's margin) lets guidance go on. Checked every HERE_EVERY seconds only while they move
+-- (PLAYER_STARTED_MOVING to PLAYER_STOPPED_MOVING), so nothing runs while they stand still, and once per area entered
+-- or left.
+local HERE_EVERY = 2
+---@type {Cancel: fun(self)}?
+local walking
+---@type string?
+local hereKey
+local function Walked()
+	if InCombatLockdown() then
+		return
+	end
+	local map, x, y = ns.State.Where()
+	local steps = cachedRoute.steps
+	local first = steps[1]
+	local here = { map = map, x = x, y = y }
+	if first and first.checklist and map and x and y then
+		-- The arrow moves to another giver only past Model.TownArrow's margin, as the rebuild would place it.
+		local target = ns.Model.TownArrow(ns.Data, here, first.checklist, first)
+		if target and (target.map ~= first.map or target.x ~= first.x or target.y ~= first.y) then
+			ns.Invalidate()
+		end
+	end
+	-- A spot "Next spot" passed over is not standing in its area (Model.Here), so walking between the spots of one
+	-- area rebuilds when that changes, as walking into or out of an area does.
+	local index = ns.Model.Here(ns.Data, here, steps, cachedRoute.here, sessionCamps)
+	local key = index and steps[index].key or nil
+	if key ~= hereKey and key ~= cachedRoute.here then
+		ns.Invalidate()
+	end
+	hereKey = key
+end
+local moving = CreateFrame("Frame")
+moving:SetScript("OnEvent", function(_, event)
+	if event == "PLAYER_STARTED_MOVING" then
+		walking = walking or C_Timer.NewTicker(HERE_EVERY, Walked)
+	elseif walking then
+		walking:Cancel()
+		walking = nil
+		Walked()
+	end
+end)
+-- By feature detection, as State's optional events: without them the head moves on the next event's rebuild.
+for _, event in ipairs({ "PLAYER_STARTED_MOVING", "PLAYER_STOPPED_MOVING" }) do
+	pcall(moving.RegisterEvent, moving, event)
+end
+
+-- A spell learned (or a new level's) changes what the trainer stop says, or ends it: rebuild when the answer moved.
+local spellbook = CreateFrame("Frame")
+---@param event string
+local function TrainingMoved(event)
+	if not ns.Setting("trainingReminders") or not ns.Prefs().journey or InCombatLockdown() then
+		return
+	end
+	local now = ns.Integrations.Training()
+	trainingEndedBySpell = event == "SPELLS_CHANGED" and training ~= nil and now == nil
+	if (now and now.count) ~= (training and training.count) or (now and now.level) ~= (training and training.level) then
+		ns.Invalidate()
+	end
+end
+-- PLAYER_MONEY fires for every coin looted or spent: a burst asks Tweaks Forever once, a moment after it starts,
+-- since money only moves the answer when it crosses a fee.
+local MONEY_SETTLE = 1
+local moneyPending = false
+spellbook:SetScript("OnEvent", function(_, event)
+	if event ~= "PLAYER_MONEY" then
+		TrainingMoved(event)
+	elseif not moneyPending then
+		moneyPending = true
+		C_Timer.After(MONEY_SETTLE, function()
+			moneyPending = false
+			TrainingMoved("PLAYER_MONEY")
+		end)
+	end
+end)
+
+-- The resume line (docs/design.md §2.5). A login sets the latch; the first rebuild with a step 1 compares it once with
+-- the step saved last session, and the line lasts until step 1 changes. A /reload never sets the latch.
+local resumeLatch = false
+---@type {key: string, reason: string}?
+local resume
+
+---@param first? AGFStep
+local function Remember(first)
+	if not first then
+		resume = nil
+		return
+	end
+	local prefs = ns.Prefs()
+	local last = prefs.last
+	if resumeLatch then
+		resumeLatch = false
+		resume = last and last.key == first.key and { key = last.key, reason = last.reason } or nil
+	elseif resume and resume.key ~= first.key then
+		resume = nil
+	end
+	prefs.last = { key = first.key, reason = first.reason }
+end
+
+-- The reason the last session left `step` with, while the resume line stands for it.
+---@param step AGFStep
+---@return string?
+function ns.Resume(step)
+	return resume and resume.key == step.key and resume.reason or nil
+end
+
+-- Commits a finished build (Shown.Build's two routes and the snapshot they were planned from): the plan is atomic,
+-- so its order and sound, then Guidance.Ended and the callers, all run on the frame the last slice of the
+-- rebuild finished, never on a partial route.
+---@param shown AGFRoute
+---@param full AGFRoute
+---@param world AGFSnapshot
+local function CommitRoute(shown, full, world)
+	local guide = ns.RestedXP and ns.RestedXP.Journey()
+	if guide and not ns.Prefs().notInterested[guide.key] then
+		-- A chosen RestedXP guide follows the one RestedXP has loaded: its next chapter, another guide picked in it, or
+		-- the guide it loads after a login that saved an older one (#368).
+		local prefs = ns.Prefs()
+		local was = prefs.journey
+		if was and was ~= guide.key and was:find("^guide:") ~= nil then
+			prefs.journey = guide.key
+			if prefs.guided == was then
+				prefs.guided = guide.key
+			end
+		end
+		for _, route in ipairs(shown == full and { shown } or { shown, full }) do
+			for index = #route.journeys, 1, -1 do
+				if route.journeys[index].kind == "guide" then
+					table.remove(route.journeys, index)
+				end
+			end
+
+			-- An unchosen RestedXP guide is only a card: a player who has not picked a journey keeps the planner's
+			-- default, Quests in your log, rather than being handed over to a guide they did not choose.
+			if ns.Prefs().journey == guide.key then
+				route.journey, route.steps = guide.key, guide.steps
+				route.chosen = true
+				-- The planner never saw these steps, so "you're here" is judged on them as it is on a planned card
+				-- (Shown.lua's Reorder): Focus selects the quest of the area the player stands in, and the stop and
+				-- its line step aside (#352).
+				local here = ns.Model.Here(ns.Data, world.player, guide.steps, cachedRoute.here, ns.Prefs().camps)
+				for index, step in ipairs(guide.steps) do
+					step.here = index == 1 and here == 1 or nil
+				end
+				route.here = here == 1 and guide.steps[1].key or nil
+			end
+		end
+	end
+	local guideCards = ns.RestedXP.Cards(guide)
+	for _, route in ipairs(shown == full and { shown } or { shown, full }) do
+		-- Guides stay selectable, after Quests in your log (or the story without one): the default card leads until the
+		-- player picks a guide, and the cards after it keep their own order.
+		local at
+		for index, journey in ipairs(route.journeys) do
+			at = at or (journey.kind == "carry" and index or nil)
+		end
+		at = at or (#route.journeys > 0 and 1 or 0)
+		for _, card in ipairs(guideCards) do
+			if not ns.Prefs().notInterested[card.key] then
+				table.insert(route.journeys, at + 1, card)
+				at = at + 1
+			end
+		end
+	end
+	-- A rebuild that changes the area the player is "here" in (Next spot passing over the camp they stand at, say)
+	-- restarts the walking check from it, so walking on into the next camp rebuilds again (Walked).
+	-- (Not from a combat refresh, which keeps no `here`.)
+	if shown.here ~= cachedRoute.here and not InCombatLockdown() then
+		hereKey = shown.here
+	end
+	cachedRoute, rawRoute, snapshot = shown, full, world
+	local timing = ns.QuestieStatus.timing
+	timing.route = timing.route or debugprofilestop()
+	-- The zone the story led with, and the zone it left, outlive the session, so a /reload does not shuffle it
+	-- (Plan.lua reads them back).
+	local prefs = ns.Prefs()
+	prefs.lead, prefs.left = full.lead, full.left
+	dirty = false
+	if not InCombatLockdown() then
+		ns.Guidance.Ended(rawRoute)
+	end
+	-- A skipped step the full build no longer finds (turned in, abandoned) leaves Skipped (n): Show again would
+	-- bring nothing back.
+	local seen = cachedRoute.skipped
+	if seen then
+		for index = #skippedOrder, 1, -1 do
+			local key = skippedOrder[index].key
+			if not seen[key] then
+				sessionSkipped[key] = nil
+				table.remove(skippedOrder, index)
+			end
+		end
+	end
+	Remember(cachedRoute.steps[1])
+end
+
+-- QuestieSource.lua swaps ns.Data for the QuestieDB catalogue once its sliced build finishes. Until then ns.Data
+-- carries no quest records (docs/design.md §2.14): a route built now would be log-only and would flip under the player
+-- when the records land, so the build and the auto-start wait and the tracker shows the loading line. "unavailable"
+-- means Questie is genuinely absent or failed, and the log's route is the only one there is.
+---@return boolean
+function ns.QuestieBuilding()
+	return ns.QuestieStatus ~= nil
+		and (
+			ns.QuestieStatus.state == "building"
+			or (not ns.QuestieStatus.settled and Questie ~= nil and Questie.API ~= nil)
+		)
+end
+
+-- While the catalogue builds, a chosen RestedXP guide's steps stand as the route: they come from RestedXP, not the
+-- catalogue, so the tracker shows the guide's step at once rather than the loading line, and the full build that
+-- follows the catalogue fills in each step's quests. Only a guide the player chose (a guide key, which CommitRoute
+-- moves to the guide RestedXP has loaded); anything else waits on the loading line.
+local function GuideWhileBuilding()
+	local guide = ns.RestedXP.Journey()
+	local prefs = ns.Prefs()
+	local chosen = prefs.journey
+	if guide and #guide.steps > 0 and not prefs.notInterested[guide.key] and chosen and chosen:find("^guide:") then
+		-- Settled until the next invalidation (the catalogue landing, or RestedXP moving on), so a read reuses it.
+		cachedRoute, dirty = { journeys = { guide }, chosen = true, journey = guide.key, steps = guide.steps }, false
+	end
+end
+
+-- The synchronous full build: ns.Route()'s lazy path, and any caller before Core's coroutine starts. One frame, no
+-- slices.
+local function Rebuild()
+	pendingRebuild = false
+	if not ns.State.Ready() then
+		-- Completed-quest data hasn't loaded yet; an empty route beats a wrong one.
+		cachedRoute, snapshot = { journeys = {}, chosen = false, steps = {} }, nil
+		return
+	end
+	if ns.QuestieBuilding() then
+		-- The catalogue is still building: hold the route rather than build a log-only one that flips.
+		snapshot = nil
+		GuideWhileBuilding()
+		return
+	end
+	CommitRoute(BuildRoute()) -- multi-value: the shown route, the full one and their snapshot
+end
+
+---@return AGFRoute
+function ns.Route()
+	-- A queued or running rebuild owns the next commit. Reads keep the current route so they cannot pull sliced
+	-- planning into the caller's frame or run Model.Plan twice over the same state.
+	if dirty and not rebuildCo and not pendingRebuild then
+		Rebuild()
+	end
+	return cachedRoute
+end
+
+-- What ns.Route() was planned from: the one read of the player, the completed quests and the quest log its build
+-- took. A view drawing the route reads this, so it agrees with the steps it draws and walks no quest log of its own
+-- (every change to any of the three invalidates the route, so the next build brings the next snapshot). A fresh read
+-- while no build stands behind the route. Never written to; what is not the route's (the map the player is on now,
+-- another dungeon's quests) is still asked of ns.State.
+---@return AGFSnapshot
+function ns.Snapshot()
+	ns.Route()
+	return snapshot or { player = ns.State.Player(), completed = ns.State.Completed(), log = ns.State.Log() }
+end
+
+-- Whether ns.Route() answers from the committed route: false while one is due or being built, when reading it would
+-- build one in the caller's frame.
+---@return boolean
+function ns.RouteSettled()
+	return not dirty and not rebuildCo and ns.State.Ready()
+end
+
+-- The journey the route is showing (the chosen one, else the first card's), for the tracker's heading and the
+-- map's way back to the story's start.
+---@return AGFJourney?
+function ns.CurrentJourney()
+	local route = ns.Route()
+	for _, journey in ipairs(route.journeys or {}) do
+		if journey.key == route.journey then
+			return journey
+		end
+	end
+end
+
+---@param fn fun()
+function ns.OnRouteChange(fn)
+	routeListeners[#routeListeners + 1] = fn
+end
+
+-- Guidance settles first (Guidance.lua), so every listener already reads the route as started, stopped or handed on.
+local function NotifyRouteChange()
+	ns.Guidance.RouteChanged()
+	for _, fn in ipairs(routeListeners) do
+		ns.SafeCall("route listener", fn)
+	end
+end
+
+-- Step 1's travel frame is queued: it and the rebuild's frame belong to their own estimate.
+local travelPending = false
+
+-- Skipped when an invalidation landed since the rebuild: ns.Route() would rebuild in this frame too, and the
+-- pending rebuild queues its own refresh. The asides are asked in this frame too, then Moments compares what is
+-- offered. The cards wait for this frame and ask from the next.
+local function RefreshTravel()
+	travelPending = false
+	if not pendingRebuild then
+		ns.Integrations.RefreshTravel()
+		ns.Asides.Refresh()
+		ns.Moments.Observe()
+		ns.Integrations.ResumeCards()
+	end
+end
+
+-- Wakes the listeners once a rebuild ends; step 1's travel line gets its own frame (RefreshTravel).
+local function FinishRebuild()
+	travelPending = true
+	NotifyRouteChange()
+	C_Timer.After(0, RefreshTravel)
+end
+
+-- One frame of the rebuild: starts the coroutine, resumes it for another slice, or commits the finished route. The
+-- Resume small planner units within one budgeted frame instead of waiting a frame per card. Leave headroom for
+-- the next indivisible unit and commit notification; only a completed route becomes visible.
+local REBUILD_SLICE_MS = 0.75
+local function StepRebuild()
+	if not rebuildCo then
+		-- A caller in the same frame (the map a card click turns) may have rebuilt through ns.Route() already: the
+		-- route is fresh, but the listeners still need waking.
+		if not dirty then
+			pendingRebuild = false
+			FinishRebuild()
+			return
+		end
+		if not ns.State.Ready() then
+			-- Completed-quest data hasn't loaded yet; an empty route beats a wrong one.
+			pendingRebuild = false
+			cachedRoute, snapshot = { journeys = {}, chosen = false, steps = {} }, nil
+			FinishRebuild()
+			return
+		end
+		if ns.QuestieBuilding() then
+			-- The catalogue is still building: hold the last route (or the empty one) so the display doesn't flip to a
+			-- log-only route that changes the moment the records land (docs/design.md §2.14).
+			pendingRebuild = false
+			snapshot = nil
+			GuideWhileBuilding()
+			FinishRebuild()
+			return
+		end
+		flightStart = invalidations
+		rebuildCo = coroutine.create(BuildRoute)
+	end
+	local started = debugprofilestop()
+	local ok, shown, full, world
+	repeat
+		ok, shown, full, world = coroutine.resume(rebuildCo)
+	until not ok
+		or coroutine.status(rebuildCo) == "dead"
+		or shown == "frame"
+		or debugprofilestop() - started >= REBUILD_SLICE_MS
+	if not ok then
+		local failed = rebuildCo
+		rebuildCo = nil
+		pendingRebuild = false
+		fullDue = true -- the next build plans in full, never repaints a route that failed
+		-- debugstack takes the coroutine first in the client; the annotations know only its level form.
+		---@diagnostic disable-next-line: param-type-mismatch
+		ns.RecordError("rebuild", shown, debugstack and debugstack(failed) or debug.traceback(failed))
+		error(shown, 0)
+	end
+	if coroutine.status(rebuildCo) == "suspended" then
+		-- Another slice of the same build is due next frame.
+		C_Timer.After(0, StepRebuild)
+		return
+	end
+	rebuildCo = nil
+	CommitRoute(shown, full, world)
+	pendingRebuild = false
+	FinishRebuild()
+	-- A listener that invalidated during FinishRebuild's notify already set `pendingRebuild` and queued its own step,
+	-- so only queue one here when nothing else has. Without the guard two chains would resume the same coroutine,
+	-- giving a spurious extra notification and rebuild frames that run several slices.
+	if invalidations ~= flightStart and not pendingRebuild then
+		-- The player, log or prefs changed while the build ran: rebuild from the new state.
+		dirty = true
+		pendingRebuild = true
+		C_Timer.After(0, StepRebuild)
+	end
+end
+
+-- Marks the route stale and queues its rebuild for the next frame, once.
+local function Queue()
+	dirty = true
+	invalidations = invalidations + 1
+	if pendingRebuild then
+		return
+	end
+	pendingRebuild = true
+	C_Timer.After(0, StepRebuild)
+end
+
+-- Only the quest log moved (State's countsOnly): if its shape is unchanged since the last build, the next one only
+-- repaints the counts (Model.Repaint), unless something else has asked for a full plan since. docs/design.md §4.4.
+function ns.InvalidateCounts()
+	fullDue = fullDue or not rawRoute.journeys[1]
+	Queue()
+end
+
+function ns.Invalidate()
+	fullDue = true
+	Queue()
+end
+
+-- A rebuild or step 1's travel line is due: this frame or the next belongs to them, not to a card's estimate.
+---@return boolean
+function ns.Settling()
+	return pendingRebuild or travelPending
+end
+
+--[[ Slash command and audit ]]
+
+local function Audit()
+	local data, questie = ns.Data, ns.QuestieStatus
+	local clientVersion, clientBuild = GetBuildInfo()
+	ns.Print(L.AUDIT_BUILD:format(data.build, clientVersion, clientBuild))
+	if questie.state == "questie" then
+		ns.Print(L.AUDIT_SOURCE_QUESTIE:format(questie.version))
+	else
+		ns.Print(L.AUDIT_SOURCE_BUNDLED)
+		if questie.state == "building" then
+			ns.Print(L.AUDIT_QUESTIE_BUILDING)
+		elseif questie.reason then
+			ns.Print(L.AUDIT_QUESTIE_UNUSED:format(questie.reason))
+		end
+	end
+
+	local bundled = 0
+	for _ in pairs(data.quests) do
+		bundled = bundled + 1
+	end
+
+	local player, completed, log = ns.State.Player(), ns.State.Completed(), ns.State.Log()
+	local eligible = 0
+	for questID in pairs(data.quests) do
+		if ns.Model.Eligible(data, player, completed, log, questID) then
+			eligible = eligible + 1
+		end
+	end
+
+	local completedKnown = 0
+	for _ in pairs(completed) do
+		completedKnown = completedKnown + 1
+	end
+
+	ns.Print(L.AUDIT_COUNTS:format(bundled, eligible, completedKnown))
+	if not ns.State.Ready() then
+		ns.Print(L.AUDIT_NOT_READY)
+	end
+end
+
+SLASH_ADVENTUREGUIDEFOREVER1 = "/agf"
+SLASH_ADVENTUREGUIDEFOREVER2 = "/adventureguide"
+local function Slash(msg)
+	local command = strtrim(msg or ""):lower()
+	if ns.Report and ns.Report.Command and ns.Report.Command(command) then
+		return
+	elseif command == "where" then
+		local ok, lines = ns.SafeCall("where lines", ns.WhereLines)
+		ns.Report.Show(
+			ns.CutText(table.concat(ok and lines or { "Report lines failed: " .. tostring(lines) }, "\n"), 2000)
+		)
+	elseif command == "audit" then
+		Audit()
+	elseif command == "leaderboard" or command == "stats" then
+		ns.Stats.Open()
+	elseif command == "share" or command == "share on" or command == "share off" then
+		if command ~= "share" then
+			ns.SetSetting("statsShare", command == "share on")
+		end
+		local sharing = ns.Setting("statsShare") ~= false
+		ns.Print(sharing and L.LEADERBOARD_SHARING_ON or L.LEADERBOARD_SHARING_OFF)
+	elseif command == "dump" then
+		ns.Dump()
+	elseif command == "tracker" then
+		ns.Print(ns.TrackerHost.Debug())
+	elseif command == "travel" then
+		ns.Print(ns.Guidance.Debug())
+	elseif command == "timing" then
+		ns.Print(ns.LoginTiming())
+	elseif command == "" then
+		if ns.OpenPanel then
+			ns.OpenPanel()
+		else
+			ns.OpenMap()
+		end
+	else
+		ns.Print(L.HELP_OPEN)
+		ns.Print(L.HELP_REPORT)
+		ns.Print(L.HELP_ISSUE)
+		ns.Print(L.HELP_WHERE)
+		ns.Print(L.HELP_AUDIT)
+		ns.Print(L.HELP_LEADERBOARD)
+		ns.Print(L.HELP_SHARE)
+		ns.Print(L.HELP_DUMP)
+		ns.Print(L.HELP_TRACKER)
+	end
+end
+SlashCmdList.ADVENTUREGUIDEFOREVER = function(msg)
+	ns.SafeCall("slash command", Slash, msg)
+end
+
+-- Open the guide on the world map.
+function AdventureGuideForever_OnAddonCompartmentClick()
+	if ns.OpenPanel then
+		ns.OpenPanel()
+	else
+		ns.OpenMap()
+	end
+end
+
+-- Deferred to ADDON_LOADED: every TOC file (including State.lua and Settings.lua, which load
+-- after this one) has run by then, so forward references to ns.State/ns.RegisterSettings resolve.
+EventUtil.ContinueOnAddOnLoaded(addonName, function()
+	LoadDB()
+	LoadCharDB()
+	ns.QuestieOptions.Load()
+	ns.State.OnChange(function(countsOnly)
+		if countsOnly then
+			ns.InvalidateCounts()
+		else
+			ns.Invalidate()
+		end
+	end)
+	spellbook:RegisterEvent("SPELLS_CHANGED")
+	spellbook:RegisterEvent("PLAYER_MONEY")
+	ns.State.OnInitialLogin(function()
+		resumeLatch = true
+	end)
+	ns.RegisterSettings()
+	EventUtil.ContinueAfterAllEvents(ns.WhatsNew, "PLAYER_LOGIN")
+	EventUtil.ContinueAfterAllEvents(function()
+		ns.MinimapButton.Create({
+			name = "AdventureGuideForeverMinimapButton",
+			icon = "Interface\\Icons\\inv_misc_map_01",
+			title = ns.L.TITLE,
+			binding = "Alt-G",
+			subtext = ns.L.MINIMAP_BUTTON_SUBTEXT,
+			settings = db,
+			host = ns,
+			onClick = function()
+				if ns.OpenPanel then
+					ns.OpenPanel()
+				end
+			end,
+		})
+	end, "PLAYER_LOGIN")
+end)
+
+-- After an update, one chat line says what changed. Never on a first install (no version seen yet, which is also
+-- every login on a client that doesn't load saved variables), nor in a dev checkout, whose TOC version the packager
+-- hasn't filled in. `lastVersion` is a record, not a setting, so it has no default.
+function ns.WhatsNew()
+	local version = C_AddOns.GetAddOnMetadata(addonName, "Version")
+	if not db or type(version) ~= "string" or version == "" or version:sub(1, 1) == "@" then
+		return
+	end
+	local seen = db.lastVersion
+	db.lastVersion = version
+	if type(seen) == "string" and seen ~= version and ns.Setting("whatsNew") then
+		ns.Print(L.UPDATED_TO:format(version, L.WHATS_NEW))
+	end
+end

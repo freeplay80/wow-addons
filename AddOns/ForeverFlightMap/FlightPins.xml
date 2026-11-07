@@ -1,0 +1,33 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+    <Frame name="ForeverFlightPointPinTemplate" virtual="true" enableMouse="true">
+        <Size x="14" y="14"/>
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture parentKey="Border" setAllPoints="true">
+                    <Color r="0.10" g="0.55" b="0.80" a="0.95"/>
+                </Texture>
+            </Layer>
+            <Layer level="BORDER">
+                <Texture>
+                    <Size x="12" y="12"/>
+                    <Anchors><Anchor point="CENTER"/></Anchors>
+                    <Color r="0.03" g="0.05" b="0.07" a="0.98"/>
+                </Texture>
+            </Layer>
+            <Layer level="OVERLAY">
+                <Texture parentKey="Icon" file="Interface\Icons\Ability_Mount_Gryphon_01">
+                    <Size x="12" y="12"/>
+                    <Anchors><Anchor point="CENTER"/></Anchors>
+                    <TexCoords left="0.1" right="0.9" top="0.1" bottom="0.9"/>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Scripts>
+            <OnLoad>
+                Mixin(self, MapCanvasPinMixin, ForeverFlightPointPinMixin);
+                self:SetMouseClickEnabled(false);
+                self:SetMouseMotionEnabled(true);
+            </OnLoad>
+        </Scripts>
+    </Frame>
+</Ui>

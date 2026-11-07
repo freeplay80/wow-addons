@@ -1,0 +1,12 @@
+## Interface: 16001
+## Title: Trainer Helper
+## Title-koKR: 직업 훈련사 도우미
+## Notes-koKR: 배울 수 있는 스킬을 알리고, 월드맵과 HUD에 내 직업 훈련사 위치를 표시합니다. /fth
+## Version: 0.3.0
+## OptionalDeps: QuestieDB
+## SavedVariables: ForeverTrainerHelperDB
+
+TrainerData.lua
+TrainerPins.lua
+TrainerPins.xml
+TrainerHud.lua

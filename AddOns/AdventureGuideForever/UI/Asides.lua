@@ -1,0 +1,377 @@
+---@type string, AGFNamespace
+local _, ns = ...
+local L = ns.L
+
+-- Asides (docs/design.md §2.11): one-line hints beside the journeys, never a route. Each domain registers a provider
+-- that gives at most one. Every one the player has neither skipped this session nor turned down is drawn above the
+-- cards, and the first of them is the tracker's line. Providers are asked in step 1's travel frame (Core), never
+-- in a rebuild's, and not in combat, when the last answers stand.
+---@class AGFAsidesModule : AGFAsides
+local Asides = {}
+ns.Asides = Asides
+
+---@type (fun(): AGFAside?)[]
+local providers = {}
+-- Every provider's last answer, in registration order.
+---@type AGFAside[]
+local answers = {}
+-- Skip for now: until the next session, or until its provider renews the aside (a new talent point): each skipped key
+-- and the `renew` it had then, `true` for none.
+---@type table<string, integer|true>
+local skipped = {}
+---@type fun()[]
+local listeners = {}
+-- The events a provider asks again on (RefreshOn).
+---@type Frame?
+local events
+
+local function Notify()
+	for _, fn in ipairs(listeners) do
+		fn()
+	end
+end
+
+-- "Not interested", per character: each turned-down key and the text it had, which Show again names.
+---@return table<string, string>
+local function Declined()
+	local prefs = ns.Prefs()
+	if type(prefs.asides) ~= "table" then
+		prefs.asides = {}
+	end
+	return prefs.asides
+end
+
+---@param fn fun(): AGFAside?
+function Asides.Register(fn)
+	providers[#providers + 1] = fn
+end
+
+---@param fn fun()
+function Asides.OnChange(fn)
+	listeners[#listeners + 1] = fn
+end
+
+---@return AGFAside?
+function Asides.Current()
+	for _, aside in ipairs(answers) do
+		if Asides.Wanted(aside.key, aside.renew) then
+			return aside
+		end
+	end
+end
+
+-- Every answer the player still wants, in registration order: the panel's lines (docs/design.md §2.11).
+---@return AGFAside[]
+function Asides.All()
+	local shown = {}
+	for _, aside in ipairs(answers) do
+		if Asides.Wanted(aside.key, aside.renew) then
+			shown[#shown + 1] = aside
+		end
+	end
+	return shown
+end
+
+-- The player has neither skipped this key this session nor turned it down: a provider with several candidates offers
+-- the first they still want. A skip holds only while the aside's `renew` is the one it had then.
+---@param key string
+---@param renew integer?
+---@return boolean
+function Asides.Wanted(key, renew)
+	return not (skipped[key] == (renew or true) or Declined()[key])
+end
+
+-- Every provider's last answer, skipped or not, in registration order (Moments.lua's seen set).
+---@return AGFAside[]
+function Asides.Answers()
+	return answers
+end
+
+-- What the player sees of an aside, so an unchanged answer redraws nothing.
+---@param aside? AGFAside
+---@return string
+local function Seen(aside)
+	local place = aside and aside.place
+	return aside
+			and table.concat({
+				aside.key,
+				aside.text,
+				aside.category or "",
+				aside.reason or "",
+				aside.icon,
+				aside.texture or "",
+				place and ("%d:%.4f:%.4f"):format(place.map, place.x, place.y) or "",
+			}, "\n")
+		or ""
+end
+
+-- What the player sees of every aside shown: the panel's lines, the first of them the tracker's.
+---@return string
+local function SeenAll()
+	local seen = {}
+	for index, aside in ipairs(Asides.All()) do
+		seen[index] = Seen(aside)
+	end
+	return table.concat(seen, "\n\n")
+end
+
+function Asides.Refresh()
+	if InCombatLockdown() then
+		return
+	end
+	local before = SeenAll()
+	answers = {}
+	for _, provider in ipairs(providers) do
+		answers[#answers + 1] = provider()
+	end
+	if SeenAll() ~= before then
+		Notify()
+	end
+end
+
+-- Skip and Not interested ask the providers again, so one with several candidates offers its next (Wanted).
+---@param key string
+function Asides.Skip(key)
+	---@type integer|true
+	local renew = true
+	for _, aside in ipairs(answers) do
+		renew = aside.key == key and aside.renew or renew
+	end
+	skipped[key] = renew
+	Notify()
+	Asides.Refresh()
+end
+
+-- The events whose bursts ask the providers once, `settle` seconds after the first (Asides.RefreshOn).
+---@type table<string, number>
+local settles = {}
+---@type table<string, boolean>
+local settling = {}
+
+---@param event string
+local function OnEvent(_, event)
+	local settle = settles[event]
+	if not settle then
+		Asides.Refresh()
+	elseif not settling[event] then
+		settling[event] = true
+		C_Timer.After(settle, function()
+			settling[event] = nil
+			Asides.Refresh()
+		end)
+	end
+end
+
+-- Asks the providers again on `event`, when the client has it: an unknown event is an error on RegisterEvent, and an
+-- API the probe did not confirm may come with none. With `settle`, a burst of the event asks once, that many seconds
+-- after it starts.
+---@param event string
+---@param settle? number
+function Asides.RefreshOn(event, settle)
+	events = events or CreateFrame("Frame")
+	events:SetScript("OnEvent", OnEvent)
+	settles[event] = settle
+	pcall(events.RegisterEvent, events, event)
+end
+
+---@param aside AGFAside
+function Asides.Decline(aside)
+	Declined()[aside.key] = aside.text
+	Notify()
+	Asides.Refresh()
+end
+
+-- The turned-down asides, by text, for Show again: its provider's answer now, else the text it had when turned down.
+---@return {key: string, text: string}[]
+function Asides.Declined()
+	local now = {}
+	for _, aside in ipairs(answers) do
+		now[aside.key] = aside.text
+	end
+	local list = {}
+	for key, text in pairs(Declined()) do
+		list[#list + 1] = { key = key, text = now[key] or text }
+	end
+	table.sort(list, function(a, b)
+		return a.text < b.text
+	end)
+	return list
+end
+
+---@param key string
+function Asides.Restore(key)
+	Declined()[key] = nil
+	Notify()
+end
+
+-- Go: to the aside's place, as a step's Go goes (Guidance.Navigate). Only a place from the data has one.
+---@param aside AGFAside
+---@return boolean
+function Asides.Go(aside)
+	local place = aside.place
+	return place ~= nil
+		and ns.Guidance.ShowOnMap({
+			map = place.map,
+			x = place.x,
+			y = place.y,
+			title = place.name,
+			quests = {},
+			adds = {},
+		})
+end
+
+-- A profession aside for a learned line's next rank ("profession:<skill>:<rank>", rank 2 Journeyman or above), not a
+-- free slot or a secondary skill still to learn: where SkillUp Forever's route to the next rank would help.
+---@param aside AGFAside
+---@return boolean
+function Asides.NextRank(aside)
+	if aside.category ~= "professions" then
+		return false
+	end
+	local rank = tonumber(aside.key:match("^profession:%d+:(%d+)$"))
+	return rank ~= nil and rank >= 2
+end
+
+-- The aside's menu, for its line in the guide and in the tracker.
+---@param owner Region
+---@param aside AGFAside
+function Asides.Open(owner, aside)
+	ns.ContextMenu(owner, function(_, root)
+		root:CreateTitle(aside.text)
+		if aside.place and not ns.Setting("wanderer") then
+			root:CreateButton(L.GO, function()
+				Asides.Go(aside)
+			end)
+		end
+		root:CreateButton(L.SKIP, function()
+			Asides.Skip(aside.key)
+		end)
+		root:CreateButton(L.NOT_INTERESTED, function()
+			Asides.Decline(aside)
+		end)
+		if Asides.NextRank(aside) then
+			ns.Companions.AddMenu(root, "SkillUpForever")
+		end
+	end)
+end
+
+---@param owner Region
+---@param mouseButton string
+---@param aside? AGFAside
+function Asides.Click(owner, mouseButton, aside)
+	if aside and mouseButton == "RightButton" then
+		Asides.Open(owner, aside)
+	elseif aside then
+		Asides.Go(aside)
+	end
+end
+
+---@param owner Frame
+---@param aside? AGFAside
+function Asides.Enter(owner, aside)
+	if aside then
+		ns.Overview.ShowTooltip(owner, {
+			aside.text,
+			aside.place and not ns.Setting("wanderer") and ns.Menu.ClickLine() or nil,
+		})
+		-- A trainer for a profession's next rank: SkillUp Forever plans the way there.
+		if Asides.NextRank(aside) then
+			ns.Companions.AddLine(GameTooltip, "SkillUpForever")
+			GameTooltip:Show()
+		end
+	end
+end
+
+--[[ The first provider: the class trainer, from Tweaks Forever's spells to train, at the nearest
+     trainer who teaches them (Model.Trainer); text only when the data places none. ]]
+
+Asides.Register(function()
+	if not ns.Setting("trainingReminders") then
+		return nil
+	end
+	local training = ns.Integrations.Training()
+	if not training then
+		return nil
+	end
+	local count = training.count
+	local spellCount = count == 1 and L.TRAINER_SPELL or L.TRAINER_SPELLS:format(count)
+	local npc = ns.Model.Trainer(ns.Data, ns.State.Player(), training.level)
+	local place = npc and npc.place or nil
+	if not place then
+		-- A class the bundled trainer data does not place (Forever's extra combos): the nearest class trainer
+		-- Tweaks Forever knows, when its API v2 is loaded. Its list holds both sides' trainers, so one the catalogue
+		-- knows to serve only the other side is passed over.
+		local player = ns.State.Player()
+		local best, bestYards
+		for _, trainer in ipairs(ns.Integrations.Trainers() or {}) do
+			local known = ns.Data.npcs and ns.Data.npcs[trainer.npc]
+			if trainer.place and not (known and not ns.Model.HasBit(known.side, player.side)) then
+				local yards = ns.Model.Yards(ns.Data, ns.State.Player(), trainer.place)
+				if yards and (not bestYards or yards < bestYards) then
+					best, bestYards = trainer.place, yards
+				end
+			end
+		end
+		place = best
+	end
+	local who = place and L.TRAINER_IN:format(ns.Model.TownName(ns.Data, place, ns.State.MapName)) or L.TRAINER
+	-- The minimap's class trainer mark (CSV:1321).
+	return {
+		key = "trainer",
+		text = L.TRAINER_LINE:format(who, spellCount),
+		icon = "class",
+		place = place,
+		category = "training",
+		reason = L.NEXT_REASON_TRAINING,
+	}
+end)
+
+-- A spell learned at the trainer shortens the line at once.
+Asides.RefreshOn("SPELLS_CHANGED")
+-- Money only moves the line when it crosses a fee, and PLAYER_MONEY fires for every coin looted.
+Asides.RefreshOn("PLAYER_MONEY", 1)
+
+--[[ Unspent talent points: "You have 2 talent points to spend", while any are. The probe found
+     GetNumUnspentTalents on Forever and UnitCharacterPoints missing; without the former there is no line. A point
+     gained brings it back after a Skip for now, once per new point; spending them all ends it at once. ]]
+
+-- The count at the last answer, and how many times it has risen this session (the aside's `renew`).
+local talentPoints, talentRises = 0, 0
+
+Asides.Register(function()
+	local points = GetNumUnspentTalents and GetNumUnspentTalents() or 0
+	talentRises = points > talentPoints and talentRises + 1 or talentRises
+	talentPoints = points
+	if points <= 0 then
+		return nil
+	end
+	local text = points == 1 and L.TALENT_POINT or L.TALENT_POINTS:format(points)
+	-- The Legion minor-talents book (CSV:388), the one square talent mark the atlas has.
+	return {
+		key = "talents",
+		text = text,
+		icon = "minortalents-icon-book",
+		renew = talentRises,
+		category = "training",
+		reason = L.NEXT_REASON_TALENTS,
+	}
+end)
+Asides.RefreshOn("CHARACTER_POINTS_CHANGED")
+
+-- District events can arrive before the client updates its position. Coalesce and read on the next frame.
+local district = CreateFrame("Frame")
+local districtPending = false
+for _, event in ipairs({ "ZONE_CHANGED", "ZONE_CHANGED_INDOORS", "PLAYER_REGEN_ENABLED" }) do
+	pcall(district.RegisterEvent, district, event)
+end
+district:SetScript("OnEvent", function()
+	if not districtPending then
+		districtPending = true
+		C_Timer.After(0, function()
+			districtPending = false
+			if ns.RouteSettled() then
+				Asides.Refresh()
+			end
+		end)
+	end
+end)

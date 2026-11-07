@@ -1,0 +1,135 @@
+﻿1.60.29 - 6th November 2026
+- Fixed a minor issue with the Blizzard internal realm name showing next to guild names in tooltips (for 'Enhance tooltip') and in info cards (for 'Show info cards').  Thank you for the reports.
+- Updated translations.
+
+1.60.28 - 6th November 2026
+- The 'Show info card' option ('Interface') now shows an armory link for players (level 10 or higher).  Info cards can now be shown for dungeon map boss icons, dungeon zone icons (requires latest release of Leatrix Maps) and items in the appearances window (part of Account Collections).  If the info card is for an NPC, pet, mount, player or boss (including the boss icons shown with Leatrix Maps), a sounds button in the info card will let you listen to or mute the sounds that it makes (requires latest release of Leatrix Sounds).
+
+1.60.27 - 4th November 2026
+- For 'Class colored frames' ('Frames'), you can now set the frame border and player chain (if you use that option) to be in class color too.
+- For 'Show info cards' ('Interface'), fixed an issue which caused CTRL/C to not copy the link if your info card key included CTRL and you had not released CTRL first.
+- For 'Show flight times' ('System'), redesigned the flight progress bar.  The progress bar now shows the next stop in addition to the final destination.  There is a toggle for that and a text size slider in the configuration panel.
+- Fixed an issue with 'More chat font sizes' ('Chat') which caused the communities and guild chat font size to reset sometimes.
+
+1.60.26 - 28th October 2026
+- For 'Enhance minimap', added more visual effects.
+- For 'Enhance dressup', redesigned the dressing room layout.  There are additional buttons, the gear slot buttons and the nude button are now toggles and there is now an info card button.
+- For 'Media', tracks are now automatically generated from game data.
+- Updated flight times and translations.
+
+1.60.25 - 21st October 2026
+- For 'Automate gossip' ('Automation'), updated the NPC list.
+- For 'Show info cards' ('Interface'), you can now toggle individual gear slot items and there's a new fullscreen button with a scene selection menu in the model viewer.
+- For 'Show range coloring' ('Interface'), fixed a Lua error.
+- For 'Simple addon listing' ('Settings'), fixed a situational issue which could have caused some addons to not show in the listing.
+
+1.60.21 - 20th October 2026
+- Added 'Show info cards' ('Interface').  If checked, pointing at something (such as a player, item, spell, buff, quest, etc) and pressing a keybind (you can set it in the configuration panel) will show a color-coded information card.  Pointing at a character will show information such as their average item level, talent choices, buffs and a 3D model of the character with animation slider and gear toggle button.  Pointing at something else will show useful information and a Wowhead link that you can copy with CTRL/C.  This new option replaces the web link keybind which has been removed.
+- Added a language dropdown menu ('Settings') so you can choose which language you want the addon to use.
+- For 'Enhance minimap' ('Interface'), the new mail indicator will now be better positioned.
+- Updated flight times and translations.
+
+1.60.20 -15th October 2026
+- For 'Enhance minimap' ('Interface'), 'Square minimap' will now stay square with the compass rings hidden if the minimap shape is changed by rotation or another addon (such as FarmHud).
+- For 'Mute game sounds', updated the 'Chimes' setting.
+
+1.60.19 - 14th October 2026
+- For 'Enhance minimap' ('Interface'), enabling 'Square minimap' will no longer prevent the map from being rotated.  Instead, an advisory note has been added to the option tooltp.
+
+1.60.18 - 14th October 2026
+- Added 'Show range coloring' ('Interface').  If checked, action button icons will be colored red for out of range and blue for not enough mana.
+- Added a search options box to the main configuration panel.  Search for an option, click on a result and it will show you where the option is.
+- Removed the 'Disable bag automation' option ('System') due to issues.
+
+1.60.17 - 12th October 2026
+- For 'Enhance minimap' ('Interface'), enabling 'Square minimap' will prevent 'Rotate minimap' (a setting in Edit Mode) from being applied.  You cannot have both a square minimap and rotation.
+- Reversed the changes to the 'Disable bag automation' option ('System').
+- Taint logging will be disabled for now because having it enabled causes fake errors to show up that will lead users to report and investigate problems that don't exist and are only caused by having taint logging enabled.  This is a temporary change.
+- Updated flight times.
+
+1.60.16 - 11th October 2026
+- The 'Show Wowhead links' option ('Interface') now works with the new legacy challenges panel (links are shown at the top under the legacy points progress bar).
+- For 'Show volume slider' ('Interface'), fixed the position of the slider on the character frame.
+- For 'Show player chain' ('Interface'), you can now choose both the modern chains and the classic chains.
+- For 'Enhance minimap' ('Interface'), added a visual effect dropdown menu so you can choose a visual effect for the minimap.
+- For 'Enhance tooltip' ('Interface'), tooltips will now show whatever information they can within secrets rules instead of bypassing the tooltip entirely.
+- For 'Mute custom sounds' ('System'), added a 'Sound finder' button.  You can use it to find the sound ID for any sound in the game.
+- For 'Set edit mode layout' ('Settings'), fixed a situational issue which may have caused your chosen edit mode layout to not load under certain circumstances.
+- The 'Set chat font size' option ('Chat') is now 'More chat font sizes'.  It now adds additional font sizes to the chat font size menu.
+- The 'Filter chat messages' option ('Chat') is not currently available because of an issue in the current beta.
+- The 'Disable bag automation' option ('System') now works with many more interactions and bags will no longer automatically close.  
+- For 'Media', added movie 'New Horizons'.  Watch in 'Movies' or listen in 'Various > Cinematics'.
+- For dropdown menus in the addon configuration panel, you can now use the mousewheel to cycle through the items by pointing over an open menu or a closed one.
+- Updated flight times.
+
+1.60.15 - 10th October 2026
+- Added 'Show druid power bar' ('Interface').  If checked and you are logged in with a druid, a power bar will be shown in the player frame when your character is in cat or bear form.
+- Updated flight times.
+
+1.60.14 - 7th October 2026
+- For 'Show flight times' ('System'), the 'Frequent Flier' perk is now supported and factored into flight times.  Contributions and flight data will always show the flight time without the perk but the flight map node tooltips will show the flight time with the perk (if your character has it).  Any routes with multiple valid flight times will no longer show flight time information or ask for contributions.
+- Updated flight times.
+
+1.60.13 - 7th October 2026
+- The 'Show Wowhead links' option ('Interface') now supports the new 'Simple map frame' setting in Leatrix Maps.
+- Updated flight times.
+- Note that native game controller support in Wow Forever is still in alpha development stage and may cause issues until Blizzard has progressed further along with developing the feature.
+
+1.60.12 - 5th October 2026
+- For 'Show durability status' ('Interface'), fixed a minor issue which caused the durability button to show on every tab in the character frame.
+- Updated flight times.
+
+1.60.11 - 2nd October 2026
+- Updated flight times.
+
+1.60.10 - 30th September 2026
+- Updated flight times.
+
+1.60.09 - 28th September 2026
+- Added 'Disable drunken haze' ('System').  If enabled, the drunken haze effect will be disabled.
+- For 'Enhance tooltip' ('Interface'), fixed a secrets issue and an issue which caused creature tooltips to show the creature type twice.
+- For 'Set weather density' ('System'), the settings now range from very low to high as Forever does not support completely disabling weather.
+- For 'Mute game sounds' ('System'), the 'Shouts' setting has been removed as it's not needed in Forever.
+- The 'Disable screen glow' setting ('System') has been removed as it's no longer used in Forever.
+- The media player now works correctly and will be updated as the beta progresses.  Also fixed an issue which caused the media player panel to be hidden after watching a movie.
+- Updated flight times.
+
+1.60.08 - 26th September 2026
+- Added 'Show flight times' ('System').  Help contribute missing or incorrect flight times by pasting them in the comments on CurseForge when prompted to do so by the addon.
+
+1.60.07 - 26th September 2026
+- Updated 'Mute game sounds' ('System').
+- Updated 'Mute mount sounds' ('System').
+- Minor updates for various other settings.
+- Fixed an issue with 'Enhance minimap' ('Interface') causing Questie to show quest icons in the minimap button bag.
+
+1.60.06 - 23rd September 2026
+- Added 'Enhance flight map' option ('Interface').
+- For 'Automate gossip' ('Automation'), updated the Forever NPC list.
+- For 'Mute game sounds', 'Fizzle' now includes the holy cast whatchamacallit thing.
+
+1.60.05 - 23rd September 2026
+- For 'Automate gossip' ('Automation'), added the current Forever NPC list for automatically skipping gossip for NPCs with only one gossip option.  Note that this list is incomplete and will be updated later.
+- For 'Show train all button' ('Interface'), the button will no longer show for trainer frames that use training points (such as hunter beast training).
+- For 'Web link', links will now point to Forever pages on Wowhead.
+
+1.60.04 - 20th September 2026
+- For 'Enhanced tooltip' ('Inteface'), fixed the duplicate names showing in player tooltips.
+- For 'Show volume slider' ('Interface'), fixed the slider visibility.
+- For 'Show durability status' ('Interface'), fixed the button visibility.
+- The 'Show Wowhead links' option ('Interface') now links quests to Forever pages on Wowhead.
+- Removed the 'Hide talking frame' option ('Frames').
+
+1.60.03 - 19th September 2026
+- Removed the 'Block pet battle duels' option ('Social').
+- Removed the 'Show pet save button' option ('Interface').
+- Removed the 'Hide bodyguard gossip' option ('Frames').
+- Removed the 'Disable pet automation' option ('System').
+- Removed the 'Set additional options' option ('System').
+- Removed the toys from 'Remove transforms' ('System').
+
+1.60.02 - 19th September 2026
+- For 'Enhance minimap' ('Interface'), if 'Square minimap' is enabled, the day and night indicator will be hidden.
+
+1.60.01 - 17th September 2026
+- Welcome to Forever Beta!

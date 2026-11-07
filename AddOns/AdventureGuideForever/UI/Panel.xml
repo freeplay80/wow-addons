@@ -1,0 +1,135 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ https://raw.githubusercontent.com/Gethe/wow-ui-source/live/Interface/AddOns/Blizzard_SharedXML/UI.xsd">
+	<Frame name="AdventureGuideForeverPingPinTemplate" inherits="MapPinPingTemplate" virtual="true"/>
+	<!-- The guide tab is built with CreateFrame in Panel.lua; its journey cards use AdventureGuideForeverJourneyCardTemplate below. -->
+	<!-- The tab reuses the stock LargeSideTabButtonTemplate directly (see Panel.lua CreateTab()) and anchors to QuestMapFrame in Lua once Blizzard_WorldMap loads. -->
+	<!-- A quest giver: the game's own available-quest "!", redrawn plainly on hover like the quest POIs' own mark. -->
+	<Frame name="AdventureGuideForeverGiverPinTemplate" mixin="AdventureGuideForeverGiverPinMixin" enableMouse="true" virtual="true">
+		<Size x="22" y="22"/>
+		<Layers>
+			<Layer level="ARTWORK">
+				<!-- art-ok: a square atlas on the pin's 22 square -->
+				<Texture parentKey="Icon" atlas="QuestNormal" setAllPoints="true"/>
+			</Layer>
+			<Layer level="ARTWORK" textureSubLevel="1">
+				<!-- art-ok: a square atlas on the pin's 22 square -->
+				<Texture parentKey="Glow" atlas="QuestNormal" alphaMode="BLEND" setAllPoints="true" hidden="true"/>
+			</Layer>
+		</Layers>
+	</Frame>
+	<!-- A journey card: Blizzard's renown card (Blizzard_Journeys.xml:5-107, RenownCardButtonTemplate) at 0.77 scale,
+	     its art and radial ring kept, the kind's quest-log icon in the ring, and a title, a count and a reason beside
+	     it. AlphaHighlightButtonTemplate's OnLoad copies NormalTexture's atlas into the highlight, so the art is set
+	     here, before the card is ever shown. Its pushed art is the same card: the renown pressed art is drawn off
+	     true, so neither a press nor the chosen card ever moves. -->
+	<Button name="AdventureGuideForeverJourneyCardTemplate" inherits="AlphaHighlightButtonTemplate" virtual="true">
+		<Size x="288" y="86"/>
+		<!-- art-ok: the card is the art's own 374x112 at 0.77 -->
+		<NormalTexture parentKey="NormalTexture" atlas="ui-journeys-renown-button"/>
+		<!-- art-ok: the card is the art's own 374x112 at 0.77 -->
+		<PushedTexture parentKey="PushedTexture" atlas="ui-journeys-renown-button"/>
+		<Frames>
+			<Frame parentKey="IconFrame">
+				<Size x="46" y="46"/>
+				<Anchors>
+					<Anchor point="LEFT" x="15"/>
+				</Anchors>
+				<Layers>
+					<Layer level="OVERLAY" textureSubLevel="1">
+						<!-- art-ok: a square atlas on the ring's 46 square -->
+						<Texture parentKey="Border" atlas="ui-journeys-renown-radial-bar" setAllPoints="true"/>
+					</Layer>
+					<Layer level="OVERLAY">
+						<Texture parentKey="Icon">
+							<Size x="18" y="18"/>
+							<Anchors>
+								<Anchor point="CENTER"/>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+			</Frame>
+		</Frames>
+		<Layers>
+			<Layer level="OVERLAY">
+				<FontString parentKey="Title" inherits="GameFontNormalMed2" justifyH="LEFT" wordwrap="false">
+					<Size x="212" y="16"/>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeKey="$parent.IconFrame" relativePoint="TOPRIGHT" x="6" y="4"/>
+					</Anchors>
+				</FontString>
+				<FontString parentKey="Subline" inherits="GameFontHighlightSmall" justifyH="LEFT" wordwrap="false">
+					<Size x="212" y="14"/>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeKey="$parent.Title" relativePoint="BOTTOMLEFT" y="-2"/>
+					</Anchors>
+				</FontString>
+				<!-- Shortest Path's minutes at the right of the subline's row; the subline stops short of them. -->
+				<FontString parentKey="Travel" inherits="GameFontHighlightSmall" justifyH="RIGHT" wordwrap="false" hidden="true">
+					<Size y="14"/>
+					<Anchors>
+						<Anchor point="TOPRIGHT" relativeKey="$parent.Title" relativePoint="BOTTOMRIGHT" x="-8" y="-2"/>
+					</Anchors>
+				</FontString>
+				<FontString parentKey="Reason" inherits="GameFontHighlightSmall" justifyH="LEFT" wordwrap="false">
+					<Size x="212" y="14"/>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeKey="$parent.Subline" relativePoint="BOTTOMLEFT" y="-2"/>
+					</Anchors>
+				</FontString>
+				<!-- Blizzard's group quest tag (QUEST_TAG_ATLAS), at the right of the reason's row when a quest needs a group. -->
+				<!-- art-ok: a square atlas at 12 square -->
+				<Texture parentKey="Group" atlas="questlog-questtypeicon-group" hidden="true">
+					<Size x="12" y="12"/>
+					<Anchors>
+						<Anchor point="TOPRIGHT" relativeKey="$parent.Title" relativePoint="BOTTOMRIGHT" x="-8" y="-19"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+	</Button>
+	<!-- Private frame pools instantiate the route pin from this virtual template. -->
+	<Frame name="AdventureGuideForeverPinTemplate" mixin="AdventureGuideForeverPinMixin" enableMouse="true" virtual="true">
+		<Size x="20" y="20"/>
+		<Layers>
+			<!-- The stock quest POI, as Shortest Path's StopPin.lua draws it: 32-unit art on a 20-unit button.
+			     Its black silhouette stays opaque beneath faded later stops. -->
+			<Layer level="BACKGROUND">
+				<!-- art-ok: the quest POI's square art at 32 square -->
+				<Texture parentKey="Disc" atlas="UI-QuestPoi-QuestNumber">
+					<Size x="32" y="32"/>
+					<Anchors>
+						<Anchor point="CENTER"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="ARTWORK">
+				<!-- art-ok: the quest POI's square art at 32 square -->
+				<Texture parentKey="Icon" atlas="UI-QuestPoi-QuestNumber">
+					<Size x="32" y="32"/>
+					<Anchors>
+						<Anchor point="CENTER"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="ARTWORK" textureSubLevel="1">
+				<!-- art-ok: a square cell of the POI number sheet, cropped in Pins.lua -->
+				<Texture parentKey="Number" file="Interface\WorldMap\UI-QuestPoi-NumberIcons">
+					<Size x="32" y="32"/>
+					<Anchors>
+						<Anchor point="CENTER"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<!-- The quest POI's own numeral over the ring; hover and the reveal ping are the tooltip and the native
+			     ping pin, with no glow layer of our own. -->
+			<Layer level="OVERLAY">
+				<FontString parentKey="NumberText" inherits="GameFontNormal">
+					<Anchors>
+						<Anchor point="CENTER"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<!-- The shared private canvas wires hover and observes global mouse clicks. -->
+	</Frame>
+</Ui>

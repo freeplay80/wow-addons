@@ -1,0 +1,9 @@
+{
+  "result": "PASS",
+  "files": 11,
+  "luaSyntax": 10,
+  "keepOrSellKeys": 274,
+  "supplementalKeys": 91,
+  "totalKeys": 365,
+  "gameUI": "NOT_TESTED"
+}

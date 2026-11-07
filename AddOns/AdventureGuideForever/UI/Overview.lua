@@ -1,0 +1,928 @@
+---@type string, AGFNamespace
+local _, ns = ...
+local L = ns.L
+
+-- The map guide's shared presentation (docs/design.md §2.2): the kind icons, a card's
+-- lines and progress, and what a click or hover on a card or a step does. Rows draw
+-- from the same route and choose through the same ns.Choose, so they never disagree.
+---@class AGFOverview
+local Overview = {}
+ns.Overview = Overview
+
+-- Blizzard's QUEST_TAG_ATLAS icons (Blizzard_FrameXMLBase/Constants.lua:514-527); the next zone gets the map's "!",
+-- the calling the quest log's class icon from the same sheet (CSV:9385).
+local KIND_ICONS = {
+	guide = "questlog-questtypeicon-story",
+	carry = "questlog-questtypeicon-quest",
+	story = "questlog-questtypeicon-story",
+	nextzone = "QuestNormal",
+	dungeon = "questlog-questtypeicon-dungeon",
+	calling = "questlog-questtypeicon-class",
+	-- The minimap's battlemaster mark (CSV:1319).
+	battleground = "battlemaster",
+}
+
+-- The overview's quest log headers (docs/design.md §2.2), in the order they show. A journey carries its header's key
+-- in `section`, set once in Planning/Journeys.lua from its kind; `open` is the default for a character that has never
+-- touched the header, and the player's own choice is saved per character by `key`.
+---@class AGFJourneyGroup
+---@field key AGFJourneySection
+---@field label string
+---@field open boolean
+
+---@type AGFJourneyGroup[]
+local GROUPS = {}
+local LABELS = {
+	continue = L.GROUP_CONTINUE,
+	zones = L.GROUP_ZONES,
+	dungeons = L.GROUP_DUNGEONS,
+	battlegrounds = L.GROUP_BATTLEGROUNDS,
+}
+for index, key in ipairs(ns.Model.SECTIONS) do
+	GROUPS[index] = { key = key, label = LABELS[key], open = false }
+end
+
+-- `journeys`' cards under `key` in the order the guide draws them (Model.InSection); empty when it has none, so a
+-- header with no card is never drawn.
+local InGroup = ns.Model.InSection
+
+-- Whether the player collapsed `key`: their saved choice, else the group's default.
+---@param key AGFJourneySection
+---@return boolean
+local function Collapsed(key)
+	local saved = ns.Prefs().previewGroups or {}
+	if saved[key] ~= nil then
+		return saved[key] == true
+	end
+	for _, group in ipairs(GROUPS) do
+		if group.key == key then
+			return not group.open
+		end
+	end
+	return false
+end
+
+-- The header's click: remember the opposite state for this character, so it survives a reload.
+---@param key AGFJourneySection
+local function ToggleCollapsed(key)
+	local prefs = ns.Prefs()
+	prefs.previewGroups = prefs.previewGroups or {}
+	prefs.previewGroups[key] = not Collapsed(key)
+end
+
+-- Whether `journey` is on show in the overview: every card while the player follows one, and every card of an open
+-- header. A card of the header the route follows is always shown, so the player never loses it. The card-minute
+-- queue uses this too, so a hidden card is never refreshed.
+---@param route AGFRoute
+---@param journey AGFJourney
+---@return boolean
+local function Open(route, journey)
+	if route.chosen or not Collapsed(journey.section) then
+		return true
+	end
+	local limit, position = journey.section == "continue" and 2 or 1, 0
+	for _, candidate in ipairs(route.journeys) do
+		if candidate.section == journey.section then
+			position = position + 1
+			if candidate.key == journey.key then
+				return position <= limit
+			end
+		end
+	end
+	return false
+end
+
+-- A step on the world map: the map opens when it is closed, then turns to the step and pings it.
+---@param step AGFStep
+local function ShowOnMap(step)
+	ns.Pins.Reveal(step)
+end
+
+---@param owner Frame
+---@param lines string[]
+local function ShowTooltip(owner, lines)
+	GameTooltip:SetOwner(owner, "ANCHOR_RIGHT")
+	GameTooltip_SetTitle(GameTooltip, lines[1])
+	for index = 2, #lines do
+		GameTooltip_AddNormalLine(GameTooltip, lines[index])
+	end
+	GameTooltip:Show()
+end
+
+---@class AGFStepHoverRow : Button
+---@field step? AGFStep
+---@field index? integer
+
+function Overview.RowLeave()
+	GameTooltip_Hide()
+end
+
+-- A step row's lines: the ring's; a row after step 1 asks Shortest Path for its travel line once, on hover.
+---@param self AGFStepHoverRow
+local function RowEnter(self)
+	local step, index = self.step, self.index
+	if not (step and index) then
+		return
+	end
+	local travel = index == 1 and ns.Integrations.Travel(step) or ns.Integrations.TravelLine(step)
+	GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+	ns.Pins.StepTooltip(GameTooltip, step, index, travel)
+	-- The chosen journey's rows drag into another order (docs/design.md §2.20).
+	if ns.Route().chosen and not step.rxpIndex then
+		GameTooltip_AddInstructionLine(GameTooltip, L.ORDER_DRAG)
+	end
+	-- Without Shortest Path a step is a waypoint as the crow flies; a wanderer wants neither.
+	if not ns.Setting("wanderer") then
+		ns.Companions.AddLine(GameTooltip, "ShortestPathForever")
+	end
+	GameTooltip:Show()
+end
+
+-- The step's kind at a glance (docs/design.md §2.9), the map's own marks: a pickup's "!", a hand-in's "?", an
+-- objective's mark (a dungeon's work too), and the minimap tracking menu's trainer and battlemaster. A town reads as
+-- its pickups when it has any, else its hand-ins. Nil for a step the model gave no verb.
+local VERB_ATLAS = {
+	pickup = "QuestNormal",
+	turnin = "QuestTurnin",
+	objective = "questobjective",
+	battlemaster = "battlemaster",
+}
+local TRAINER_FILE = "Interface\\Minimap\\Tracking\\Class"
+-- An objective step whose open objectives are all one kind wears the mark the game shows over that kind of
+-- target: the targeting frame's skull for kills, the quest log's own objective mark for something to collect or use.
+-- Mixed work, and a place to reach, keep the objective's own mark.
+-- The targeting frame's own skull over a high-level target (Blizzard_UnitFrame/Mainline/TargetFrame.xml,
+-- HighLevelTexture), the modern atlas for the loose skull the old frame shipped.
+local OBJECTIVE_ATLASES = {
+	monster = "UI-HUD-UnitFrame-Target-HighLevelTarget_Icon",
+	item = "QuestObjective",
+	object = "QuestObjective",
+}
+
+---@param step AGFStep
+---@return string? atlas
+local function ObjectiveIcon(step)
+	local kind
+	for _, objective in ipairs(step.objectives or {}) do
+		local quest = ns.Data.quests[objective.id]
+		local own = quest and quest.kinds and quest.kinds[objective.slot]
+		if not own or (kind and own ~= kind) then
+			return nil
+		end
+		kind = own
+	end
+	return kind and OBJECTIVE_ATLASES[kind] or nil
+end
+
+---@param step AGFStep
+---@return string? atlas
+---@return string? file
+local function VerbIcon(step)
+	local verb = step.verb
+	if verb == "town" then
+		return (step.pickups and #step.pickups > 0) and VERB_ATLAS.pickup or VERB_ATLAS.turnin
+	elseif verb == "trainer" then
+		return nil, TRAINER_FILE
+	elseif verb == "objective" then
+		local atlas = ObjectiveIcon(step)
+		if atlas then
+			return atlas
+		end
+	end
+	return verb and VERB_ATLAS[verb] or nil
+end
+
+-- A RestedXP line's kind (AGFRXPElement.tag) in the same marks (#351): a pickup's "!", a hand-in's "?", an objective's
+-- mark, the quest log's objective mark for something to collect, the flight master's and the innkeeper's tracking
+-- icons for a flight and a hearth. Other kinds (a walk, a note) have no mark.
+local LINE_ATLAS = {
+	accept = VERB_ATLAS.pickup,
+	turnin = VERB_ATLAS.turnin,
+	complete = VERB_ATLAS.objective,
+	collect = "QuestObjective",
+	collectmultiple = "QuestObjective",
+}
+local LINE_FILES = {
+	fly = "Interface\\Minimap\\Tracking\\FlightMaster",
+	fp = "Interface\\Minimap\\Tracking\\FlightMaster",
+	hs = "Interface\\Minimap\\Tracking\\Innkeeper",
+	home = "Interface\\Minimap\\Tracking\\Innkeeper",
+}
+
+---@param tag? string
+---@param size number
+---@return string
+function Overview.LineMarkup(tag, size)
+	local atlas, file = LINE_ATLAS[tag or ""], LINE_FILES[tag or ""]
+	if atlas then
+		return ns.Art.Markup(atlas, size) .. " "
+	elseif file then
+		return ns.Art.FileMarkup(file, size) .. " "
+	end
+	return ""
+end
+
+---@param step AGFStep
+---@param size number
+---@return string
+function Overview.VerbMarkup(step, size)
+	local atlas, file = VerbIcon(step)
+	if atlas then
+		return ns.Art.Markup(atlas, size) .. " "
+	elseif file then
+		return ns.Art.FileMarkup(file, size) .. " "
+	end
+	return ""
+end
+
+---@class AGFBadge : Texture
+---@field box number the square the mark fits in
+
+-- The kind's mark on `badge` at its own aspect, hidden when the step has none. A file (the trainer's, the flight
+-- master's) is a square icon.
+---@param badge AGFBadge
+---@param step AGFStep
+local function SetVerbIcon(badge, step)
+	local atlas, file = VerbIcon(step)
+	if atlas then
+		ns.Art.Fit(badge, atlas, badge.box, badge.box)
+	elseif file then
+		ns.Art.Icon(badge, file, badge.box)
+	end
+	badge:SetShown(atlas ~= nil or file ~= nil)
+end
+
+-- A step's badge: the kind's mark over its ring's lower right, in a `size` square `out` past the ring's edge, as
+-- Shortest Path badges a numbered stop (its Route.lua: BADGE_SIZE 16, BADGE_OFFSET 4 on a 22 ring); centred in that
+-- square, so a mark narrower than it stays in place.
+---@param parent Frame
+---@param ring Region
+---@param size number
+---@param out number
+---@return AGFBadge
+local function CreateBadge(parent, ring, size, out)
+	local badge = parent:CreateTexture(nil, "OVERLAY", nil, 1) --[[@as AGFBadge]]
+	badge.box = size
+	badge:SetSize(size, size)
+	badge:SetPoint("CENTER", ring, "BOTTOMRIGHT", out - size / 2, size / 2 - out)
+	badge:Hide()
+	return badge
+end
+
+--[[ Reordering the chosen journey (docs/design.md §2.20): the right-click menu's Do this next, sooner and later, and a
+     drag from one row onto another with the stock move cursor. Order.lua says which moves keep the route whole; a
+     row it would not take is dimmed while the drag lasts, and nothing moves but the step dragged. ]]
+
+local DRAG_CURSOR = "Interface\\CURSOR\\UI-Cursor-Move"
+local DIMMED = 0.35
+
+-- After the step menu (Menu.lua), the chosen journey's order: each move greyed where Order.lua refuses it, the way
+-- back while the order is the player's, and a town's givers still to see, a skip each.
+---@param root AGFMenuDescription
+---@param step AGFStep
+---@param index? integer
+local function OrderEntries(root, step, index)
+	local Order = ns.Order
+	if step.rxpIndex or not (index and ns.Route().chosen) then
+		return
+	end
+	root:CreateDivider()
+	for _, move in ipairs({ { L.ORDER_NEXT, 1 }, { L.ORDER_SOONER, index - 1 }, { L.ORDER_LATER, index + 1 } }) do
+		local to = move[2]
+		local button = root:CreateButton(move[1], function()
+			Order.Move(index, to)
+		end)
+		button:SetEnabled(to >= 1 and Order.CanMove(index, to))
+	end
+	if Order.IsCustom() then
+		root:CreateButton(L.ORDER_RESET, Order.Reset)
+	end
+	local open = {}
+	for _, giver in ipairs(step.checklist or {}) do
+		open[#open + 1] = not (giver.done or giver.skipped) and giver or nil
+	end
+	if #open > 0 then
+		local skip = root:CreateButton(L.TOWN_SKIP_GIVER)
+		-- A town's givers are a list: past 20 rows of 20 px the submenu scrolls (WFA-36).
+		skip:SetScrollMode(400)
+		for _, giver in ipairs(open) do
+			skip:CreateButton(giver.name, function()
+				Order.SkipGiver(step.key, giver.key)
+			end)
+		end
+	end
+end
+
+-- A step row's right-click: the step menu, then its order.
+---@param owner Region
+---@param step AGFStep
+---@param index? integer
+local function StepMenu(owner, step, index)
+	ns.ContextMenu(owner, function(_, root)
+		ns.Menu.Step(root, step)
+		OrderEntries(root, step, index)
+	end)
+end
+
+---@class AGFDraggableRow : Button
+---@field step? AGFStep
+---@field index? integer
+
+-- Lets a row of `rows` be dragged onto another; `redraw` puts every row's own alpha back once the drag ends.
+---@param row AGFDraggableRow
+---@param rows AGFDraggableRow[]
+---@param redraw fun()
+local function Draggable(row, rows, redraw)
+	row:RegisterForDrag("LeftButton")
+	row:SetScript("OnDragStart", function(self)
+		if (self.step and self.step.rxpIndex) or not (self.index and ns.Route().chosen) then
+			return
+		end
+		GameTooltip_Hide()
+		SetCursor(DRAG_CURSOR)
+		for _, other in ipairs(rows) do
+			if other ~= self and other.index and other:IsShown() and not ns.Order.CanMove(self.index, other.index) then
+				other:SetAlpha(DIMMED)
+			end
+		end
+	end)
+	row:SetScript("OnDragStop", function(self)
+		ResetCursor()
+		local target
+		for _, other in ipairs(rows) do
+			if other ~= self and other.index and other:IsShown() and other:IsMouseOver() then
+				target = other
+			end
+		end
+		redraw()
+		if self.index and target and ns.Order.CanMove(self.index, target.index) then
+			ns.Order.Move(self.index, target.index)
+		end
+	end)
+end
+
+--[[ A town's checklist (docs/design.md §2.9): a line a giver under the town's row, ticked once done as the tracker
+     ticks an objective; a giver skipped for now greys out with no tick. ]]
+
+local CHECK_HEIGHT, CHECK_ICON = 14, 12
+
+---@class AGFCheckLine : Frame
+---@field Tick Texture
+---@field Text FontString
+
+---@param parent Frame
+---@return AGFCheckLine
+local function CreateCheckLine(parent)
+	local line = CreateFrame("Frame", nil, parent) --[[@as AGFCheckLine]]
+	line:SetHeight(CHECK_HEIGHT)
+	line.Tick = line:CreateTexture(nil, "ARTWORK")
+	line.Tick:SetSize(CHECK_ICON, CHECK_ICON)
+	line.Tick:SetPoint("LEFT")
+	line.Text = line:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
+	line.Text:SetPoint("LEFT", CHECK_ICON + 4, 0)
+	line.Text:SetPoint("RIGHT")
+	line.Text:SetJustifyH("LEFT")
+	line.Text:SetWordWrap(false)
+	return line
+end
+
+-- `step`'s checklist in `pool`'s lines from `first` on (made as needed on `parent`), from `top` down, `left` in and
+-- `width` wide, while a line ends above `bottom`. Returns the top under the last line and the next free line.
+---@param pool AGFCheckLine[]
+---@param first integer
+---@param parent Frame
+---@param step AGFStep
+---@param left number
+---@param top number
+---@param width number
+---@param bottom? number
+---@return number top
+---@return integer next
+local function LayoutChecklist(pool, first, parent, step, left, top, width, bottom)
+	local index = first
+	for _, giver in ipairs(step.checklist or {}) do
+		if bottom and top + CHECK_HEIGHT > bottom then
+			break
+		end
+		local line = pool[index] or CreateCheckLine(parent)
+		pool[index] = line
+		line:SetWidth(width)
+		line:SetPoint("TOPLEFT", left, -top)
+		-- art-ok: the tracker's tick or its nub, both square, in the square the line built
+		line.Tick:SetAtlas(giver.done and "UI-QuestTracker-Tracker-Check" or "UI-QuestTracker-Objective-Nub")
+		line.Tick:SetAlpha(giver.skipped and 0.4 or 1)
+		line.Text:SetWordWrap(step.rxpIndex ~= nil)
+		line.Text:SetText((giver.done or giver.skipped) and giver.text or ns.StepStyle.Checklist(step, giver))
+		local height = step.rxpIndex and math.max(CHECK_HEIGHT, line.Text:GetStringHeight()) or CHECK_HEIGHT
+		line:SetHeight(height)
+		local shade = (giver.done or giver.skipped) and 0.6 or 0.9
+		line.Text:SetTextColor(shade, shade, shade)
+		line:Show()
+		top, index = top + height, index + 1
+	end
+	return top, index
+end
+
+-- Hides `pool`'s lines from `from` on.
+---@param pool AGFCheckLine[]
+---@param from integer
+local function HideChecklist(pool, from)
+	for index = from, #pool do
+		pool[index]:Hide()
+	end
+end
+
+-- A quest in the log opens the map on its zone; any other step turns the map to it and pings it. Right-click is the
+-- step menu and order.
+---@param self AGFStepHoverRow
+---@param mouseButton string
+local function RowClick(self, mouseButton)
+	if not self.step then
+		return
+	end
+	if mouseButton == "RightButton" then
+		StepMenu(self, self.step, self.index)
+	elseif not ns.ShowQuest(self.step) then
+		ShowOnMap(self.step)
+	end
+end
+
+-- A cleanup quest's title, from the log first so it is in the client's language, then the data.
+---@param id integer
+---@return string?
+local function CleanupTitle(id)
+	local entry = ns.Snapshot().log[id]
+	local quest = ns.Data.quests[id]
+	return (entry and entry.title) or (quest and quest.title)
+end
+
+-- One cleanup quest's title in the card's tooltip.
+---@param id integer
+local function AddCleanupTitle(id)
+	local title = CleanupTitle(id)
+	if title then
+		GameTooltip_AddHighlightLine(GameTooltip, title)
+	end
+end
+
+-- Open a cleanup quest on the map, selected in the game's quest log, so its Abandon button is the player's to press.
+-- The same path as ns.ShowQuest (Core/Core.lua); AGF never opens the details pane and never abandons a quest itself
+-- (docs/design.md §1, §2.18).
+---@param questID integer
+function Overview.OpenCleanupQuest(questID)
+	if InCombatLockdown() then
+		return
+	end
+	C_QuestLog.SetSelectedQuest(questID)
+	ns.OpenMap(GetQuestUiMapID(questID))
+end
+
+-- The carry card's right-click menu: the grey and elsewhere quests under their headings, each opening on the map.
+-- False when there is nothing to clean up, so the card keeps doing nothing.
+---@param owner Region
+---@param journey AGFJourney
+---@return boolean opened
+local function CleanupMenu(owner, journey)
+	local cleanup = journey.cleanup
+	if not cleanup or cleanup.grey + cleanup.elsewhere == 0 then
+		return false
+	end
+	ns.ContextMenu(owner, function(_, root)
+		root:SetScrollMode(400)
+		root:CreateTitle(L.CLEANUP_MENU_TITLE)
+		if cleanup.grey > 0 then
+			root:CreateTitle(L.CLEANUP_GREY_HEADING)
+			for _, id in ipairs(cleanup.greyIDs or {}) do
+				root:CreateButton(CleanupTitle(id) or "", function()
+					Overview.OpenCleanupQuest(id)
+				end)
+			end
+		end
+		if cleanup.elsewhere > 0 then
+			root:CreateTitle(L.CLEANUP_ELSEWHERE_HEADING)
+			for _, id in ipairs(cleanup.elsewhereIDs or {}) do
+				root:CreateButton(CleanupTitle(id) or "", function()
+					Overview.OpenCleanupQuest(id)
+				end)
+			end
+		end
+	end)
+	return true
+end
+
+-- Choosing a journey shows its route and turns the map to it, and with the setting on starts it (ns.Choose, once the
+-- rebuild has its steps). The map turns before the invalidation, so its redraw reads the route as it is and the one
+-- rebuild waits a frame. The chosen card is no toggle: the header's back arrow goes back to the overview and the
+-- footer's Stop stops the route, so a click on it only turns the map to it again, or resumes its route while that is
+-- paused. Right-click offers "Not interested", except on what the player carries, whose menu cleans up the log.
+---@param self AGFCardButton
+---@param mouseButton string
+local function CardClick(self, mouseButton)
+	local journey = self.journey
+	if not journey then
+		return
+	end
+	if journey.rxpGroup and journey.rxpName and mouseButton ~= "RightButton" then
+		ns.RestedXP.Choose(journey.rxpGroup, journey.rxpName, ns.Setting("titleStartsRoute"))
+		GameTooltip_Hide()
+		return
+	end
+	if mouseButton == "RightButton" then
+		if journey.kind == "carry" then
+			if CleanupMenu(self, journey) then
+				GameTooltip_Hide()
+			end
+		else
+			GameTooltip_Hide()
+			ns.Menu.Journey(self, journey)
+		end
+		return
+	end
+	if self.state == "chosen" and ns.Guidance.Status() == "paused" then
+		ns.StartRoute()
+	else
+		-- Turn the map to the selected journey.
+		if WorldMapFrame:IsShown() and journey.map > 0 then
+			ns.OpenMap(journey.map)
+		end
+		if self.state ~= "chosen" then
+			ns.Choose(journey.key, ns.Setting("titleStartsRoute"))
+		end
+	end
+	-- Its tooltip spoke for the state the click just left.
+	GameTooltip_Hide()
+end
+
+-- A card's first stop and how many stops follow it, its third line when it has no reason.
+---@param journey AGFJourney
+---@return string?
+local function HubLine(journey)
+	local more = journey.more or 0
+	if not journey.hub then
+		return nil
+	end
+	return (more > 1 and L.HUB_MORE:format(journey.hub, more))
+		or (more == 1 and L.HUB_MORE_ONE:format(journey.hub))
+		or journey.hub
+end
+
+-- The log-full note (docs/design.md §2.18) on the card that has it: how many quests could go.
+---@param journey AGFJourney
+---@return string?
+local function DropLine(journey)
+	local drop = journey.drop and #journey.drop or 0
+	return (drop == 1 and L.LOG_FULL_ONE) or (drop > 1 and L.LOG_FULL:format(drop)) or nil
+end
+
+-- The carry card's cleanup line (docs/design.md §2.18): what the player could hand in, what has gone grey, and what
+-- they can't finish from here. Its tooltip lists the titles, and its right-click menu opens one on the map.
+---@param journey AGFJourney
+---@return string?
+local function CleanupLine(journey)
+	local cleanup = journey.cleanup
+	if not cleanup then
+		return nil
+	end
+	local parts = {}
+	parts[#parts + 1] = cleanup.ready > 0 and L.CLEANUP_READY:format(cleanup.ready) or nil
+	parts[#parts + 1] = cleanup.grey > 0 and L.CLEANUP_GREY:format(cleanup.grey) or nil
+	parts[#parts + 1] = cleanup.elsewhere > 0 and L.CLEANUP_ELSEWHERE:format(cleanup.elsewhere) or nil
+	return #parts > 0 and L.CLEANUP:format(table.concat(parts, L.LIST_SEPARATOR)) or nil
+end
+
+-- The dungeon card's way in (docs/design.md §2.19): the entrance for its instance (a Map.ID, Dungeons.Entrance), else
+-- the line saying why there is none, and whether that line suggests installing Tweaks Forever (drawn grey). Nil for
+-- any other card.
+---@param journey AGFJourney
+---@return integer? instance
+---@return AGFPoint? point
+---@return string? note
+---@return boolean? suggestion
+local function Entrance(journey)
+	local instance = journey.kind == "dungeon" and journey.instance
+	if not instance then
+		return nil
+	end
+	local point, reason = ns.Dungeons.Entrance(instance)
+	if point then
+		return instance, point
+	end
+	local line, suggestion
+	if reason == "missing" then
+		line, suggestion = ns.Companions.Line("TweaksForever")
+	end
+	return instance, nil, line or (reason == "outdated" and L.TWEAKS_OUTDATED) or L.ENTRANCE_UNKNOWN, suggestion
+end
+
+-- Every card's tooltip, whole or one-line: its lines, the hub line when line 3 holds the reason
+-- or is folded away, how many quests need a group, the quests the log-full note means, then what a click does. The
+-- map's chosen card points to the back arrow; a card whose click would replace someone else's journey warns
+-- first (docs/design.md §2.9).
+---@param card AGFCardButton
+local function CardTooltip(card)
+	local journey = card.journey
+	if not journey then
+		return
+	end
+	local starts = ns.Setting("titleStartsRoute")
+	local chosen = card.state == "chosen"
+	GameTooltip:SetOwner(card, "ANCHOR_RIGHT")
+	GameTooltip_SetTitle(GameTooltip, journey.title)
+	GameTooltip_AddNormalLine(GameTooltip, journey.subline)
+	if journey.reason then
+		GameTooltip_AddHighlightLine(GameTooltip, journey.reason)
+	end
+	local hub = HubLine(journey)
+	if hub and (journey.reason or journey.drop or card.state == "compact" or card.detail == hub) then
+		GameTooltip_AddHighlightLine(GameTooltip, hub)
+	end
+	if card.detail and card.detail ~= journey.reason and card.detail ~= journey.subline and card.detail ~= hub then
+		GameTooltip_AddHighlightLine(GameTooltip, card.detail)
+	end
+	local travel = ns.Integrations.CardTravel(journey)
+	if travel and travel.line then
+		GameTooltip_AddHighlightLine(GameTooltip, travel.line)
+	end
+	if journey.kind == "carry" then
+		GameTooltip_AddNormalLine(GameTooltip, L.CARRY_EXPLANATION)
+	end
+	local cleanup = journey.cleanup
+	if cleanup then
+		if cleanup.ready > 0 then
+			GameTooltip_AddNormalLine(GameTooltip, L.CLEANUP_READY_HEADING)
+			for _, id in ipairs(cleanup.readyIDs or {}) do
+				AddCleanupTitle(id)
+			end
+		end
+		if cleanup.grey > 0 then
+			GameTooltip_AddNormalLine(GameTooltip, L.CLEANUP_GREY_HEADING)
+			for _, id in ipairs(cleanup.greyIDs or {}) do
+				AddCleanupTitle(id)
+			end
+		end
+		if cleanup.elsewhere > 0 then
+			GameTooltip_AddNormalLine(GameTooltip, L.CLEANUP_ELSEWHERE_HEADING)
+			for _, id in ipairs(cleanup.elsewhereIDs or {}) do
+				AddCleanupTitle(id)
+			end
+		end
+		if cleanup.grey + cleanup.elsewhere > 0 then
+			GameTooltip_AddInstructionLine(GameTooltip, L.CLEANUP_RIGHT_CLICK)
+		end
+	end
+	local group = journey.group or 0
+	if group > 0 then
+		GameTooltip_AddHighlightLine(GameTooltip, group == 1 and L.GROUP_ONE or L.GROUP_MANY:format(group))
+	end
+	local _, _, note, suggestion = Entrance(journey)
+	if note and suggestion then
+		GameTooltip_AddColoredLine(GameTooltip, note, GRAY_FONT_COLOR)
+	elseif note then
+		GameTooltip_AddNormalLine(GameTooltip, note)
+	end
+	if journey.drop then
+		local log = ns.Snapshot().log
+		GameTooltip_AddNormalLine(GameTooltip, L.LOG_FULL_LIST)
+		for _, id in ipairs(journey.drop) do
+			local entry = log[id]
+			GameTooltip_AddHighlightLine(GameTooltip, entry and entry.title or ns.Data.quests[id].title)
+		end
+	end
+	local resumes = chosen and ns.Guidance.Status() == "paused"
+	if not chosen then
+		GameTooltip_AddInstructionLine(GameTooltip, L.CLICK_TO_CHOOSE)
+	elseif resumes then
+		GameTooltip_AddInstructionLine(GameTooltip, L.CLICK_TO_RESUME)
+	end
+	if chosen and not card.noBack then
+		GameTooltip_AddInstructionLine(GameTooltip, L.BACK_TO_ALL)
+	end
+	if (resumes or not chosen and starts) and ns.Integrations.ReplacesJourney() then
+		GameTooltip_AddInstructionLine(GameTooltip, L.REPLACES_JOURNEY)
+	end
+	if journey.kind ~= "carry" then
+		GameTooltip_AddInstructionLine(GameTooltip, L.RIGHT_CLICK_NOT_INTERESTED)
+	end
+	GameTooltip:Show()
+end
+
+-- How far a journey has come, when it has come some way: a story's chapters done of a chain the data proves the length
+-- of, a RestedXP guide's steps done of all it has, Quests in your log' quests ready of all it holds. The bar's value
+-- and the grid footer's words.
+---@param journey AGFJourney
+---@return number? value
+---@return string? label
+local function Progress(journey)
+	local story = journey.story
+	if story and story.total and story.chapter > 1 then
+		return (story.chapter - 1) / story.total, L.CHAPTERS_DONE:format(story.chapter - 1, story.total)
+	end
+	local step, steps = journey.guideStep, journey.guideSteps
+	if step and steps and steps > 0 and step > 1 then
+		return (step - 1) / steps, L.CHAPTERS_DONE:format(step - 1, steps)
+	end
+	local ready, underway = journey.ready or 0, journey.underway or 0
+	if journey.kind == "carry" and ready > 0 then
+		return ready / (ready + underway), L.READY_OF:format(ready, ready + underway)
+	end
+end
+
+-- The zone icon's centre: the card's first town on its zone, else its first stop.
+---@param journey AGFJourney
+---@return AGFStep?
+local function IconStep(journey)
+	for _, step in ipairs(journey.steps) do
+		if step.kind == "town" and step.map == journey.map then
+			return step
+		end
+	end
+	return journey.steps[1]
+end
+
+-- A grid card's footer when it has come no way: how many stops it has.
+---@param journey AGFJourney
+---@return string
+local function Stops(journey)
+	if journey.rxpGroup then
+		return L.RXP_SELECT
+	end
+	local stops = journey.more and journey.more + 1 or #journey.steps
+	return stops == 1 and L.STOPS_ONE or L.STOPS:format(stops)
+end
+
+-- The featured card's counts, after the map's own turn-in and quest marks.
+local READY_MARK, UNDERWAY_MARK = ns.Art.Markup("QuestTurnin", 12) .. " ", ns.Art.Markup("QuestNormal", 12) .. " "
+local COUNT_GAP = "  "
+
+-- The featured card's line of counts, with the map's marks; its subline when it has none.
+---@param journey AGFJourney
+---@return string
+local function Counts(journey)
+	local ready, underway, counts = journey.ready or 0, journey.underway or 0, {}
+	counts[#counts + 1] = ready > 0 and READY_MARK .. L.CARRY_READY:format(ready) or nil
+	counts[#counts + 1] = underway > 0 and UNDERWAY_MARK .. L.CARRY_IN_PROGRESS:format(underway) or nil
+	return #counts > 0 and table.concat(counts, COUNT_GAP) or journey.subline
+end
+
+-- The client's own stat bar (Blizzard_SharedXML/Camelot/ProgressBars/ColoredProgressBar.xml, which the reputation and
+-- skills frames inherit as ReputationBarTemplate and SkillsBarTemplate): inherited whole, so the background, the
+-- mask-clipped fill and their nine-slices are the client's, and the bar is lengthened only through the template's
+-- own SetFillPercent. The frame is 29 tall at its own size; a card draws it at 7 by scaling the whole frame, so the
+-- art keeps its shape and the fill keeps the client's own rounded ends.
+local BAR_HEIGHT, BAR_ART = 7, 29
+
+---@class AGFProgressBar : Frame
+---@field Fill Texture the template's mask-clipped fill, as wide as the progress
+---@field Mask MaskTexture the fill's rounded ends
+---@field Text FontString the template's own label, unused here
+---@field SetFillPercent fun(self: AGFProgressBar, percent: number) the template's own fill, from its left edge
+
+---@param parent Frame
+---@return AGFProgressBar
+local function CreateBar(parent)
+	local bar = CreateFrame("Frame", nil, parent, "ColoredProgressBarTemplate") --[[@as AGFProgressBar]]
+	bar:SetScale(BAR_HEIGHT / BAR_ART)
+	bar:SetHeight(BAR_ART)
+	-- The template's fill is white; the game's reputation and skill bars use its green for progress that is going up.
+	bar.Fill:SetAtlas("common-stat-bar-green", true)
+	bar:SetFillPercent(0)
+	return bar
+end
+
+-- The bar `width` wide at (x, y) in its card, filled to `value` (0-1]; a scaled frame's offsets and size are in its
+-- own units. The template draws no fill at all at 0, so an empty bar is its own background and nothing else.
+---@param bar AGFProgressBar
+---@param x number
+---@param y number
+---@param width number
+---@param value number
+local function SetBar(bar, x, y, width, value)
+	local scale = BAR_HEIGHT / BAR_ART
+	bar:SetScale(scale)
+	bar:SetWidth(width / scale)
+	bar:ClearAllPoints()
+	bar:SetPoint("TOPLEFT", x / scale, -y / scale)
+	bar:SetFillPercent(math.min(value, 1))
+	bar:Show()
+end
+
+-- A rebuild redraws a hovered card's tooltip only while the card is on screen and the tooltip still up: a card that
+-- closed with the map has no OnLeave to clear its ownership, and redrawing it would leave the tooltip
+-- floating where the card was.
+---@param card AGFCardButton
+local function RefreshCardTooltip(card)
+	if card:IsVisible() and GameTooltip:IsShown() and GameTooltip:IsOwned(card) then
+		CardTooltip(card)
+	end
+end
+
+-- Hiding a frame fires no OnLeave on the one under the pointer, so the tooltip goes when it belongs to `root` or
+-- anything inside it; another addon's tooltip stays.
+---@param root Frame
+local function HideTooltipWithin(root)
+	---@type Frame? the walk ends on a parentless frame
+	local owner = GameTooltip:GetOwner()
+	while owner do
+		if owner == root then
+			GameTooltip:Hide()
+			return
+		end
+		owner = owner:GetParent()
+	end
+end
+
+-- A card's levels, in the colour the game gives a quest of that level: a zone's or dungeon's range, a battleground's
+-- first level. Nothing for a card with no one place (Quests in your log).
+---@param journey AGFJourney
+---@param level integer the player's
+---@return string? text
+---@return {r: number, g: number, b: number}? color
+local function Levels(journey, level)
+	local low, high = ns.Model.LevelRange(ns.Data, journey)
+	if not low then
+		return nil
+	elseif not high then
+		return L.LEVELS_FROM:format(low), GetQuestDifficultyColor(level)
+	end
+	local text = low == high and tostring(low) or L.LEVELS:format(low, high)
+	return text, GetQuestDifficultyColor(math.max(low, math.min(level, high)))
+end
+
+-- Why a quest wants a group, in words (Model.GroupNeed, docs/design.md §2.27): "Dungeon: The Deadmines", "Group of
+-- 3", "Elite: group advised". Nil for a quest done alone.
+---@param questID integer
+---@param log? table<integer, AGFLogQuest> the snapshot's log, when the caller has read it already
+---@return string?
+function Overview.GroupNote(questID, log)
+	local data = ns.Data
+	local kind, value = ns.Model.GroupNeed(data, log or ns.Snapshot().log, questID)
+	if (kind == "dungeon" or kind == "raid") and value then
+		local name = ns.State.InstanceName(value) or data.instances[value].name
+		return (kind == "raid" and L.GROUP_NEED_RAID or L.GROUP_NEED_DUNGEON):format(name)
+	elseif kind == "raid" then
+		return L.GROUP_NEED_RAID_ANY
+	elseif kind == "size" and value then
+		return L.GROUP_NEED_SIZE:format(value)
+	elseif kind == "elite" then
+		return L.GROUP_NEED_ELITE
+	end
+	return nil
+end
+
+-- A step's group notes, each said once, in the step's quest order: the tracker's and the step tooltip's lines.
+---@param step AGFStep
+---@return string[]
+function Overview.GroupNotes(step)
+	local notes, seen, log = {}, {}, ns.Snapshot().log
+	for _, id in ipairs(step.quests) do
+		local note = Overview.GroupNote(id, log)
+		if note and not seen[note] then
+			seen[note] = true
+			notes[#notes + 1] = note
+		end
+	end
+	return notes
+end
+
+---@param journey AGFJourney
+---@param player? AGFPlayer
+---@return string?
+function Overview.VisitWarning(journey, player)
+	local zone = journey.zone and ns.Data.zones[journey.zone]
+	local step = journey.steps[1]
+	if zone and step and zone.min > (player or ns.State.Player()).level then
+		return L.QUEST_VISIT_WARNING:format(step.title, zone.min, zone.max)
+	end
+end
+
+Overview.KIND_ICONS = KIND_ICONS
+Overview.Levels = Levels
+Overview.GROUPS = GROUPS
+Overview.InGroup = InGroup
+Overview.Collapsed = Collapsed
+Overview.ToggleCollapsed = ToggleCollapsed
+Overview.Open = Open
+Overview.SetVerbIcon = SetVerbIcon
+Overview.CreateBadge = CreateBadge
+Overview.StepMenu = StepMenu
+Overview.Draggable = Draggable
+Overview.LayoutChecklist = LayoutChecklist
+Overview.HideChecklist = HideChecklist
+Overview.Entrance = Entrance
+Overview.CreateBar = CreateBar
+Overview.SetBar = SetBar
+Overview.ShowOnMap = ShowOnMap
+Overview.ShowTooltip = ShowTooltip
+Overview.RowEnter = RowEnter
+Overview.RowClick = RowClick
+Overview.CardClick = CardClick
+Overview.CardTooltip = CardTooltip
+Overview.RefreshCardTooltip = RefreshCardTooltip
+Overview.HideTooltipWithin = HideTooltipWithin
+Overview.HubLine = HubLine
+Overview.DropLine = DropLine
+Overview.CleanupLine = CleanupLine
+Overview.Progress = Progress
+Overview.IconStep = IconStep
+Overview.Stops = Stops
+Overview.Counts = Counts

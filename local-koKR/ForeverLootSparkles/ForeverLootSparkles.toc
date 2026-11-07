@@ -1,0 +1,14 @@
+## Interface: 16001
+## Title: Forever Loot Sparkles
+## Notes: Always shows the sparkle effect on lootable quest items. Turns the outline mode off and the loot sparkle on at login and whenever a graphics change resets it. Also makes ore veins and herbs sparkle as you approach them (Blizzard's soft targeting). Options under Options > AddOns.
+## Author: Ashtar Senior
+## Notes-koKR: 전리품을 얻을 수 있는 퀘스트 아이템의 반짝임을 유지합니다. 가까운 광맥과 약초에도 반짝임을 표시할 수 있습니다. 게임 설정의 애드온 탭에서 조절하세요.
+## Version: v1.3.1
+## IconTexture: Interface\AddOns\ForeverLootSparkles\Icon
+## SavedVariables: ForeverLootSparklesDB
+## X-License: GPL-3.0-or-later
+## X-Curse-Project-ID: 1729017
+
+Locale.lua
+ForeverLootSparkles.lua
+SoftTarget.lua

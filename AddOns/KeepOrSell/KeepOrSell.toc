@@ -1,0 +1,46 @@
+## Interface: 16001
+## Title: KeepOrSell
+## Notes-koKR: 퀘스트 아이템, 전문 기술 재료, 경매 가치에 따라 가방을 보관·경매장·잡동사니 등으로 분류합니다. 가방 가치 표시와 값싼 잡동사니 파괴 버튼을 제공하며 Baganator, Auctionator, Scrap, Questie와 연동합니다.
+## Notes: Sorts your bags into keep, auction house and junk for Scrap: quest items, profession reagents, items worth more on the AH. Shows your bag value and destroys the cheapest junk on a click. For Baganator, Auctionator, Scrap and Questie.
+## Notes-deDE: Sortiert die Taschen in Behalten, Auktionshaus und Schrott für Scrap: Questitems, Berufsmaterial, Items mit AH-Wert. Zeigt den Taschenwert und zerstört per Klick den billigsten Schrott. Für Baganator, Auctionator, Scrap und Questie.
+## Author: Conoar
+## Version: v0.21.0
+## IconTexture: Interface\AddOns\KeepOrSell\Icon
+## SavedVariables: KeepOrSellDB
+## OptionalDeps: Baganator, Auctionator, Scrap, QuestieDB, TradeSkillMaster
+## X-License: GPL-3.0-or-later
+## X-Curse-Project-ID: 1725855
+
+Locales\Locales.lua
+Data\Starts.lua
+Data\NewItems.lua
+Rules\Keep.lua
+Rules\Objectives.lua
+Rules\Prices.lua
+Integrations\TSM.lua
+Rules\Share.lua
+Rules\Gear.lua
+Rules\Professions.lua
+Rules\Account.lua
+Rules\Questie.lua
+Rules\Disenchant.lua
+Rules\Filter.lua
+Rules\Classify.lua
+Core\Dependencies.lua
+UI\OptionSections.lua
+Integrations\Scrap.lua
+Integrations\Baganator.lua
+Integrations\Tooltip.lua
+UI\Hints.lua
+UI\Help.lua
+UI\Style.lua
+UI\Setup.lua
+UI\OptionsWindow.lua
+Core\Bags.lua
+UI\Destroy.lua
+UI\LootCoins.lua
+UI\Warnings.lua
+UI\BagValue.lua
+UI\FilterWindow.lua
+UI\Options.lua
+Core\Core.lua

@@ -1,0 +1,132 @@
+[
+  {
+    "relative": "Lueur\\Locales\\koKR.lua",
+    "before": null,
+    "after": "cf0300488bd8797eae9794d16ae1ad4ddbafdf054c35235be7fe3f85d02becd2"
+  },
+  {
+    "relative": "Lueur\\Lueur.toc",
+    "before": "cdabc7ce9ce695de2717f596d5b2fc879824756bc92954dea8578fa999eb119e",
+    "after": "9c5c056ac1bcbf00274ff40b22b7b5de6b35770447001185602f8e146af8c0be"
+  },
+  {
+    "relative": "ForeverLootSparkles\\Locale.lua",
+    "before": null,
+    "after": "d7429c69840c0b46f2f69d9af33d626c77305e364779ee86bb30a67e52c21d78"
+  },
+  {
+    "relative": "ForeverLootSparkles\\ForeverLootSparkles.lua",
+    "before": "3c13dcc3f99086e4df577b3dc64b7aa0654b7931886218dbef6a4beea56c1308",
+    "after": "86ac6c2ea6a5fd138cb33f37be77e518f0e8685f92972e0c7138eebed79f6f50"
+  },
+  {
+    "relative": "ForeverLootSparkles\\SoftTarget.lua",
+    "before": "337bdec793a61ce04f40f08ec079dafe3e3a061c5cc5f0405ff4534f7e854ccc",
+    "after": "6afec00b397b1fe866c6b7c5191e8f8ee4713851004e5e38d577397d2e89a509"
+  },
+  {
+    "relative": "ForeverLootSparkles\\ForeverLootSparkles.toc",
+    "before": "2f6b1e4bdcc488f3b3e98186d3910496f51cfdd4b71c36eb5678ad45e4425d04",
+    "after": "50ff068eb7efeb673f283fa23c1e02ad912cf179593900106e78a2727c1004bd"
+  },
+  {
+    "relative": "HanharEnhancementHUD\\Locale.lua",
+    "before": null,
+    "after": "02626501953e057221263ffe84a445f57899c6516d1a2e36195970ad39bed738"
+  },
+  {
+    "relative": "HanharEnhancementHUD\\Core.lua",
+    "before": "a1cbb561f5c5bd6b8bfb66691c6aef6d8fa5e599e0f6cb0d1ca8eff740aa02c5",
+    "after": "8e25a90c59af4b86606f643286c4df7478d952a10427108f9629136ab94deb6e"
+  },
+  {
+    "relative": "HanharEnhancementHUD\\Totems.lua",
+    "before": "8b3e6da02c52ebcdf1063093bb150660bbcd56c0820b8af3622d89cf5318721f",
+    "after": "4d001d72ce9a45ddae88b121893021ce0c4f5c2ea3eac72807714d9ff496f2ee"
+  },
+  {
+    "relative": "HanharEnhancementHUD\\Swing.lua",
+    "before": "422aabc8a7fdc7f8148cae8a6ca6cc0f354cf387d5cfcd4ecf6eda6c96d995f3",
+    "after": "c3664c7614ed2000244aee0537feae489f88aa3f6e4cc76e231e3e229db40a03"
+  },
+  {
+    "relative": "HanharEnhancementHUD\\Buffs.lua",
+    "before": "e6ca09d7ac3b94f528bdfbd60764cb12ecb177a657f997b22fd995cd3a3cecf2",
+    "after": "824e884d1d35e37600699e06b47f88d43ec38537c8e224888beeb0cacf11b122"
+  },
+  {
+    "relative": "HanharEnhancementHUD\\Dots.lua",
+    "before": "bfba891d17681f212ad0c50c7ed8ebef6b9c1bcaedff79881f5b2d9ccb34d469",
+    "after": "ba88766092ef72064892085c586ccb626e584185680893593637d91f5f6763bf"
+  },
+  {
+    "relative": "HanharEnhancementHUD\\Reinc.lua",
+    "before": "6a7a547d9df8454c9adf5cec0907009ec1106ae1092363fc2d5fb92fc9929ab5",
+    "after": "c9b348f4fa28f380af4e6aba8f2b749259ec90e2445c74af7a644df665889c57"
+  },
+  {
+    "relative": "HanharEnhancementHUD\\Persist.lua",
+    "before": "19f5cc9d495ca54e561bb114a3d85ba591ebf6c2dfb9c62920a18a90995905e5",
+    "after": "59c1a3973e9a3849d73acd1ff614a4ff152c12a612ecd84a3e69f7892fd01f01"
+  },
+  {
+    "relative": "HanharEnhancementHUD\\Options.lua",
+    "before": "f470190ab55e25f53526d30792a1ecc9d20854c2034d3531ef8a57034273749d",
+    "after": "f8809ac3fb2b5d2797a9c2b702e80f943f2e10091c1bd5ff1d37f6e7f5d9075e"
+  },
+  {
+    "relative": "HanharEnhancementHUD\\Slot01.lua",
+    "before": "cd75cbd56ac493c9a480ba2503772e9804c94531bce6f74d3f6569fa5b9f20c7",
+    "after": "bb2fb6050cbc38d472b26c7e8569f53d9a74fad875ef928a65cf4d3f9b0cd133"
+  },
+  {
+    "relative": "HanharEnhancementHUD\\Slot02.lua",
+    "before": "f68a7a55f88b89344a48f1d9d82f636510cc30726ec039374a5f5c3796a1077f",
+    "after": "439ccf2ea2357a40fa7808e4629f559cbc74295df75c2315e0f2655193000463"
+  },
+  {
+    "relative": "HanharEnhancementHUD\\Slot03.lua",
+    "before": "78ac5da0271962db61035f3722540a05bcac5e6db72b635dc37182596bf3b9f9",
+    "after": "a0f92a75b6d2e323adc97ad0eb5d89316fa6797605ab25fd3fbfccf897ddbe0a"
+  },
+  {
+    "relative": "HanharEnhancementHUD\\Slot04.lua",
+    "before": "261f1c11894daf428c5a13b7d20449de7f0dfdc696d44810dc88fa839291ccf8",
+    "after": "0d8cab2eab29fcdbe3b68e9835590469d05ce6177440a0e3c51f83312eb2bede"
+  },
+  {
+    "relative": "HanharEnhancementHUD\\Slot05.lua",
+    "before": "0f01dfb7c0d81fa37024afdc0e81e558b799e853f63958a562a3f5a935e98c02",
+    "after": "eafb8ce243a2bf085f7cb58d53f3c79379899095c5bcd0537e25d9ab9b083e45"
+  },
+  {
+    "relative": "HanharEnhancementHUD\\Slot06.lua",
+    "before": "796453783c88626fbc7094e83ef16d98f80b542bdb06e20e3d3b61148e7806d2",
+    "after": "d11e811b4b09d64986ba637c16d9e10e85e3e6e9fcc7f4e3ed21a88aed2fe8dc"
+  },
+  {
+    "relative": "HanharEnhancementHUD\\Slot07.lua",
+    "before": "bcb0ebc6efd54395b66e03e37e5b1d832eaf96ca9b1ec55cc5c2d23d763a16bf",
+    "after": "3c8e7c8d3388be786acf1e369d5c97b66d59a3af7a7ac62e9472daef6ce0a928"
+  },
+  {
+    "relative": "HanharEnhancementHUD\\Slot08.lua",
+    "before": "c69d67b66548397ea241b18cf24c2da1e1e97ea98452b433463078e7d801c2e2",
+    "after": "64077f9b24e7c9a502ce9287c55c7a484758d18331acc20b2e0c0fcf7c5b83fd"
+  },
+  {
+    "relative": "HanharEnhancementHUD\\Slot09.lua",
+    "before": "551d5191cfe7472459396e63920bdaef999fc9f1e61b26f4ea1787445f2767e6",
+    "after": "d3a9165163657786691958273976a716ae0c14b457d02a1361bb9ab9723a5e4a"
+  },
+  {
+    "relative": "HanharEnhancementHUD\\Slot10.lua",
+    "before": "763ea1a7901503af17da71a3e03a0a534da248cbe2c3f7ec1e301e0b4c44561b",
+    "after": "b3efa76d295c13f98cb3ac502e944792ae0b1a509a7c230d3187218a91c33f20"
+  },
+  {
+    "relative": "HanharEnhancementHUD\\HanharEnhancementHUD.toc",
+    "before": "2383f4c458ef00c73b5824f6829182094a51441cb401dcd8044d99ad3730ab4b",
+    "after": "ef97d53e6084688780ed781d0a8050dbf864e207aad6e55421e1334afd53982c"
+  }
+]

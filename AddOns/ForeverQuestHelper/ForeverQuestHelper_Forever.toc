@@ -1,0 +1,18 @@
+## Interface: 16001
+## Title: Quest Helper
+## Title-koKR: 퀘스트 도우미
+## Notes-koKR: 퀘스트 동선, 호드 추천 동선, 지도 순번, 목표 표식, 방향과 거리를 표시합니다. /fqh
+## Version: 0.7.0
+## OptionalDeps: QuestieDB
+## SavedVariables: ForeverQuestHelperDB
+
+QuestHelperSettings.lua
+QuestFloor.lua
+HordeQuestPlan.lua
+HordeQuestPanel.lua
+ForeverQuestRoute.lua
+ForeverQuestRoute.xml
+HordeQuestStarts.lua
+ForeverQuestMarks.lua
+QuestDirection.lua
+QuestStarterAlerts.lua

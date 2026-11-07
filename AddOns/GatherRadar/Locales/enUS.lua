@@ -1,0 +1,107 @@
+local ADDON_NAME, ns = ...
+
+-- ==========================================
+-- IDIOMA POR DEFECTO (enUS / enGB)
+-- ==========================================
+-- Este fichero define TODAS las claves. Los demas Locales/<idioma>.lua se
+-- cargan despues y sobrescriben las suyas; lo que falte se queda en ingles.
+
+local L = ns.L or {}
+ns.L = L
+
+-- Acerca de
+L["VERSION"] = "Version:"
+L["AUTHOR"] = "Author:"
+L["LINKS"] = "Links"
+L["COMMANDS"] = "Commands"
+L["SELECT"] = "Select"
+L["SELECT_TOOLTIP"] = "Selects the whole link so you can copy it with Ctrl+C. WoW does not let addons write to the clipboard, so the last step is yours."
+L["ABOUT_DESC"] = "Herbs, ore, treasure chests and fishing pools on your minimap with the icon of what they give, and on the world map. Remembers every node you gather or see, shares them with your group, points an arrow to the nearest one and tracks your session. Imports GatherMate2_Data without duplicates."
+L["CMD_OPEN"] = "Opens the options."
+L["CMD_SESSION"] = "Shows or hides the session panel."
+L["CMD_ARROW"] = "Shows or hides the arrow to the nearest node."
+L["CMD_IMPORT"] = "Imports the Wowhead nodes you are missing."
+
+-- General
+L["OPTIONS_TITLE"] = "GatherRadar Options"
+L["GENERAL"] = "General"
+L["DEFAULTS"] = "Reset to defaults"
+L["HEADER_SHOW"] = "Show"
+L["KIND_HERB"] = "Herbs"
+L["KIND_HERB_TOOLTIP"] = "Herbalism nodes. Turn on Find Herbs to see them live."
+L["KIND_ORE"] = "Ore"
+L["KIND_ORE_TOOLTIP"] = "Mining nodes. Turn on Find Minerals to see them live."
+L["KIND_TREASURE"] = "Treasure"
+L["KIND_TREASURE_TOOLTIP"] = "Chests, footlockers and other treasure. Turn on Find Treasure to see them live."
+L["KIND_FISH"] = "Fishing pools"
+L["KIND_FISH_TOOLTIP"] = "Fish schools and floating wreckage. Turn on Find Fish to see them live."
+L["SHOW_MINIMAP"] = "On the minimap"
+L["SHOW_MINIMAP_TOOLTIP"] = "Nodes detected around you right now, with the icon of what they give. Only the professions you know; saved nodes stay on the world map."
+L["SHOW_WORLDMAP"] = "On the world map"
+L["SHOW_WORLDMAP_TOOLTIP"] = "Every saved node of the zone on the world map. Shift + right-click a pin to delete it."
+L["MAP_MENU_SHOW"] = "Show on the map:"
+L["MAP_BUTTON_TOOLTIP"] = "Choose which nodes are shown on the minimap and the world map."
+L["MAP_MENU_OPTIONS"] = "Options"
+L["SHOW_ARROW"] = "Arrow to the nearest node"
+L["SHOW_ARROW_TOOLTIP"] = "An arrow on screen that points to the nearest node, with its name and distance. Drag it to move it."
+L["SHOW_SESSION"] = "Session panel"
+L["SHOW_SESSION_TOOLTIP"] = "Nodes gathered and materials obtained since you logged in, and per hour."
+L["HEADER_RADAR"] = "Radar"
+L["SCAN"] = "Scan the minimap"
+L["SCAN_TOOLTIP"] = "Reads the nodes that Find Herbs, Find Minerals, Find Treasure or Find Fish show on the minimap and puts their icon on them."
+L["SAVE_SEEN"] = "Save nodes seen on the minimap"
+L["SAVE_SEEN_TOOLTIP"] = "Also saves the nodes the scan sees, not only the ones you gather. Your map fills up much faster. When off, seen nodes are kept only until you log out."
+L["SHARE"] = "Share with my group"
+L["SHARE_TOOLTIP"] = "Sends the nodes you find to your party or raid, and adds theirs to your map. Only works with group members who also use GatherRadar."
+L["HARD"] = "Mark what you can't gather yet"
+L["HARD_TOOLTIP"] = "Red ring on herbs and ore that need more skill than you have, and the arrow skips them. The other colors are your chance of a skill-up: orange, yellow, green, gray."
+L["HEADER_LOOK"] = "Appearance"
+L["MINIMAP_SIZE"] = "Minimap icon size"
+L["MINIMAP_SIZE_TOOLTIP"] = "Size of the node icons on the minimap."
+L["WORLDMAP_SIZE"] = "World map icon size"
+L["WORLDMAP_SIZE_TOOLTIP"] = "Size of the node icons on the world map."
+
+-- Datos
+L["DATA"] = "Data"
+L["DATA_TITLE"] = "GatherRadar Data"
+L["HEADER_DATABASE"] = "Saved nodes"
+L["HEADER_DEDUPE"] = "Duplicates"
+L["DEDUPE"] = "Same node within"
+L["DEDUPE_TOOLTIP"] = "Two nodes of the same kind closer than this are the same place and only one is kept."
+L["CLEANUP"] = "Remove duplicates"
+L["CLEANUP_TOOLTIP"] = "Goes through every saved node and removes the ones that are too close to another of the same kind."
+L["CLEANUP_DONE"] = "%d duplicates removed."
+L["HEADER_IMPORT"] = "Import nodes"
+L["IMPORT_DESC"] = "GatherRadar comes with the known nodes of WoW Forever (Wowhead data from GatherMate2_Data, fishing pools from the classic game data). Only the missing ones are added: yours are never replaced."
+L["IMPORT"] = "Import Wowhead nodes"
+L["IMPORT_TOOLTIP"] = "Adds the nodes you are missing, of the kinds checked above."
+L["IMPORT_DONE"] = "New nodes imported."
+L["IMPORT_KIND_TOOLTIP"] = "Import this kind when you press the button."
+L["IMPORT_NONE"] = "Nothing to import: check at least one kind."
+L["HEADER_CLEAR"] = "Delete"
+L["CLEAR_ZONE"] = "Delete this zone"
+L["CLEAR_ZONE_TOOLTIP"] = "Deletes every saved node of the zone you are in."
+L["CLEAR_ALL"] = "Delete everything"
+L["CLEAR_ALL_TOOLTIP"] = "Deletes every saved node of every zone. Learned names are kept."
+L["CLEAR_ALL_CONFIRM"] = "Delete every saved GatherRadar node? This cannot be undone."
+L["HEADER_FORGET"] = "Forget everything"
+L["FORGET_DESC"] = "Starts GatherRadar from scratch: deletes every saved node, the names and icons learned in your language and the session. Your settings are kept."
+L["FORGET_ALL"] = "Forget everything"
+L["FORGET_ALL_TOOLTIP"] = "Deletes every node, learned name and the session. Settings are kept."
+L["FORGET_ALL_CONFIRM"] = "Forget everything GatherRadar has saved and learned? This cannot be undone."
+L["FORGET_DONE"] = "Everything forgotten."
+
+-- Pines y flecha
+L["SEEN_NOW"] = "On the minimap right now"
+L["PIN_DELETE"] = "Shift + right-click: delete"
+L["ARROW_NONE"] = "No nodes nearby"
+L["ARROW_TOOLTIP"] = "Points to the nearest node. Drag to move, right-click to hide."
+L["YARDS"] = "%d yd"
+
+-- Sesion
+L["SESSION"] = "Session"
+L["SESSION_TIME"] = "Time: %s"
+L["SESSION_NODES"] = "%d nodes (%d/h)"
+L["SESSION_EMPTY"] = "Gather something to start counting."
+L["PER_HOUR"] = "%d/h"
+L["RESET"] = "Reset"

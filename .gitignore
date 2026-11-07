@@ -23,3 +23,35 @@
 !/ForeverQuestHelper/QuestStarterAlerts.lua
 !/ForeverQuestHelper/QuestArrow.tga
 !/ForeverQuestHelper/QuestCompass.tga
+
+!/ForeverTrainerHelper/
+!/ForeverTrainerHelper/ForeverTrainerHelper_Forever.toc
+!/ForeverTrainerHelper/TrainerData.lua
+!/ForeverTrainerHelper/TrainerPins.lua
+!/ForeverTrainerHelper/TrainerPins.xml
+!/ForeverTrainerHelper/TrainerHud.lua
+!/ForeverTrainerHelper/TrainerArrow.tga
+
+!/ForeverFlightMap/
+!/ForeverFlightMap/ForeverFlightMap_Forever.toc
+!/ForeverFlightMap/FlightMap.lua
+!/ForeverFlightMap/FlightPins.xml
+!/ForeverFlightMap/FlightPins.lua
+
+# 번역 작업 자료와 게임에 설치된 애드온 스냅샷
+!/local-koKR/
+!/local-koKR/**
+!/AddOns/
+!/AddOns/**
+!/installed-addons-manifest.json
+!/Snapshot-InstalledAddons.cjs
+!/.gitattributes
+!/Verify-AddonBackup.cjs
+
+# 애드온 백업에도 계정 설정·비밀정보·중첩 저장소는 포함하지 않습니다.
+/AddOns/**/.git/
+/AddOns/**/.env*
+/AddOns/**/SavedVariables/
+/local-koKR/**/node_modules/
+/local-koKR/**/.git/
+/local-koKR/**/.env*

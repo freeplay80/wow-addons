@@ -1,0 +1,7 @@
+## Interface: 16001
+## Title: Bank Deposit
+## Title-koKR: 은행 재료 입금
+## Notes-koKR: 은행 창에 버튼을 추가해 가방의 제작 재료를 한 번에 은행에 넣습니다. /fbd
+## Version: 0.1.0
+
+BankDeposit.lua

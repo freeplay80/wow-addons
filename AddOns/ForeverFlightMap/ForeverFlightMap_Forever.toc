@@ -1,0 +1,10 @@
+## Interface: 16001
+## Title: Flight Map
+## Title-koKR: 비행지점 지도
+## Notes-koKR: 월드맵에 비행 조련사(비행 경로) 지점을 표시합니다. /ffm
+## Version: 0.1.0
+## SavedVariables: ForeverFlightMapDB
+
+FlightMap.lua
+FlightPins.xml
+FlightPins.lua

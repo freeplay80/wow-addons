@@ -1,0 +1,239 @@
+-- Destroys the cheapest junk item on a click, for small bags far from a vendor.
+-- Shown as a button in Baganator's bag window; the tooltip names the item before it is destroyed.
+local _, ns = ...
+local L = ns.L
+
+local PREFIX = "|cffffd200KeepOrSell:|r "
+local RARE = 3 -- Enum.ItemQuality; the client asks to type DELETE from here on
+
+-- candidates: list of {bag, slot, value, quality, locked}. Returns those that may be destroyed, cheapest
+-- first, in list order on a tie. Pure.
+function ns.SortCheapest(candidates)
+  local list = {}
+  for i, item in ipairs(candidates) do
+    if not item.locked and (item.quality or 0) < RARE then table.insert(list, {item = item, index = i}) end
+  end
+  table.sort(list, function(a, b)
+    if a.item.value ~= b.item.value then return a.item.value < b.item.value end
+    return a.index < b.index
+  end)
+  for i, entry in ipairs(list) do list[i] = entry.item end
+  return list
+end
+
+-- The cheapest candidate that may be destroyed, the first slot on a tie, or nil. Pure.
+function ns.PickCheapest(candidates)
+  return ns.SortCheapest(candidates)[1]
+end
+
+-- Junk in the regular bags (see ns.ScanBags), cheapest first: destroying junk in a profession bag
+-- frees no slot for other items
+function ns.DestroyCandidates()
+  local candidates = {}
+  for _, item in ipairs(ns.ScanBags()) do
+    if item.junk and not item.special then table.insert(candidates, item) end
+  end
+  return ns.SortCheapest(candidates)
+end
+
+-- Returns the bag item of the junk to destroy, or nil
+function ns.FindDestroyTarget()
+  return ns.DestroyCandidates()[1]
+end
+
+-- Destroys target only if it still sits unchanged in its slot and the cursor is free. Returns true on success.
+function ns.DestroyTarget(target)
+  if not target or CursorHasItem() then return false end
+  local info = C_Container.GetContainerItemInfo(target.bag, target.slot)
+  if not (info and info.hyperlink == target.link and (info.stackCount or 1) == target.count) or info.isLocked then
+    return false
+  end
+  C_Container.PickupContainerItem(target.bag, target.slot)
+  local kind, itemID = GetCursorInfo()
+  if kind ~= "item" or itemID ~= target.itemID then
+    ClearCursor()
+    return false
+  end
+  DeleteCursorItem()
+  print(PREFIX .. L.DESTROY_DONE:format(target.link, target.count))
+  return true
+end
+
+-- true if the loot item is worth destroying target for: KeepOrSell would keep it, or it's worth more
+local function WorthMore(item, target)
+  return item.keep or item.value > target.value
+end
+
+-- loot: list of {slot, link, count, value, keep, fits}; keep = KeepOrSell would keep it (quest, profession, for alts),
+-- fits = it needs no free slot. Returns the loot item worth destroying target for, or nil. Pure.
+function ns.LootWorthMore(loot, target)
+  if not target then return nil end
+  local best
+  for _, item in ipairs(loot) do
+    if not item.fits and WorthMore(item, target) then
+      if not best or (item.keep and not best.keep) or (item.keep == best.keep and item.value > best.value) then
+        best = item
+      end
+    end
+  end
+  return best
+end
+
+-- Pairs loot with the junk that makes room for it: the most valuable loot (kept items first) takes a free
+-- slot, once those are used up the cheapest junk, the next one the next cheapest junk, and so on. Loot that
+-- fits needs nothing. loot: see ns.LootWorthMore; junk: cheapest first (ns.DestroyCandidates); free: free
+-- regular slots. Returns a list of {loot, target, worth}: no target = a free slot is left for it; worth =
+-- destroying target for it pays off. Loot left without a free slot or junk is not listed. Pure.
+function ns.PairLoot(loot, junk, free)
+  local needs = {}
+  for i, item in ipairs(loot) do
+    if not item.fits then table.insert(needs, {item = item, index = i}) end
+  end
+  table.sort(needs, function(a, b)
+    local ak, bk = a.item.keep or false, b.item.keep or false
+    if ak ~= bk then return ak end
+    if a.item.value ~= b.item.value then return a.item.value > b.item.value end
+    return a.index < b.index
+  end)
+  local result = {}
+  free = free or 0
+  for i, entry in ipairs(needs) do
+    if i <= free then
+      table.insert(result, {loot = entry.item})
+    else
+      local target = junk[i - free]
+      if not target then break end
+      table.insert(result, {loot = entry.item, target = target, worth = WorthMore(entry.item, target)})
+    end
+  end
+  return result
+end
+
+-- The items in the open loot window, valued at the better of auction and vendor price; slot = loot slot,
+-- fits = needs no free regular slot (ns.LootFits)
+function ns.LootItems()
+  local items = {}
+  if not (GetNumLootItems and GetLootSlotLink and GetLootSlotInfo) then return items end
+  for slot = 1, GetNumLootItems() do
+    local link = GetLootSlotLink(slot)
+    if link then
+      local count = select(3, GetLootSlotInfo(slot)) or 1
+      local prices = ns.GetPrices(link)
+      local itemID = C_Item.GetItemInfoInstant(link)
+      local kind = ns.Classify(itemID, link).kind
+      table.insert(items, {
+        slot = slot, link = link, count = count, value = math.max(prices.ah or 0, prices.vendor or 0) * count,
+        keep = kind == "quest" or kind == "profession" or kind == "alt", fits = ns.LootFits(itemID, count),
+      })
+    end
+  end
+  return items
+end
+
+local button
+local looting, told = false, false
+
+local function SetGlow(on)
+  if not button then return end
+  if on then button.Pulse:Play() else button.Pulse:Stop() end
+  button.Glow:SetShown(on)
+end
+
+-- The loot coins (LootCoins.lua) light the button up when destroying junk makes room for better loot
+function ns.SetDestroyGlow(on)
+  SetGlow(on and KeepOrSellDB.destroy and button ~= nil and button.target ~= nil)
+end
+
+function ns.IsDestroyGlowing()
+  return button ~= nil and button.Pulse:IsPlaying()
+end
+
+function ns.LootOpened()
+  looting, told = true, false
+end
+
+function ns.LootClosed()
+  looting = false
+  SetGlow(false)
+end
+
+-- UI_ERROR_MESSAGE while looting: when the bags are full and the loot is worth more than the
+-- cheapest junk, the destroy button glows and one chat line per loot window says why
+function ns.InventoryFull(message)
+  if not (looting and button and KeepOrSellDB.destroy and message == ERR_INV_FULL) then return end
+  local target = ns.FindDestroyTarget()
+  local best = ns.LootWorthMore(ns.LootItems(), target)
+  if not best then return end
+  SetGlow(true)
+  if told then return end
+  told = true
+  print(PREFIX .. L.DESTROY_LOOT:format(best.link, GetMoneyString(best.value), target.link, GetMoneyString(target.value)))
+end
+
+local function ShowTooltip(self)
+  local target = self.target
+  if not target then return end
+  GameTooltip:SetOwner(self, "ANCHOR_TOP")
+  GameTooltip:SetText("KeepOrSell")
+  GameTooltip:AddLine(L.DESTROY_TIP:format(target.link, target.count, GetMoneyString(target.value)), 1, 1, 1, true)
+  GameTooltip:AddLine(L.DESTROY_CLICK, 0.6, 0.6, 0.6, true)
+  GameTooltip:Show()
+end
+
+local function CreateButton()
+  local frame = CreateFrame("Button", nil, UIParent)
+  frame:SetSize(20, 20)
+  frame.Icon = frame:CreateTexture(nil, "ARTWORK")
+  frame.Icon:SetAllPoints()
+  frame.Cross = frame:CreateTexture(nil, "OVERLAY")
+  frame.Cross:SetTexture("Interface\\Buttons\\UI-GroupLoot-Pass-Up")
+  frame.Cross:SetSize(12, 12)
+  frame.Cross:SetPoint("BOTTOMRIGHT", 2, -2)
+  frame:SetScript("OnEnter", ShowTooltip)
+  frame:SetScript("OnLeave", function() GameTooltip:Hide() end)
+  frame.Glow = frame:CreateTexture(nil, "OVERLAY")
+  frame.Glow:SetTexture("Interface\\Buttons\\CheckButtonHilight")
+  frame.Glow:SetBlendMode("ADD")
+  frame.Glow:SetPoint("CENTER")
+  frame.Glow:SetSize(28, 28)
+  frame.Glow:Hide()
+  frame.Pulse = frame.Glow:CreateAnimationGroup()
+  frame.Pulse:SetLooping("BOUNCE")
+  local fade = frame.Pulse:CreateAnimation("Alpha")
+  fade:SetFromAlpha(1)
+  fade:SetToAlpha(0.2)
+  fade:SetDuration(0.6)
+  frame:SetScript("OnClick", function(self)
+    if ns.DestroyTarget(self.target) then
+      GameTooltip:Hide()
+      SetGlow(false)
+    end
+  end)
+  frame:Hide()
+  return frame
+end
+
+-- Adds the button to Baganator's bag window; false when Baganator can't take it
+function ns.RegisterDestroy()
+  local api = Baganator and Baganator.API
+  if not (api and api.RegisterRegion and api.RequestLayoutUpdate) then return false end
+  button = CreateButton()
+  api.RegisterRegion("KeepOrSell", "keeporsell-destroy", "backpack", "bottom_left", button)
+  return true
+end
+
+function ns.UpdateDestroy()
+  if not button then return end
+  local target = KeepOrSellDB.destroy and ns.FindDestroyTarget() or nil
+  button.target = target
+  if target then button.Icon:SetTexture(target.icon) end
+  if button:IsMouseOver() and button:IsShown() then
+    if target then ShowTooltip(button) else GameTooltip:Hide() end
+  end
+  local shown = target ~= nil
+  if shown == button:IsShown() then return end -- no relayout needed
+  -- a hidden region still takes its width in Baganator's row
+  button:SetWidth(shown and 20 or 1)
+  button:SetShown(shown)
+  Baganator.API.RequestLayoutUpdate()
+end

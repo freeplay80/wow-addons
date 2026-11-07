@@ -1,0 +1,16 @@
+[
+  {
+    "Relative": "KeepOrSell\\UI\\Style.lua",
+    "Source": "G:\\AI\\Game\\WoW_AddOn\\local-koKR\\font-fix-2026-11-08\\source\\KeepOrSell\\UI\\Style.lua",
+    "Target": "D:\\Blizzard Games\\World of Warcraft\\_forever_\\Interface\\AddOns\\KeepOrSell\\UI\\Style.lua",
+    "Before": "7AD30FBF371E07E151EF42E26F77CCCD15DDCA95B61ED214A8B8E42D2F0AB6FD",
+    "After": "A24E9A1FAA17BE2AA6F26FD735FFC0E7C7CBB556E7913046EABC0A422682532B"
+  },
+  {
+    "Relative": "KeepOrSell\\UI\\Setup.lua",
+    "Source": "G:\\AI\\Game\\WoW_AddOn\\local-koKR\\font-fix-2026-11-08\\source\\KeepOrSell\\UI\\Setup.lua",
+    "Target": "D:\\Blizzard Games\\World of Warcraft\\_forever_\\Interface\\AddOns\\KeepOrSell\\UI\\Setup.lua",
+    "Before": "AD838D5CAEE500D34CE22809BD6D84EA8DC8D1BC2C10A9A10EAD52CE95824747",
+    "After": "A1A7E8F1023DE3B555379560E282AA67D60436C423AEF8559C3C6E5C6A8084C9"
+  }
+]
