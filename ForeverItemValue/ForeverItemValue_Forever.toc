@@ -1,0 +1,10 @@
+## Interface: 16001
+## Title: Item Value
+## Title-koKR: 아이템 가치 비교
+## Notes-koKR: 아이템 툴팁에 상점 판매가·경매 시세·마력 추출 가치·제작 원가를 비교해 보여줍니다. /fiv
+## Version: 0.1.0
+## OptionalDeps: Auctionator
+## SavedVariables: ForeverItemValueDB
+
+DisenchantData.lua
+ItemValue.lua

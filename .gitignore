@@ -38,6 +38,11 @@
 !/ForeverFlightMap/FlightPins.xml
 !/ForeverFlightMap/FlightPins.lua
 
+!/ForeverItemValue/
+!/ForeverItemValue/ForeverItemValue_Forever.toc
+!/ForeverItemValue/ItemValue.lua
+!/ForeverItemValue/DisenchantData.lua
+
 # 번역 작업 자료와 게임에 설치된 애드온 스냅샷
 !/local-koKR/
 !/local-koKR/**
