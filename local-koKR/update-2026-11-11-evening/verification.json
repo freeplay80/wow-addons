@@ -1,0 +1,71 @@
+{
+  "result": "PASS",
+  "installedRoot": "D:\\Blizzard Games\\World of Warcraft\\_forever_\\Interface\\AddOns",
+  "installedVersions": {
+    "AdventureGuideForever": "v1.6.3",
+    "Auctionator": "345",
+    "ForeverCore": "v1.4.1",
+    "Lueur": "1.7.0",
+    "ProfessionTooltip": "v1.1.1"
+  },
+  "files": 9,
+  "luaSyntax": 4,
+  "tocLoadOrder": 5,
+  "checkedLocaleKeys": {
+    "AdventureGuideForever": 457,
+    "Auctionator": 452,
+    "Lueur": 326,
+    "ProfessionTooltip": 129
+  },
+  "lueurHelpEntries": 31,
+  "adventureGuideBindings": 9,
+  "professionTooltipFallbackNames": 12,
+  "gameUI": "NOT_TESTED",
+  "plan": [
+    {
+      "relative": "AdventureGuideForever/Locales/koKR.lua",
+      "before": "067de55a6fc47c3d9bbe219ad3ea1921396df88815cd49a645d8e1649d2182d6",
+      "after": "a6656d588c5c53cb1b33257a654d883a3043621032ea85808f0543ed9b6625e2"
+    },
+    {
+      "relative": "Auctionator/Locales/koKR.lua",
+      "before": "fc11c17ad6d400a0015155bf513e058a5125a99811ecbcf6b4f985548071a173",
+      "after": "e7027a17a7f5cda1e84fda38d9fc65b9eca206c78a050f06c9ed26f676ef6016"
+    },
+    {
+      "relative": "Lueur/Locales/koKR.lua",
+      "before": null,
+      "after": "e413815d3e20714c002243308318050259a59b55566ff90c625a6060adfd5c47"
+    },
+    {
+      "relative": "ProfessionTooltip/Locales/koKR.lua",
+      "before": "96c59440b25e811b1bfb3cef010999a6e428c42e970c3cbe71e40269686a5f5d",
+      "after": "f4bc3027b53189ede050ba7e462748c9506b78817619cd00c8fa565b4aff02d6"
+    },
+    {
+      "relative": "AdventureGuideForever/AdventureGuideForever.toc",
+      "before": "ef74107a298a8c1883b41aed0ade1be056b6191fd062b040de698f2fc15b88dc",
+      "after": "62f05eb600508877205514e73f17cea010f92bfb87ab6e66248addb3132a89de"
+    },
+    {
+      "relative": "Auctionator/Auctionator.toc",
+      "before": "a2b1a5bd50d4ba398e5bcadad7870d3bb9aa4df5db2caa062b25281bf9204f81",
+      "after": "bfc4ea096609f5c464cd305ccf98dda1b50d83e4718717928d580ea4797411f6"
+    },
+    {
+      "relative": "ForeverCore/ForeverCore.toc",
+      "before": "bac8de4a9ed902c886adade5978dc35b6b131a2ee82219e92128de27aa15400b",
+      "after": "c9f7bd808ea098b8c1f9140d52c36f3c044b0dead4233083c581ee6fc717bd02"
+    },
+    {
+      "relative": "Lueur/Lueur.toc",
+      "before": "c48f781ecb2609b604f693b67bf96ceec8b54783f239a04916174f636435b121",
+      "after": "de558702d47eb9a8b01dc6ef7d8f6754b1b5180a31dece4cd3c04490d43c4b18"
+    },
+    {
+      "relative": "ProfessionTooltip/ProfessionTooltip.toc",
+      "before": "65b0abd77aaf93c33cb8209fd2e02746db088e554faa3f08c33b573acdc282e1",
+      "after": "2d940f4c5e1c561ed3bfba7623322a493ebab1d3f278d40d4d541cb401e03157"
+    }
+  ]
+}

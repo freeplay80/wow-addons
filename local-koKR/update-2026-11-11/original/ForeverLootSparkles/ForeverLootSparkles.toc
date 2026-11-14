@@ -1,0 +1,11 @@
+## Interface: 16001
+## Title: Forever Loot Sparkles
+## Notes: Always shows the sparkle effect on lootable quest items. Switches the loot sparkle back on at login and whenever a graphics change resets it. Options under Options > AddOns.
+## Author: Ashtar Senior
+## Version: v2.0.0
+## IconTexture: Interface\AddOns\ForeverLootSparkles\Icon
+## SavedVariables: ForeverLootSparklesDB
+## X-License: GPL-3.0-or-later
+## X-Curse-Project-ID: 1729017
+
+ForeverLootSparkles.lua

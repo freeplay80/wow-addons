@@ -1,0 +1,115 @@
+{
+  "result": "PASS",
+  "installedRoot": "D:\\Blizzard Games\\World of Warcraft\\_forever_\\Interface\\AddOns",
+  "installedVersions": {
+    "AdventureGuideForever": "v1.7.3",
+    "Auctionator": "346",
+    "ForeverCore": "v1.7.3",
+    "Leatrix_Maps": "1.60.31",
+    "Leatrix_Plus": "1.60.30",
+    "ProfessionTooltip": "v1.1.2",
+    "Questie": "12.7.0",
+    "QuestieTrace": "1.10.0"
+  },
+  "files": 17,
+  "luaSyntax": 13,
+  "tocLoadOrder": 8,
+  "questieKeys": 38,
+  "questieTraceSchema": 18,
+  "leatrixDungeonNames": 5,
+  "gameUI": "NOT_TESTED",
+  "plan": [
+    {
+      "relative": "AdventureGuideForever/AdventureGuideForever.toc",
+      "before": "ba248926b0ab9e684d487adeb971a315e6e825838d8ed395741ed1b14f0860ec",
+      "after": "12d2185b08a2ab4dde0f8810b196cf645f42c0bc8418f01eff19419f0b465624"
+    },
+    {
+      "relative": "AdventureGuideForever/Locales/koKR.lua",
+      "before": "b4827d41e6e8bb3f259cc3d3027d5b51c17ba4b683c62561902cec20a41610e4",
+      "after": "c4eafa3135fb4abcfb031610fa015b78fd154bc93c2e16610f4a8e7f83e5bf90"
+    },
+    {
+      "relative": "Auctionator/Auctionator.toc",
+      "before": "62c2581c0c2d9b2f8efdf4f3e1a6cbde3fe1614204af9e5673c1e377296d28eb",
+      "after": "8c2f0f32c159130ceab77b97fa8d018a56226d0e3eb6bab388b041e6e057c9df"
+    },
+    {
+      "relative": "Auctionator/Locales/koKR.lua",
+      "before": "fc11c17ad6d400a0015155bf513e058a5125a99811ecbcf6b4f985548071a173",
+      "after": "e7027a17a7f5cda1e84fda38d9fc65b9eca206c78a050f06c9ed26f676ef6016"
+    },
+    {
+      "relative": "ForeverCore/ForeverCore.toc",
+      "before": "12651dc7837a63a25b53615ffb6c4a0b19d969da0082dd2f063b6fd3426075a3",
+      "after": "812903229c68c9f8aa49d5a5afd6671e962480c862cc42225ef9c6c8e2343a92"
+    },
+    {
+      "relative": "ForeverCore/Locales/koKR.lua",
+      "before": "2a8592998da3816670f8dbf38a96781c7838e7cf267159b5009e08867c1a95b9",
+      "after": "a148a489d481a1e859e95fb0ac23b3e0019ee8d4709d653339d3830c445d2834"
+    },
+    {
+      "relative": "Leatrix_Maps/Leatrix_Maps_Locale.lua",
+      "before": "929d9b2b06bf717b8ab8843d14f411a9a4b79f8a55f8394c31fced014d9b903e",
+      "after": "e5e3ab8b7b49558863d2b20505d4f9157692a4e95bb644b760ffb192fd20768c"
+    },
+    {
+      "relative": "Leatrix_Plus/Leatrix_Plus.lua",
+      "before": "7c0696c5b473d7d5efccbed3328464f7436bbb8abfed8fa071d46ad0f2ecd3bb",
+      "after": "176a9dbcba94d566b4cb79010ee26265ff8213029a4cc6eab089be5882996a44"
+    },
+    {
+      "relative": "Leatrix_Plus/Leatrix_Plus_Locale.lua",
+      "before": "1b932cc9724aba88e0369879cab078d657bb8c23bbb9d59647867e4b585a3086",
+      "after": "b18e9d202caba9e18e0ad914fcfb9bdf25ae43940003c1af749a23b30bac56d0"
+    },
+    {
+      "relative": "ProfessionTooltip/Locales/koKR.lua",
+      "before": "96c59440b25e811b1bfb3cef010999a6e428c42e970c3cbe71e40269686a5f5d",
+      "after": "f4bc3027b53189ede050ba7e462748c9506b78817619cd00c8fa565b4aff02d6"
+    },
+    {
+      "relative": "ProfessionTooltip/ProfessionTooltip.toc",
+      "before": "050d2410d98af45fec6e83fca8ca346370eab9379a6a3aa8514ff4b6bc209fae",
+      "after": "91f887850d873ee046b768675da7bb2c65b34d65b76353ff17e18367f2dbcc46"
+    },
+    {
+      "relative": "Questie/Localization/Translations/ExtraObjectives/ClassicObjectives.lua",
+      "before": "c940948a36a206c3cb7b49d7ef9a1cd4e55a8ac436c04117738652b8c91c2e2e",
+      "after": "6eaa05f83d17f5f1ebe79dac6b8897d9b85532059f8e9f7fb1f438ee2473105f"
+    },
+    {
+      "relative": "Questie/Localization/Translations/ExtraObjectives/ForeverObjectives.lua",
+      "before": "890239cf24d601baddf1d17d9f289a8cc5e7cb74381f8da258692c0bdd266f7a",
+      "after": "c09df7dac5352e077234ecdbc7bd6cdb763395e25dae4fd84cf8cd525dc05f9e"
+    },
+    {
+      "relative": "Questie/Localization/Translations/Journey/MyJourney.lua",
+      "before": "b2254ca0de4052246eda7e98f0e1589f4bbae7b6c3badc8ae0072b16219ac9f1",
+      "after": "32ebbfac9586f6a44105a0b9fc491ffef0a835aa38b48a1556786f9f75c1d052"
+    },
+    {
+      "relative": "Questie/Localization/Translations/MinimapIcon/MinimapIcon.lua",
+      "before": "e7d2328c7aff55d6579024b08459e0a4d7cceea383aa305ac20cbcb871a70da2",
+      "after": "24a60f3b825a430d62762aa16136fa95140a9bbe224f756fb0885a6a06da9e09"
+    },
+    {
+      "relative": "QuestieTrace/Modules/Dumps/MapHierarchy.lua",
+      "before": "c0a6aab182a4b04536607227eab7e9ddbbdeb0a1147d4cf21ff93425c9714de1",
+      "after": "5c0bbb96967d02a4ddc49600ff85f9edfb39e6c33848ea5dae8a962286fc125b"
+    },
+    {
+      "relative": "QuestieTrace/QuestieTrace.lua",
+      "before": "2735fe31491de1f524ca2cf588bd2337c047d67fb4ff246ded78319e04df23ae",
+      "after": "f32c651ce380c060f3ff951ab879b7b26f380fe0110fbae399dba53b565db56b"
+    }
+  ],
+  "sources": {
+    "leatrixDungeonNames": "https://worldofwarcraft.blizzard.com/ko-kr/news/24315643",
+    "specializationNames": [
+      "https://worldofwarcraft.blizzard.com/ko-kr/news/24276957",
+      "https://worldofwarcraft.blizzard.com/ko-kr/news/19956929"
+    ]
+  }
+}

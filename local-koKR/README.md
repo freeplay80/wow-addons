@@ -9,6 +9,9 @@
 | `Hanhar-ui.txt`, `build-hanhar.cjs` | Hanhar 표시 문구와 첫 적용용 생성 스크립트 |
 | `additional-2026-11-08/` | KeepOrSell 등 추가 번역의 원본·수정본·문구·검증 및 적용 자료 |
 | `font-fix-2026-11-08/` | KeepOrSell 제목과 소개 문구의 한글 글꼴 수정 전후 파일 |
+| `update-2026-11-11/` | 애드온 6개의 업데이트 후 한글 복구 파일, 수정 전 설치 파일, 검증 결과 및 해시 |
+| `update-2026-11-11-evening/` | Lueur 1.7.0 번역 복구와 AdventureGuideForever, Auctionator, ForeverCore, ProfessionTooltip의 한국어 보완 |
+| `update-2026-11-12/` | 업데이트된 애드온 8개의 한글 복구·보완 파일과 설치 검증 기록 |
 
 `source/`는 각 작업 당시의 수정본이며, `original/`은 해당 수정 직전의 백업입니다. 폴더별 시점이 다르므로 최신 파일을 복구할 때는 뒤에 한 수정도 함께 확인해야 합니다. 현재 게임 설치본의 통합 사본은 저장소 루트의 `AddOns/`에 있습니다.
 
