@@ -38,6 +38,10 @@
 !/ForeverFlightMap/FlightPins.xml
 !/ForeverFlightMap/FlightPins.lua
 
+!/ForeverBuffGreeter/
+!/ForeverBuffGreeter/ForeverBuffGreeter_Forever.toc
+!/ForeverBuffGreeter/BuffGreeter.lua
+
 !/ForeverItemValue/
 !/ForeverItemValue/ForeverItemValue_Forever.toc
 !/ForeverItemValue/ItemValue.lua
