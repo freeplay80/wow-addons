@@ -9,7 +9,8 @@ local function IsNumber(value)
     return not isSecret(value) and type(value) == "number"
 end
 
-local width, padding, rowHeight, maxRows = 290, 10, 19, 6
+-- The list grows with the number of learnable skills; maxRows only guards against running off screen.
+local width, padding, rowHeight, maxRows = 290, 10, 19, 30
 local headerHeight = 44
 local gold = { 0.78, 0.55, 0.10 }
 
@@ -66,12 +67,43 @@ local skillTitle = hud:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
 skillTitle:SetPoint("TOPLEFT", divider, "BOTTOMLEFT", 0, -6)
 skillTitle:SetTextColor(0.52, 1, 0.6)
 
+local SavePosition
+
+-- Row buttons take the mouse for tooltips, so they hand drags on to the HUD.
+local function RowDragStart() hud:StartMoving() end
+local function RowDragStop() SavePosition(hud) end
+
+local function RowEnter(self)
+    local entry = self.entry
+    if not entry then return end
+    GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+    if type(entry.id) ~= "number" or not pcall(GameTooltip.SetSpellByID, GameTooltip, entry.id) then
+        GameTooltip:SetText(entry.name, 1, 1, 1)
+        if entry.rank and entry.rank ~= "" then GameTooltip:AddLine(entry.rank, 0.62, 0.62, 0.62) end
+    end
+    GameTooltip:AddLine(("필요 레벨 %d · 비용 %s"):format(entry.level or 0, ns.Money(entry.cost)), 1, 0.82, 0)
+    GameTooltip:Show()
+end
+
+local function RowLeave(self)
+    if GameTooltip:IsOwned(self) then GameTooltip:Hide() end
+end
+
 local rows = {}
 local function GetRow(index)
     local row = rows[index]
     if row then return row end
     row = {}
     local top = headerHeight + padding + 28 + (index - 1) * rowHeight
+    row.button = CreateFrame("Button", nil, hud)
+    row.button:SetPoint("TOPLEFT", hud, "TOPLEFT", padding, -top + 1)
+    row.button:SetPoint("TOPRIGHT", hud, "TOPRIGHT", -padding, -top + 1)
+    row.button:SetHeight(rowHeight)
+    row.button:RegisterForDrag("LeftButton")
+    row.button:SetScript("OnDragStart", RowDragStart)
+    row.button:SetScript("OnDragStop", RowDragStop)
+    row.button:SetScript("OnEnter", RowEnter)
+    row.button:SetScript("OnLeave", RowLeave)
     row.icon = hud:CreateTexture(nil, "ARTWORK")
     row.icon:SetSize(16, 16)
     row.icon:SetPoint("TOPLEFT", hud, "TOPLEFT", padding, -top)
@@ -90,22 +122,31 @@ end
 local function RestorePosition()
     local saved = ns.GetDB().hudPosition
     hud:ClearAllPoints()
-    if type(saved) == "table" and IsNumber(saved.x) and IsNumber(saved.y) then
+    if type(saved) == "table" and IsNumber(saved.x) and IsNumber(saved.top) then
+        hud:SetPoint("TOP", UIParent, "TOP", saved.x, saved.top)
+    elseif type(saved) == "table" and IsNumber(saved.x) and IsNumber(saved.y) then
+        -- Positions saved by 0.3.0 were centre offsets.
         hud:SetPoint("CENTER", UIParent, "CENTER", saved.x, saved.y)
     else
         hud:SetPoint("TOP", UIParent, "TOP", 0, -190)
     end
 end
 
-hud:SetScript("OnDragStart", function(self) self:StartMoving() end)
-hud:SetScript("OnDragStop", function(self)
+-- Saved by the top edge so the HUD grows downward when the skill list gets longer.
+function SavePosition(self)
     self:StopMovingOrSizing()
-    local centerX, centerY = self:GetCenter()
-    local parentX, parentY = UIParent:GetCenter()
-    if IsNumber(centerX) and IsNumber(centerY) and IsNumber(parentX) and IsNumber(parentY) then
-        ns.GetDB().hudPosition = { x = centerX - parentX, y = centerY - parentY }
+    -- Our own saved position is the only one; the client's layout cache would fight it.
+    if self.SetUserPlaced then self:SetUserPlaced(false) end
+    local centerX, top = self:GetCenter(), self:GetTop()
+    local parentX, parentTop = UIParent:GetCenter(), UIParent:GetTop()
+    if IsNumber(centerX) and IsNumber(top) and IsNumber(parentX) and IsNumber(parentTop) then
+        ns.GetDB().hudPosition = { x = centerX - parentX, top = top - parentTop }
     end
-end)
+    RestorePosition()
+end
+
+hud:SetScript("OnDragStart", function(self) self:StartMoving() end)
+hud:SetScript("OnDragStop", SavePosition)
 
 local function WorldPosition(mapID, x, y)
     if not CreateVector2D or not C_Map.GetWorldPosFromMapPos then return end
@@ -161,11 +202,15 @@ local function ShowSkills()
         if type(rankText) ~= "string" or rankText == "" then rankText = entry.rank end
         row.name:SetText(entry.name .. ((type(rankText) == "string" and rankText ~= "") and (" |cff9d9d9d(" .. rankText .. ")|r") or ""))
         row.info:SetText(("Lv%d · %s"):format(entry.level or 0, ns.Money(entry.cost)))
+        row.button.entry = entry
+        row.button:Show()
         row.icon:Show()
         row.name:Show()
         row.info:Show()
     end
     for index = shown + 1, #rows do
+        rows[index].button.entry = nil
+        rows[index].button:Hide()
         rows[index].icon:Hide()
         rows[index].name:Hide()
         rows[index].info:Hide()
@@ -174,6 +219,7 @@ local function ShowSkills()
     local footer = 0
     if extra > 0 then
         local row = GetRow(shown + 1)
+        row.button:Hide()
         row.icon:Hide()
         row.info:Hide()
         row.name:SetText(("|cff9d9d9d…외 %d개 (/fth 로 전체 보기)|r"):format(extra))
@@ -238,8 +284,12 @@ events:SetScript("OnUpdate", function(_, delta)
         Update()
     end
 end)
-events:SetScript("OnEvent", function(_, event)
-    if event == "TRAINER_SHOW" then
+events:SetScript("OnEvent", function(_, event, arg1)
+    if event == "ADDON_LOADED" then
+        -- SavedVariables are only available from here, so the saved position is applied now.
+        if arg1 == "ForeverTrainerHelper" then RestorePosition() end
+        return
+    elseif event == "TRAINER_SHOW" then
         trainerWindowOpen = true
     elseif event == "TRAINER_CLOSED" then
         trainerWindowOpen = false
@@ -248,7 +298,7 @@ events:SetScript("OnEvent", function(_, event)
     C_Timer.After(event == "PLAYER_ENTERING_WORLD" and 4 or 1, RefreshLearnable)
 end)
 for _, event in ipairs({
-    "PLAYER_ENTERING_WORLD", "PLAYER_LEVEL_UP", "SPELLS_CHANGED", "TRAINER_SHOW", "TRAINER_UPDATE", "TRAINER_CLOSED",
+    "ADDON_LOADED", "PLAYER_ENTERING_WORLD", "PLAYER_LEVEL_UP", "SPELLS_CHANGED", "TRAINER_SHOW", "TRAINER_UPDATE", "TRAINER_CLOSED",
 }) do
     pcall(events.RegisterEvent, events, event)
 end
