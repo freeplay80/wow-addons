@@ -254,7 +254,7 @@ local function Update()
             local zone = type(info) == "table" and info.name
             point.zone = (type(zone) == "string" and not isSecret(zone) and zone ~= "") and zone or false
         end
-        local label = point.name or "직업 훈련사"
+        local label = ns.LocalNpcName(point.npcID, point.name) or "직업 훈련사"
         place:SetText(point.zone and (label .. " |cff9d9d9d· " .. point.zone .. "|r") or label)
     else
         arrow:Hide()

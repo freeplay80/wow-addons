@@ -48,6 +48,30 @@ function ns.TextNamesClass(text, names)
     return false
 end
 
+-- QuestieDB names may not match the client's language, so the client's own creature cache is asked first.
+-- The first query can come back empty while the server sends the creature data, so it is retried later.
+local nameRetry = {}
+function ns.LocalNpcName(npcID, fallback)
+    if type(npcID) ~= "number" then return fallback end
+    local db = ns.GetDB()
+    local locale = Read(GetLocale) or "unknown"
+    db.npcNames = type(db.npcNames) == "table" and db.npcNames or {}
+    local names = type(db.npcNames[locale]) == "table" and db.npcNames[locale] or {}
+    db.npcNames[locale] = names
+    if type(names[npcID]) == "string" then return names[npcID] end
+    local now = Read(GetTime) or 0
+    if (nameRetry[npcID] or 0) > now then return fallback end
+    nameRetry[npcID] = now + 2
+    local data = Read(C_TooltipInfo and C_TooltipInfo.GetHyperlink, ("unit:Creature-0-0-0-0-%d-0000000000"):format(npcID))
+    local line = type(data) == "table" and type(data.lines) == "table" and data.lines[1]
+    local name = type(line) == "table" and Public(line.leftText)
+    if type(name) == "string" and name ~= "" then
+        names[npcID] = name
+        return name
+    end
+    return fallback
+end
+
 local function Money(copper)
     copper = math.floor(tonumber(copper) or 0)
     if copper <= 0 then return "무료" end

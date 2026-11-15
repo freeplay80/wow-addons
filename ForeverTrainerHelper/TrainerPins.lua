@@ -78,7 +78,7 @@ end
 function ForeverClassTrainerPinMixin:OnMouseEnter()
     local point = self.point
     GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
-    GameTooltip:SetText(point.name or "직업 훈련사", 1, 0.82, 0.42)
+    GameTooltip:SetText(ns.LocalNpcName(point.npcID, point.name) or "직업 훈련사", 1, 0.82, 0.42)
     GameTooltip:AddLine(point.subName or "직업 훈련사", 0.76, 0.84, 0.88)
     local list = ns.GetLearnable()
     if #list > 0 then
